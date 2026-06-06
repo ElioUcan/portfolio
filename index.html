@@ -399,15 +399,13 @@
     </div>
   </footer>
 
-  <!-- GSAP via CDN — vanilla JS, no build step needed -->
+  <!-- GSAP via CDN — used only for the hero entrance timeline -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script>
-    // Respect prefers-reduced-motion — skip all animations if user prefers it
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      gsap.registerPlugin(ScrollTrigger);
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // Hero entrance — staggered timeline on page load
+    // Hero entrance — GSAP timeline, no ScrollTrigger, fires on page load
+    if (!reduced && typeof gsap !== 'undefined') {
       const heroTl = gsap.timeline({ delay: 0.1 });
       heroTl
         .from('.hero-badge',    { opacity: 0, y: 16, duration: 0.5, ease: 'power2.out' })
@@ -415,32 +413,58 @@
         .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.3')
         .from('.hero-ctas a',   { opacity: 0, y: 16, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.2')
         .from('.hero-stat',     { opacity: 0, y: 12, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.1');
+    }
 
-      // Section fade-up reveals on scroll enter
-      gsap.utils.toArray('.reveal-section').forEach(section => {
-        gsap.from(section, {
-          opacity: 0, y: 40, duration: 0.7, ease: 'power2.out',
-          scrollTrigger: { trigger: section, start: 'top 88%', once: true }
+    // Scroll reveals — native IntersectionObserver + CSS transitions
+    // Cards are visible by default; JS progressively adds the animation
+    if (!reduced) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .scroll-item {
+          opacity: 0;
+          transform: translateY(22px);
+          transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+        }
+        .scroll-item.in-view {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .scroll-item-left {
+          opacity: 0;
+          transform: translateX(-18px);
+          transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+        }
+        .scroll-item-left.in-view {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Add animation classes via JS so elements are visible without JS
+      document.querySelectorAll('.card, .skill-group, .reveal-section').forEach(el => {
+        el.classList.add('scroll-item');
+      });
+      document.querySelectorAll('.cert-item').forEach(el => {
+        el.classList.add('scroll-item-left');
+      });
+
+      // Observe with stagger delay based on sibling index
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          // Find sibling index within the same parent for stagger
+          const siblings = [...el.parentElement.children].filter(
+            c => c.classList.contains('scroll-item') || c.classList.contains('scroll-item-left')
+          );
+          const idx = siblings.indexOf(el);
+          setTimeout(() => el.classList.add('in-view'), idx * 90);
+          io.unobserve(el);
         });
-      });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-      // Project cards — staggered reveal when container enters viewport
-      gsap.from('.reveal-cards .card', {
-        opacity: 0, y: 30, stagger: 0.1, duration: 0.6, ease: 'power2.out',
-        scrollTrigger: { trigger: '.reveal-cards', start: 'top 82%', once: true }
-      });
-
-      // Skills groups — staggered reveal
-      gsap.from('.skill-group', {
-        opacity: 0, y: 20, stagger: 0.08, duration: 0.5, ease: 'power2.out',
-        scrollTrigger: { trigger: '.skills-grid', start: 'top 82%', once: true }
-      });
-
-      // Cert list items — slide in from left
-      gsap.from('.cert-item', {
-        opacity: 0, x: -20, stagger: 0.07, duration: 0.45, ease: 'power2.out',
-        scrollTrigger: { trigger: '.certs-list', start: 'top 82%', once: true }
-      });
+      document.querySelectorAll('.scroll-item, .scroll-item-left').forEach(el => io.observe(el));
     }
   </script>
 
