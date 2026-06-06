@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elio Eduardo Ucán Zapata — Data Engineering Portfolio</title>
   <meta name="description" content="Data Engineering student · AWS Certified · ETL, Cloud, AI — Seeking remote internship Sep–Dec 2026">
+
+  <!-- Preload critical fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet">
+  <!-- Fraunces: display serif for hero title (opsz + wght variable axes) -->
+  <!-- Inter: workhorse sans for all body and UI text -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="dist/output.css">
+
+  <style>
+    /* Fraunces display — optical sizing auto uses opsz axis at large sizes */
+    .font-display {
+      font-family: 'Fraunces', serif;
+      font-optical-sizing: auto;
+    }
+  </style>
 </head>
 <body class="bg-white text-slate-900 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-900">
 
@@ -25,21 +38,22 @@
 
   <!-- Hero -->
   <section class="max-w-5xl mx-auto px-6 pt-24 pb-24">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 mb-8">
+
+    <div class="hero-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 mb-8">
       <span class="size-2 rounded-full bg-emerald-500"></span>
       <span class="text-xs font-semibold text-emerald-700">Available — Remote Internship Sep–Dec 2026</span>
     </div>
 
-    <h1 class="text-6xl md:text-8xl font-black tracking-tight text-slate-900 leading-none text-balance">
+    <h1 class="hero-title font-display font-black text-6xl md:text-8xl text-slate-900 leading-none text-balance" style="font-weight:900;">
       Elio Eduardo<br>Ucán Zapata
     </h1>
 
-    <p class="mt-8 text-xl text-slate-500 max-w-xl text-pretty leading-relaxed">
+    <p class="hero-subtitle mt-8 text-xl text-slate-500 max-w-xl text-pretty leading-relaxed">
       Data Engineering student at UPY · AWS Certified · C1 English ·
       Building ETL pipelines, cloud infrastructure, and AI-powered APIs.
     </p>
 
-    <div class="mt-10 flex flex-wrap gap-3">
+    <div class="hero-ctas mt-10 flex flex-wrap gap-3">
       <a href="https://github.com/ElioUcan" target="_blank" rel="noopener"
          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-700 transition-colors duration-150">
         GitHub ↗
@@ -55,21 +69,21 @@
     </div>
 
     <!-- Quick stats -->
-    <div class="mt-14 flex flex-wrap gap-8 pt-10 border-t border-slate-100">
-      <div>
-        <p class="text-3xl font-black text-slate-900 tabular-nums">5</p>
+    <div class="mt-14 pt-10 border-t border-slate-100 flex flex-wrap gap-10">
+      <div class="hero-stat">
+        <p class="text-3xl font-black text-slate-900 tabular-nums font-display" style="font-weight:900;">5</p>
         <p class="text-sm text-slate-500 mt-0.5">Projects shipped</p>
       </div>
-      <div>
-        <p class="text-3xl font-black text-slate-900 tabular-nums">6</p>
+      <div class="hero-stat">
+        <p class="text-3xl font-black text-slate-900 tabular-nums font-display" style="font-weight:900;">6</p>
         <p class="text-sm text-slate-500 mt-0.5">Certifications</p>
       </div>
-      <div>
-        <p class="text-3xl font-black text-slate-900">AWS</p>
+      <div class="hero-stat">
+        <p class="text-3xl font-black text-slate-900 font-display" style="font-weight:900;">AWS</p>
         <p class="text-sm text-slate-500 mt-0.5">Certified Engineer</p>
       </div>
-      <div>
-        <p class="text-3xl font-black text-slate-900">C1</p>
+      <div class="hero-stat">
+        <p class="text-3xl font-black text-slate-900 font-display" style="font-weight:900;">C1</p>
         <p class="text-sm text-slate-500 mt-0.5">English · iTEP 4.7/6</p>
       </div>
     </div>
@@ -77,16 +91,16 @@
 
   <!-- Projects -->
   <section class="bg-slate-50 border-y border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 py-20">
+    <div class="max-w-5xl mx-auto px-6 py-20 reveal-section">
       <div class="flex items-center gap-3 mb-12">
         <span class="size-2 rounded-full bg-indigo-500"></span>
         <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Projects</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="reveal-cards grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- DC Operations Dashboard -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
+        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
           <div class="flex justify-between items-start gap-2 mb-3">
             <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">DC Operations Dashboard</h3>
             <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2026</span>
@@ -109,7 +123,7 @@
         </div>
 
         <!-- ETL Pipeline -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
+        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
           <div class="flex justify-between items-start gap-2 mb-3">
             <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
             <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025–2026</span>
@@ -131,7 +145,7 @@
         </div>
 
         <!-- Terraform IaC -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
+        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
           <div class="flex justify-between items-start gap-2 mb-3">
             <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">Infrastructure as Code — Terraform on AWS</h3>
             <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025</span>
@@ -153,7 +167,7 @@
         </div>
 
         <!-- AI Agent -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
+        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
           <div class="flex justify-between items-start gap-2 mb-3">
             <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">AI Agent — Anthropic API + FastAPI</h3>
             <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025–2026</span>
@@ -175,7 +189,7 @@
         </div>
 
         <!-- better-readmes (full width) -->
-        <div class="bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 md:col-span-2">
+        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 md:col-span-2">
           <div class="flex justify-between items-start gap-4 mb-3">
             <div class="flex items-center gap-3 flex-wrap">
               <h3 class="font-bold text-slate-900 text-lg leading-tight">better-readmes</h3>
@@ -202,14 +216,14 @@
   </section>
 
   <!-- Skills -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
+  <section class="max-w-5xl mx-auto px-6 py-20 reveal-section">
     <div class="flex items-center gap-3 mb-12">
       <span class="size-2 rounded-full bg-indigo-500"></span>
       <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Technical Skills</h2>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-10">
-      <div>
+    <div class="skills-grid grid grid-cols-2 md:grid-cols-3 gap-10">
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">Languages</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Python</span>
@@ -218,8 +232,7 @@
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Bash</span>
         </div>
       </div>
-
-      <div>
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">ETL & Pipeline</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Airflow</span>
@@ -229,8 +242,7 @@
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">REST APIs</span>
         </div>
       </div>
-
-      <div>
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">Cloud & IaC</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">AWS</span>
@@ -238,8 +250,7 @@
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Linux</span>
         </div>
       </div>
-
-      <div>
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">Data</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Snowflake</span>
@@ -247,16 +258,14 @@
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Power BI</span>
         </div>
       </div>
-
-      <div>
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">AI & ML</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">scikit-learn</span>
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Anthropic SDK</span>
         </div>
       </div>
-
-      <div>
+      <div class="skill-group">
         <h3 class="text-sm font-bold text-slate-900 mb-4">Dev Tools</h3>
         <div class="flex flex-wrap gap-2">
           <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Git</span>
@@ -268,53 +277,52 @@
 
   <!-- Certifications & Awards -->
   <section class="bg-slate-50 border-y border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 py-20">
+    <div class="max-w-5xl mx-auto px-6 py-20 reveal-section">
       <div class="flex items-center gap-3 mb-12">
         <span class="size-2 rounded-full bg-indigo-500"></span>
         <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Certifications & Awards</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
-
         <div>
           <h3 class="text-base font-bold text-slate-900 mb-6">Certifications</h3>
-          <ul class="space-y-5">
-            <li class="flex justify-between items-start gap-4">
+          <ul class="certs-list space-y-5">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">AWS Academy Data Engineer</p>
                 <p class="text-xs text-slate-400 mt-0.5">Amazon Web Services</p>
               </div>
               <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2025</span>
             </li>
-            <li class="flex justify-between items-start gap-4">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">AWS Academy Cloud Foundations</p>
                 <p class="text-xs text-slate-400 mt-0.5">Amazon Web Services · 20 hrs · Credly verified</p>
               </div>
               <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2025</span>
             </li>
-            <li class="flex justify-between items-start gap-4">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">Data Analyst in Power BI</p>
                 <p class="text-xs text-slate-400 mt-0.5">DataCamp · 50 hrs</p>
               </div>
               <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
             </li>
-            <li class="flex justify-between items-start gap-4">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">Database Design</p>
                 <p class="text-xs text-slate-400 mt-0.5">DataCamp</p>
               </div>
               <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
             </li>
-            <li class="flex justify-between items-start gap-4">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">Introduction to Snowflake SQL</p>
                 <p class="text-xs text-slate-400 mt-0.5">DataCamp</p>
               </div>
               <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
             </li>
-            <li class="flex justify-between items-start gap-4">
+            <li class="cert-item flex justify-between items-start gap-4">
               <div>
                 <p class="text-sm font-semibold text-slate-800">Deep Learning in Real Life, Honors</p>
                 <p class="text-xs text-slate-400 mt-0.5">NextMid</p>
@@ -341,18 +349,16 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- Education -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
+  <section class="max-w-5xl mx-auto px-6 py-20 reveal-section">
     <div class="flex items-center gap-3 mb-12">
       <span class="size-2 rounded-full bg-indigo-500"></span>
       <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Education</h2>
     </div>
-
     <div class="space-y-8">
       <div class="flex justify-between items-start gap-6 py-6 border-b border-slate-100">
         <div>
@@ -361,7 +367,6 @@
         </div>
         <span class="text-sm font-medium text-slate-400 bg-slate-100 px-3 py-1.5 rounded-lg shrink-0 tabular-nums">Expected 2027</span>
       </div>
-
       <div class="flex justify-between items-start gap-6 py-6">
         <div>
           <h3 class="font-bold text-slate-900 text-lg">Holberton School Mérida</h3>
@@ -375,7 +380,7 @@
   <!-- Footer -->
   <footer class="bg-slate-900">
     <div class="max-w-5xl mx-auto px-6 py-14 flex flex-col items-center gap-5">
-      <p class="text-xl font-black text-white">Let's work together.</p>
+      <p class="text-xl font-black text-white font-display" style="font-weight:900;">Let's work together.</p>
       <div class="flex flex-wrap justify-center gap-6 text-sm">
         <a href="mailto:elioeduardo06@gmail.com"
            class="text-slate-400 hover:text-white transition-colors duration-150 font-medium">
@@ -393,6 +398,51 @@
       <p class="text-xs text-slate-600 mt-2">© 2026 Elio Eduardo Ucán Zapata</p>
     </div>
   </footer>
+
+  <!-- GSAP via CDN — vanilla JS, no build step needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    // Respect prefers-reduced-motion — skip all animations if user prefers it
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero entrance — staggered timeline on page load
+      const heroTl = gsap.timeline({ delay: 0.1 });
+      heroTl
+        .from('.hero-badge',    { opacity: 0, y: 16, duration: 0.5, ease: 'power2.out' })
+        .from('.hero-title',    { opacity: 0, y: 48, duration: 0.7, ease: 'power2.out' }, '-=0.2')
+        .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+        .from('.hero-ctas a',   { opacity: 0, y: 16, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.2')
+        .from('.hero-stat',     { opacity: 0, y: 12, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.1');
+
+      // Section fade-up reveals on scroll enter
+      gsap.utils.toArray('.reveal-section').forEach(section => {
+        gsap.from(section, {
+          opacity: 0, y: 40, duration: 0.7, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 88%', once: true }
+        });
+      });
+
+      // Project cards — staggered reveal when container enters viewport
+      gsap.from('.reveal-cards .card', {
+        opacity: 0, y: 30, stagger: 0.1, duration: 0.6, ease: 'power2.out',
+        scrollTrigger: { trigger: '.reveal-cards', start: 'top 82%', once: true }
+      });
+
+      // Skills groups — staggered reveal
+      gsap.from('.skill-group', {
+        opacity: 0, y: 20, stagger: 0.08, duration: 0.5, ease: 'power2.out',
+        scrollTrigger: { trigger: '.skills-grid', start: 'top 82%', once: true }
+      });
+
+      // Cert list items — slide in from left
+      gsap.from('.cert-item', {
+        opacity: 0, x: -20, stagger: 0.07, duration: 0.45, ease: 'power2.out',
+        scrollTrigger: { trigger: '.certs-list', start: 'top 82%', once: true }
+      });
+    }
+  </script>
 
 </body>
 </html>
