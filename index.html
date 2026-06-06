@@ -3,470 +3,375 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elio Eduardo Ucán Zapata — Data Engineering Portfolio</title>
-  <meta name="description" content="Data Engineering student · AWS Certified · ETL, Cloud, AI — Seeking remote internship Sep–Dec 2026">
+  <title>Elio Ucán — Data Engineering & AI</title>
+  <meta name="description" content="Elio Eduardo Ucán Zapata — Data Engineering & AI student. AWS Certified. Building ETL pipelines, cloud infrastructure, and AI-powered APIs. Seeking remote internship Sep–Dec 2026.">
+  <meta name="author" content="Elio Eduardo Ucán Zapata">
 
-  <!-- Preload critical fonts -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Elio Ucán — Data Engineering & AI">
+  <meta property="og:description" content="AWS Certified · ETL · Cloud Infrastructure · AI-Powered APIs">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Fraunces: display serif for hero title (opsz + wght variable axes) -->
-  <!-- Inter: workhorse sans for all body and UI text -->
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Anton: ultra-bold condensed display. Inter: clean body sans. -->
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="dist/output.css">
-
-  <style>
-    /* Fraunces display — optical sizing auto uses opsz axis at large sizes */
-    .font-display {
-      font-family: 'Fraunces', serif;
-      font-optical-sizing: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased selection:bg-indigo-100 selection:text-indigo-900">
+<body>
 
-  <!-- Sticky nav -->
-  <header class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span class="text-sm font-bold text-slate-900">Elio Ucán</span>
-      <a href="assets/Elio_ResumeFinal.pdf" download
-         class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-        Resume ↓
-      </a>
+  <!-- Animated grain / noise overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Fixed nav -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">ELIO UCÁN</a>
+      <a href="assets/Elio_ResumeFinal.pdf" download class="nav__resume">RESUME <span aria-hidden="true">↓</span></a>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="max-w-5xl mx-auto px-6 pt-24 pb-24">
-
-    <div class="hero-badge inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 mb-8">
-      <span class="size-2 rounded-full bg-emerald-500"></span>
-      <span class="text-xs font-semibold text-emerald-700">Available — Remote Internship Sep–Dec 2026</span>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <!-- Floating abstract shapes -->
+    <div class="shapes" aria-hidden="true">
+      <span class="shape shape--circle-lg"></span>
+      <span class="shape shape--circle-sm"></span>
+      <span class="shape shape--rect"></span>
+      <span class="shape shape--ring"></span>
     </div>
 
-    <h1 class="hero-title font-display font-black text-6xl md:text-8xl text-slate-900 leading-none text-balance" style="font-weight:900;">
-      Elio Eduardo<br>Ucán Zapata
-    </h1>
+    <div class="hero__inner">
+      <span class="hero__label">DATA ENGINEERING · 2026</span>
 
-    <p class="hero-subtitle mt-8 text-xl text-slate-500 max-w-xl text-pretty leading-relaxed">
-      Data Engineering student at UPY · AWS Certified · C1 English ·
-      Building ETL pipelines, cloud infrastructure, and AI-powered APIs.
-    </p>
+      <div class="hero__display">
+        <h1 class="hero__title">PORTFOLIO<span class="hero__badge">2026</span></h1>
+        <p class="hero__name">ELIO UCÁN</p>
+      </div>
 
-    <div class="hero-ctas mt-10 flex flex-wrap gap-3">
-      <a href="https://github.com/ElioUcan" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-slate-700 transition-colors duration-150">
-        GitHub ↗
+      <p class="hero__tagline">Building ETL Pipelines · Cloud Infrastructure · AI-Powered APIs</p>
+
+      <div class="hero__ctas">
+        <a class="btn" href="https://github.com/ElioUcan" target="_blank" rel="noopener">GITHUB <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">LINKEDIN <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="assets/Elio_ResumeFinal.pdf" download>RESUME <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS BAR ===================== -->
+  <section class="stats">
+    <div class="stats__inner">
+      <div class="stat">
+        <span class="stat__num">05</span>
+        <span class="stat__label">Projects Shipped</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">06</span>
+        <span class="stat__label">Certifications</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">AWS</span>
+        <span class="stat__label">Certified Engineer</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">C1</span>
+        <span class="stat__label">English · iTEP 4.7</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section reveal" id="projects">
+    <div class="section__head">
+      <h2 class="section__label"><span class="dot"></span>PROJECTS</h2>
+    </div>
+
+    <div class="projects">
+
+      <a class="project" href="https://github.com/ElioUcan/dc-dashboard" target="_blank" rel="noopener">
+        <span class="project__num">01</span>
+        <div class="project__body">
+          <h3 class="project__title">DC Operations Dashboard</h3>
+          <div class="project__tags">
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS</span>
+          </div>
+          <p class="project__desc">Multi-page operational dashboard for a 100&nbsp;MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO&nbsp;27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.</p>
+        </div>
+        <div class="project__meta">
+          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
+          <span class="project__year">2026</span>
+        </div>
       </a>
-      <a href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener"
-         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-indigo-200 text-indigo-700 text-sm font-semibold hover:bg-indigo-50 hover:border-indigo-300 transition-colors duration-150">
-        LinkedIn ↗
+
+      <a class="project" href="https://github.com/ElioUcan/airflow-etl" target="_blank" rel="noopener">
+        <span class="project__num">02</span>
+        <div class="project__body">
+          <h3 class="project__title">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
+          <div class="project__tags">
+            <span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">pandas</span>
+          </div>
+          <p class="project__desc">Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.</p>
+        </div>
+        <div class="project__meta">
+          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
+          <span class="project__year">2025–26</span>
+        </div>
       </a>
-      <a href="assets/Elio_ResumeFinal.pdf" download
-         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-slate-200 text-slate-600 text-sm font-semibold hover:bg-slate-50 hover:border-slate-300 transition-colors duration-150">
-        Download Resume ↓
+
+      <a class="project" href="https://github.com/ElioUcan/terraform-aws-infra" target="_blank" rel="noopener">
+        <span class="project__num">03</span>
+        <div class="project__body">
+          <h3 class="project__title">Infrastructure as Code — Terraform on AWS</h3>
+          <div class="project__tags">
+            <span class="tag">Terraform</span><span class="tag">AWS EC2</span><span class="tag">S3</span><span class="tag">IAM</span>
+          </div>
+          <p class="project__desc">Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.</p>
+        </div>
+        <div class="project__meta">
+          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
+          <span class="project__year">2025</span>
+        </div>
       </a>
-    </div>
 
-    <!-- Quick stats -->
-    <div class="mt-14 pt-10 border-t border-slate-100 flex flex-wrap gap-10">
-      <div class="hero-stat">
-        <p class="text-3xl font-black text-slate-900 tabular-nums font-display" style="font-weight:900;">5</p>
-        <p class="text-sm text-slate-500 mt-0.5">Projects shipped</p>
-      </div>
-      <div class="hero-stat">
-        <p class="text-3xl font-black text-slate-900 tabular-nums font-display" style="font-weight:900;">6</p>
-        <p class="text-sm text-slate-500 mt-0.5">Certifications</p>
-      </div>
-      <div class="hero-stat">
-        <p class="text-3xl font-black text-slate-900 font-display" style="font-weight:900;">AWS</p>
-        <p class="text-sm text-slate-500 mt-0.5">Certified Engineer</p>
-      </div>
-      <div class="hero-stat">
-        <p class="text-3xl font-black text-slate-900 font-display" style="font-weight:900;">C1</p>
-        <p class="text-sm text-slate-500 mt-0.5">English · iTEP 4.7/6</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="bg-slate-50 border-y border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 py-20">
-      <div class="flex items-center gap-3 mb-12">
-        <span class="size-2 rounded-full bg-indigo-500"></span>
-        <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Projects</h2>
-      </div>
-
-      <div class="reveal-cards grid grid-cols-1 md:grid-cols-2 gap-6">
-
-        <!-- DC Operations Dashboard -->
-        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
-          <div class="flex justify-between items-start gap-2 mb-3">
-            <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">DC Operations Dashboard</h3>
-            <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2026</span>
+      <a class="project" href="https://github.com/ElioUcan/ai-agent" target="_blank" rel="noopener">
+        <span class="project__num">04</span>
+        <div class="project__body">
+          <h3 class="project__title">AI Agent — Anthropic API + FastAPI</h3>
+          <div class="project__tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Anthropic SDK</span><span class="tag">AWS EC2</span>
           </div>
-          <p class="text-sm text-slate-500 leading-relaxed text-pretty">
-            Multi-page operational dashboard for a 100 MW data center — uptime SLA (99.982%), PUE trends, and TIA-942/ISO 27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Python</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Streamlit</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Plotly</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Docker</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Terraform</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">AWS</span>
-          </div>
-          <a href="https://github.com/ElioUcan/dc-dashboard" target="_blank" rel="noopener"
-             class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-            View on GitHub ↗
-          </a>
+          <p class="project__desc">Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.</p>
         </div>
-
-        <!-- ETL Pipeline -->
-        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
-          <div class="flex justify-between items-start gap-2 mb-3">
-            <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
-            <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025–2026</span>
-          </div>
-          <p class="text-sm text-slate-500 leading-relaxed text-pretty">
-            Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Python</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Apache Airflow</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Docker</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">PostgreSQL</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">pandas</span>
-          </div>
-          <a href="https://github.com/ElioUcan/airflow-etl" target="_blank" rel="noopener"
-             class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-            View on GitHub ↗
-          </a>
+        <div class="project__meta">
+          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
+          <span class="project__year">2025–26</span>
         </div>
+      </a>
 
-        <!-- Terraform IaC -->
-        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
-          <div class="flex justify-between items-start gap-2 mb-3">
-            <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">Infrastructure as Code — Terraform on AWS</h3>
-            <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025</span>
+      <a class="project" href="https://github.com/ElioUcan/better-readmes" target="_blank" rel="noopener">
+        <span class="project__num">05</span>
+        <div class="project__body">
+          <h3 class="project__title">better-readmes <span class="pill">OPEN SOURCE</span></h3>
+          <div class="project__tags">
+            <span class="tag">Anthropic SDK</span><span class="tag">Claude Code</span><span class="tag">npm/npx</span>
           </div>
-          <p class="text-sm text-slate-500 leading-relaxed text-pretty">
-            Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Terraform</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">AWS EC2</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">S3</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">IAM</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">AWS CLI</span>
-          </div>
-          <a href="https://github.com/ElioUcan/terraform-aws-infra" target="_blank" rel="noopener"
-             class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-            View on GitHub ↗
-          </a>
+          <p class="project__desc">Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.</p>
         </div>
-
-        <!-- AI Agent -->
-        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200">
-          <div class="flex justify-between items-start gap-2 mb-3">
-            <h3 class="font-bold text-slate-900 text-lg leading-tight text-balance">AI Agent — Anthropic API + FastAPI</h3>
-            <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2025–2026</span>
-          </div>
-          <p class="text-sm text-slate-500 leading-relaxed text-pretty">
-            Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Python</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">FastAPI</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Docker</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Anthropic SDK</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">AWS EC2</span>
-          </div>
-          <a href="https://github.com/ElioUcan/ai-agent" target="_blank" rel="noopener"
-             class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-            View on GitHub ↗
-          </a>
+        <div class="project__meta">
+          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
+          <span class="project__year">2026</span>
         </div>
+      </a>
 
-        <!-- better-readmes (full width) -->
-        <div class="card bg-white rounded-2xl border border-slate-200 p-7 hover:border-indigo-300 hover:shadow-lg transition-all duration-200 md:col-span-2">
-          <div class="flex justify-between items-start gap-4 mb-3">
-            <div class="flex items-center gap-3 flex-wrap">
-              <h3 class="font-bold text-slate-900 text-lg leading-tight">better-readmes</h3>
-              <span class="px-2.5 py-1 text-xs font-bold bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">Open Source</span>
-            </div>
-            <span class="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-md shrink-0">2026</span>
-          </div>
-          <p class="text-sm text-slate-500 leading-relaxed text-pretty max-w-2xl">
-            Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.
-          </p>
-          <div class="mt-5 flex flex-wrap gap-1.5">
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Anthropic SDK</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">Claude Code</span>
-            <span class="px-2.5 py-1 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full">npm/npx</span>
-          </div>
-          <a href="https://github.com/ElioUcan/better-readmes" target="_blank" rel="noopener"
-             class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors duration-150">
-            View on GitHub ↗
-          </a>
-        </div>
-
-      </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="max-w-5xl mx-auto px-6 py-20">
-    <div class="flex items-center gap-3 mb-12">
-      <span class="size-2 rounded-full bg-indigo-500"></span>
-      <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Technical Skills</h2>
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section reveal" id="skills">
+    <div class="section__head">
+      <h2 class="section__label"><span class="dot"></span>TECHNICAL SKILLS</h2>
     </div>
 
-    <div class="skills-grid grid grid-cols-2 md:grid-cols-3 gap-10">
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">Languages</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Python</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">SQL</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">PySpark</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Bash</span>
+    <div class="skills">
+      <div class="skill">
+        <h3 class="skill__head">Languages</h3>
+        <div class="skill__tags">
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span><span class="tag">Bash</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">ETL & Pipeline</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Airflow</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Docker</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">FastAPI</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">pandas</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">REST APIs</span>
+      <div class="skill">
+        <h3 class="skill__head">ETL &amp; Pipeline</h3>
+        <div class="skill__tags">
+          <span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">FastAPI</span><span class="tag">pandas</span><span class="tag">REST APIs</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">Cloud & IaC</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">AWS</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Terraform</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Linux</span>
+      <div class="skill">
+        <h3 class="skill__head">Cloud &amp; IaC</h3>
+        <div class="skill__tags">
+          <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Linux</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">Data</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Snowflake</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">PostgreSQL</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Power BI</span>
+      <div class="skill">
+        <h3 class="skill__head">Data</h3>
+        <div class="skill__tags">
+          <span class="tag">Snowflake</span><span class="tag">PostgreSQL</span><span class="tag">Power BI</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">AI & ML</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">scikit-learn</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Anthropic SDK</span>
+      <div class="skill">
+        <h3 class="skill__head">AI &amp; ML</h3>
+        <div class="skill__tags">
+          <span class="tag">scikit-learn</span><span class="tag">Anthropic SDK</span>
         </div>
       </div>
-      <div class="skill-group">
-        <h3 class="text-sm font-bold text-slate-900 mb-4">Dev Tools</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">Git</span>
-          <span class="px-3 py-1.5 text-xs font-semibold bg-slate-100 text-slate-700 rounded-lg">GitHub Actions</span>
+      <div class="skill">
+        <h3 class="skill__head">Dev Tools</h3>
+        <div class="skill__tags">
+          <span class="tag">Git</span><span class="tag">GitHub Actions</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications & Awards -->
-  <section class="bg-slate-50 border-y border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 py-20">
-      <div class="flex items-center gap-3 mb-12">
-        <span class="size-2 rounded-full bg-indigo-500"></span>
-        <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Certifications & Awards</h2>
-      </div>
+  <!-- ===================== CERTIFICATIONS & AWARDS ===================== -->
+  <section class="section reveal" id="certs">
+    <div class="section__head">
+      <h2 class="section__label"><span class="dot"></span>CERTIFICATIONS &amp; AWARDS</h2>
+    </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
-        <div>
-          <h3 class="text-base font-bold text-slate-900 mb-6">Certifications</h3>
-          <ul class="certs-list space-y-5">
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">AWS Academy Data Engineer</p>
-                <p class="text-xs text-slate-400 mt-0.5">Amazon Web Services</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2025</span>
-            </li>
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">AWS Academy Cloud Foundations</p>
-                <p class="text-xs text-slate-400 mt-0.5">Amazon Web Services · 20 hrs · Credly verified</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2025</span>
-            </li>
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">Data Analyst in Power BI</p>
-                <p class="text-xs text-slate-400 mt-0.5">DataCamp · 50 hrs</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
-            </li>
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">Database Design</p>
-                <p class="text-xs text-slate-400 mt-0.5">DataCamp</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
-            </li>
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">Introduction to Snowflake SQL</p>
-                <p class="text-xs text-slate-400 mt-0.5">DataCamp</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2026</span>
-            </li>
-            <li class="cert-item flex justify-between items-start gap-4">
-              <div>
-                <p class="text-sm font-semibold text-slate-800">Deep Learning in Real Life, Honors</p>
-                <p class="text-xs text-slate-400 mt-0.5">NextMid</p>
-              </div>
-              <span class="text-xs font-medium text-slate-400 bg-white border border-slate-200 px-2 py-1 rounded-md shrink-0 tabular-nums">2025</span>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-base font-bold text-slate-900 mb-6">Awards</h3>
-          <div class="bg-white rounded-2xl border border-amber-200 p-7 shadow-sm">
-            <div class="flex items-start gap-4">
-              <div class="size-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 text-2xl">
-                🏆
-              </div>
-              <div>
-                <p class="font-bold text-slate-900 text-base">3rd Place — UPY Datathon</p>
-                <p class="text-sm text-slate-500 mt-1 text-pretty">Universidad Politécnica de Yucatán · 2025</p>
-                <div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full">
-                  <span class="text-xs font-bold text-amber-700">50% scholarship awarded</span>
-                </div>
-              </div>
-            </div>
+    <div class="certs">
+      <ul class="cert-list">
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">AWS Academy Data Engineer</p>
+            <p class="cert__issuer">Amazon Web Services</p>
           </div>
-        </div>
+          <span class="cert__year">2025</span>
+        </li>
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">AWS Academy Cloud Foundations</p>
+            <p class="cert__issuer">Amazon Web Services · Credly verified</p>
+          </div>
+          <span class="cert__year">2025</span>
+        </li>
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">Data Analyst in Power BI</p>
+            <p class="cert__issuer">DataCamp · 50 hrs</p>
+          </div>
+          <span class="cert__year">2026</span>
+        </li>
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">Database Design</p>
+            <p class="cert__issuer">DataCamp</p>
+          </div>
+          <span class="cert__year">2026</span>
+        </li>
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">Introduction to Snowflake SQL</p>
+            <p class="cert__issuer">DataCamp</p>
+          </div>
+          <span class="cert__year">2026</span>
+        </li>
+        <li class="cert">
+          <span class="cert__arrow" aria-hidden="true">→</span>
+          <div class="cert__body">
+            <p class="cert__title">Deep Learning in Real Life, Honors</p>
+            <p class="cert__issuer">NextMid</p>
+          </div>
+          <span class="cert__year">2025</span>
+        </li>
+      </ul>
+
+      <div class="awards">
+        <aside class="award">
+          <span class="award__trophy" aria-hidden="true">🏆</span>
+          <p class="award__eyebrow">Award · 2025</p>
+          <h3 class="award__title">3rd Place — UPY Datathon 2025</h3>
+          <p class="award__issuer">Universidad Politécnica de Yucatán</p>
+        </aside>
+        <aside class="award">
+          <span class="award__trophy" aria-hidden="true">🥉</span>
+          <p class="award__eyebrow">Award · 2025</p>
+          <h3 class="award__title">3rd Place — Holberton Programming Olympics 2025</h3>
+          <p class="award__issuer">Holberton School Mérida</p>
+          <span class="award__badge">50% SCHOLARSHIP AWARDED</span>
+        </aside>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section class="max-w-5xl mx-auto px-6 py-20 reveal-section">
-    <div class="flex items-center gap-3 mb-12">
-      <span class="size-2 rounded-full bg-indigo-500"></span>
-      <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400">Education</h2>
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section reveal" id="education">
+    <div class="section__head">
+      <h2 class="section__label"><span class="dot"></span>EDUCATION</h2>
     </div>
-    <div class="space-y-8">
-      <div class="flex justify-between items-start gap-6 py-6 border-b border-slate-100">
-        <div>
-          <h3 class="font-bold text-slate-900 text-lg">Universidad Politécnica de Yucatán</h3>
-          <p class="text-sm text-slate-500 mt-1.5 text-pretty">B.S. Data Engineering & AI · Mérida, México</p>
+
+    <div class="edu-list">
+      <div class="edu">
+        <div class="edu__body">
+          <h3 class="edu__inst">Universidad Politécnica de Yucatán</h3>
+          <p class="edu__prog">B.S. Data Engineering &amp; AI · Mérida, México</p>
         </div>
-        <span class="text-sm font-medium text-slate-400 bg-slate-100 px-3 py-1.5 rounded-lg shrink-0 tabular-nums">Expected 2027</span>
+        <span class="edu__year">Expected 2027</span>
       </div>
-      <div class="flex justify-between items-start gap-6 py-6">
-        <div>
-          <h3 class="font-bold text-slate-900 text-lg">Holberton School Mérida</h3>
-          <p class="text-sm text-slate-500 mt-1.5 text-pretty">DevOps Engineering Certification · CI/CD · Containers · IaC · Cloud</p>
+      <div class="edu">
+        <div class="edu__body">
+          <h3 class="edu__inst">Holberton School Mérida</h3>
+          <p class="edu__prog">DevOps Engineering Certification · CI/CD · Containers · IaC · Cloud</p>
         </div>
-        <span class="text-sm font-medium text-slate-400 bg-slate-100 px-3 py-1.5 rounded-lg shrink-0">Expected Jul 2027</span>
+        <span class="edu__year">Expected Jul 2027</span>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-900">
-    <div class="max-w-5xl mx-auto px-6 py-14 flex flex-col items-center gap-5">
-      <p class="text-xl font-black text-white font-display" style="font-weight:900;">Let's work together.</p>
-      <div class="flex flex-wrap justify-center gap-6 text-sm">
-        <a href="mailto:elioeduardo06@gmail.com"
-           class="text-slate-400 hover:text-white transition-colors duration-150 font-medium">
-          elioeduardo06@gmail.com
-        </a>
-        <a href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener"
-           class="text-slate-400 hover:text-white transition-colors duration-150 font-medium">
-          LinkedIn ↗
-        </a>
-        <a href="https://github.com/ElioUcan" target="_blank" rel="noopener"
-           class="text-slate-400 hover:text-white transition-colors duration-150 font-medium">
-          GitHub ↗
-        </a>
+  <!-- ===================== FOOTER / CTA ===================== -->
+  <footer class="cta" id="contact">
+    <div class="cta__inner">
+      <h2 class="cta__title">LET'S WORK<br>TOGETHER.</h2>
+      <div class="cta__links">
+        <a href="mailto:elioeduardo06@gmail.com">elioeduardo06@gmail.com</a>
+        <a href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/ElioUcan" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
-      <p class="text-xs text-slate-600 mt-2">© 2026 Elio Eduardo Ucán Zapata</p>
+      <p class="cta__copy">© 2026 Elio Eduardo Ucán Zapata · Mérida, México</p>
     </div>
   </footer>
 
-  <!-- GSAP via CDN — used only for the hero entrance timeline -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // --- Nav: transparent → solid on scroll ---
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('nav--solid', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Hero entrance — GSAP timeline, no ScrollTrigger, fires on page load
-    if (!reduced && typeof gsap !== 'undefined') {
-      const heroTl = gsap.timeline({ delay: 0.1 });
-      heroTl
-        .from('.hero-badge',    { opacity: 0, y: 16, duration: 0.5, ease: 'power2.out' })
-        .from('.hero-title',    { opacity: 0, y: 48, duration: 0.7, ease: 'power2.out' }, '-=0.2')
-        .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-        .from('.hero-ctas a',   { opacity: 0, y: 16, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.2')
-        .from('.hero-stat',     { opacity: 0, y: 12, stagger: 0.1, duration: 0.4, ease: 'power2.out' }, '-=0.1');
+    // --- Section reveals on scroll ---
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach((el) => io.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('is-visible'));
     }
 
-    // Scroll reveals — native IntersectionObserver + CSS transitions
-    // Cards are visible by default; JS progressively adds the animation
-    if (!reduced) {
-      const style = document.createElement('style');
-      style.textContent = `
-        .scroll-item {
-          opacity: 0;
-          transform: translateY(22px);
-          transition: opacity 0.55s ease-out, transform 0.55s ease-out;
-        }
-        .scroll-item.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        .scroll-item-left {
-          opacity: 0;
-          transform: translateX(-18px);
-          transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-        }
-        .scroll-item-left.in-view {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Add animation classes via JS so elements are visible without JS
-      document.querySelectorAll('.card, .skill-group, .reveal-section').forEach(el => {
-        el.classList.add('scroll-item');
+    // --- Custom cursor (pointer devices only) ---
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.body.classList.add('has-cursor');
+      const dot = document.querySelector('.cursor-dot');
+      const ring = document.querySelector('.cursor-ring');
+      let rx = 0, ry = 0, mx = 0, my = 0;
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.transform = `translate(${mx}px, ${my}px)`;
       });
-      document.querySelectorAll('.cert-item').forEach(el => {
-        el.classList.add('scroll-item-left');
+      const loop = () => {
+        rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+        ring.style.transform = `translate(${rx}px, ${ry}px)`;
+        requestAnimationFrame(loop);
+      };
+      requestAnimationFrame(loop);
+      document.querySelectorAll('a, button').forEach((el) => {
+        el.addEventListener('mouseenter', () => ring.classList.add('cursor-ring--hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('cursor-ring--hover'));
       });
-
-      // Observe with stagger delay based on sibling index
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          // Find sibling index within the same parent for stagger
-          const siblings = [...el.parentElement.children].filter(
-            c => c.classList.contains('scroll-item') || c.classList.contains('scroll-item-left')
-          );
-          const idx = siblings.indexOf(el);
-          setTimeout(() => el.classList.add('in-view'), idx * 90);
-          io.unobserve(el);
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.scroll-item, .scroll-item-left').forEach(el => io.observe(el));
     }
   </script>
-
 </body>
 </html>
