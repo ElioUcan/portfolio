@@ -29,9 +29,15 @@ jobs:
       - name: Build CSS
         run: pnpm run build
 
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets _site/
+          cp -r dist _site/
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          exclude_assets: '.github,node_modules,src,tailwind.config.js,package.json,pnpm-lock.yaml'
+          publish_dir: ./_site
