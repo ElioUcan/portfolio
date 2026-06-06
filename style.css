@@ -543,7 +543,7 @@ img { max-width: 100%; display: block; }
 .cert-list { list-style: none; margin: 0; padding: 0; }
 .cert {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 48px 1fr auto;
   align-items: center;
   gap: 1rem;
   padding: 1.15rem 0;
@@ -551,12 +551,14 @@ img { max-width: 100%; display: block; }
   transition: padding-left var(--ease);
 }
 .cert:hover { padding-left: 0.4rem; }
-.cert__arrow {
-  color: var(--accent);
-  font-weight: 700;
-  transition: transform var(--ease);
+.cert:hover .cert__title { color: var(--accent); }
+.cert__title { transition: color var(--ease); }
+.cert__badge {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  justify-self: center;
 }
-.cert:hover .cert__arrow { transform: translateX(4px); }
 .cert__title { margin: 0; font-weight: 600; font-size: 0.98rem; }
 .cert__issuer { margin: 0.2rem 0 0; font-size: 0.8rem; color: var(--muted); }
 .cert__year {
@@ -618,11 +620,20 @@ img { max-width: 100%; display: block; }
 .edu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
   padding: clamp(1.5rem, 3vw, 2rem) 0;
   border-bottom: 1px solid var(--line);
 }
+.edu__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+.edu__body { flex: 1 1 220px; min-width: 0; }
 .edu__inst { margin: 0; font-size: 1.2rem; font-weight: 700; }
 .edu__prog { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.9rem; }
 .edu__year {
@@ -637,7 +648,8 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 @media (max-width: 540px) {
-  .edu { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+  .edu__logo { width: 48px; height: 48px; }
+  .edu__year { margin-left: calc(48px + 1.25rem); }
 }
 
 /* =========================================================
