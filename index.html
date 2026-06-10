@@ -14,11 +14,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23A259FF'/><text x='16' y='23' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='20' fill='%2309070E'>E</text></svg>">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <!-- Animated grain / noise overlay -->
   <div class="grain" aria-hidden="true"></div>
@@ -27,9 +31,16 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#top" class="nav__brand">ELIO UCÁN</a>
+      <nav class="nav__links" aria-label="Page sections">
+        <a href="#projects" class="nav__link">Work</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
       <a href="assets/Elio_Resume.pdf" download class="nav__resume">RESUME <span aria-hidden="true">↓</span></a>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="top">
@@ -44,19 +55,19 @@
     </div>
 
     <div class="hero__inner">
-      <span class="hero__label">DATA ENGINEERING & AI</span>
+      <span class="hero__label">AVAILABLE SEP–DEC 2026</span>
 
       <div class="hero__display">
-        <h1 class="hero__title">PORTFOLIO</h1>
-        <p class="hero__name">ELIO UCÁN</p>
+        <h1 class="hero__title">ELIO UCÁN</h1>
+        <p class="hero__name">DATA ENGINEERING & AI</p>
       </div>
 
       <p class="hero__tagline">Building ETL Pipelines · Cloud Infrastructure · AI-Powered APIs</p>
 
       <div class="hero__ctas">
+        <a class="btn btn--primary" href="assets/Elio_Resume.pdf" download>RESUME <span aria-hidden="true">↓</span></a>
         <a class="btn" href="https://github.com/ElioUcan" target="_blank" rel="noopener">GITHUB <span aria-hidden="true">↗</span></a>
         <a class="btn" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">LINKEDIN <span aria-hidden="true">↗</span></a>
-        <a class="btn" href="assets/Elio_Resume.pdf" download>RESUME <span aria-hidden="true">↓</span></a>
       </div>
     </div>
   </section>
@@ -80,6 +91,13 @@
         <span class="stat__num">C1</span>
         <span class="stat__label">English · iTEP 4.7</span>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about reveal">
+    <div class="about__inner">
+      <p class="about__text">I build the data infrastructure layer — ingestion pipelines, cloud environments, and the APIs that connect them. Based in Mérida, México, studying data engineering full-time while shipping production-grade systems. Available remotely from September 2026.</p>
     </div>
   </section>
 
@@ -225,7 +243,7 @@
       <ul class="cert-list">
         <li>
           <a class="cert" href="https://www.credly.com/badges/f5315b8d-38ce-45dc-8e81-c56c49070194/public_url" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/1000010749.png" alt="AWS Academy Data Engineering badge">
+            <img class="cert__badge" loading="lazy" src="images/1000010749.png" alt="AWS Academy Data Engineering badge">
             <div class="cert__body">
               <p class="cert__title">AWS Academy Data Engineer</p>
               <p class="cert__issuer">Amazon Web Services · Credly verified</p>
@@ -235,7 +253,7 @@
         </li>
         <li>
           <a class="cert" href="https://www.credly.com/badges/c78530a7-ad85-4f06-915c-28ce07fa56a7/public_url" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/1000010750.png" alt="AWS Academy Cloud Foundations badge">
+            <img class="cert__badge" loading="lazy" src="images/1000010750.png" alt="AWS Academy Cloud Foundations badge">
             <div class="cert__body">
               <p class="cert__title">AWS Academy Cloud Foundations</p>
               <p class="cert__issuer">Amazon Web Services · Credly verified</p>
@@ -245,17 +263,17 @@
         </li>
         <li>
           <a class="cert" href="https://www.datacamp.com/certificate/DEA0018844546600" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
+            <img class="cert__badge" loading="lazy" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
             <div class="cert__body">
               <p class="cert__title">Associate Data Engineer</p>
-              <p class="cert__issuer">DataCamp · Certified </p>
+              <p class="cert__issuer">DataCamp · Certified</p>
             </div>
             <span class="cert__year">2026</span>
           </a>
         </li>
         <li>
           <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/a2b0620a66aea4a6063a3809b8eced5f82c5bac6" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/dataanalyst.png" alt="DataCamp Data Analyst badge">
+            <img class="cert__badge" loading="lazy" src="images/dataanalyst.png" alt="DataCamp Data Analyst badge">
             <div class="cert__body">
               <p class="cert__title">Data Analyst in Power BI</p>
               <p class="cert__issuer">DataCamp · 50 hrs</p>
@@ -265,7 +283,7 @@
         </li>
         <li>
           <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6c44648a07e760b97f5a0caabdc6f372b0148d4f" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/dbdesign.png" alt="DataCamp Database Design badge">
+            <img class="cert__badge" loading="lazy" src="images/dbdesign.png" alt="DataCamp Database Design badge">
             <div class="cert__body">
               <p class="cert__title">Database Design</p>
               <p class="cert__issuer">DataCamp</p>
@@ -275,7 +293,7 @@
         </li>
         <li>
           <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/a183e20afedd51baf7bb7007780294559420817f" target="_blank" rel="noopener">
-            <img class="cert__badge" src="images/snowflakedatcamap.png" alt="DataCamp Introduction to Snowflake SQL badge">
+            <img class="cert__badge" loading="lazy" src="images/snowflakedatcamap.png" alt="DataCamp Introduction to Snowflake SQL badge">
             <div class="cert__body">
               <p class="cert__title">Introduction to Snowflake SQL</p>
               <p class="cert__issuer">DataCamp</p>
@@ -289,13 +307,13 @@
         <aside class="award">
           <span class="award__rank" aria-label="3rd place">3</span>
           <p class="award__eyebrow">Award · 2025</p>
-          <h3 class="award__title">3rd Place - UPY Datathon 2025</h3>
+          <h3 class="award__title">UPY Datathon 2025</h3>
           <p class="award__issuer">Universidad Politécnica de Yucatán</p>
         </aside>
         <aside class="award">
           <span class="award__rank" aria-label="3rd place">3</span>
           <p class="award__eyebrow">Award · 2025</p>
-          <h3 class="award__title">3rd Place - Holberton Programming Olympics 2025</h3>
+          <h3 class="award__title">Holberton Programming Olympics 2025</h3>
           <p class="award__issuer">Holberton School Mérida</p>
           <span class="award__badge">50% SCHOLARSHIP AWARDED</span>
         </aside>
@@ -311,23 +329,25 @@
 
     <div class="edu-list">
       <div class="edu">
-        <img class="edu__logo" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
+        <img class="edu__logo" loading="lazy" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
         <div class="edu__body">
           <h3 class="edu__inst">Universidad Politécnica de Yucatán</h3>
-          <p class="edu__prog">B.S. Data Engineering &amp; AI · Mérida, México</p>
+          <p class="edu__prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
         </div>
         <span class="edu__year">Expected 2027</span>
       </div>
       <div class="edu">
-        <img class="edu__logo" src="images/holberton.png" alt="Holberton School logo">
+        <img class="edu__logo" loading="lazy" src="images/holberton.png" alt="Holberton School logo">
         <div class="edu__body">
           <h3 class="edu__inst">Holberton School Mérida</h3>
-          <p class="edu__prog">DevOps Engineering Certification · CI/CD · Containers · IaC · Cloud</p>
+          <p class="edu__prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
         </div>
         <span class="edu__year">Expected Jul 2027</span>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ===================== FOOTER / CTA ===================== -->
   <footer class="cta" id="contact">
