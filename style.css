@@ -9,8 +9,8 @@
   --bg-soft:     #0F0B18;
   --bg-card:     #150F1E;
   --text:        #EDE9F5;
-  --muted:       #A08EBE;
-  --muted-dim:   #8878A8;
+  --muted:       #B8A8D6;
+  --muted-dim:   #9B8BBF;
   --line:        #211828;
   --accent:      #A259FF;
   --accent-soft: rgba(162, 89, 255, 0.10);
@@ -540,9 +540,9 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1rem;
 }
 .project__tags .tag {
-  border-color: rgba(162, 89, 255, 0.20);
-  color: rgba(162, 89, 255, 0.80);
-  background: rgba(162, 89, 255, 0.04);
+  border-color: rgba(162, 89, 255, 0.25);
+  color: var(--accent);
+  background: rgba(162, 89, 255, 0.05);
 }
 .project__desc {
   margin: 0;
