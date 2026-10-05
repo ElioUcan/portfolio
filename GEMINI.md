@@ -50,61 +50,74 @@ Este documento sirve como guía contextual, técnica y operativa para agentes de
 
 ## 3. Stack Tecnológico y Sistema de Diseño
 
+### Estética de Diseño: Swiss-Editorial Engineering
+Influencias directas de **Utrecht.jp**, **Swissted.com**, **Antfu.me** y **Dappboi.com**.
+El sistema se basa en el rigor editorial suizo: grillas estrictas con bordes visibles hairline de 1px, alto contraste, tipografía arquitectónica asimétrica y una paleta inspirada en papel de archivo técnico con acentos en verde terminal de consola. Se eliminaron por completo las decoraciones superficiales ("vibecoded", gradientes morados oscuros, capas de ruido SVG fractal y sombras difusas).
+
 ### Tecnologías Base
 - **HTML5:** Marcado semántico estructurado (`<header>`, `<main>`, `<section>`, `<aside>`, `<footer>`, `<nav>`, `<noscript>`).
 - **CSS3 Puro:**
-  - Variables personalizadas (`:root`) para consistencia cromática y transiciones.
+  - Variables personalizadas (`:root`) para el sistema cromático y espaciados.
   - Dimensiones, espaciados y tipografía fluidos mediante funciones `clamp()`.
-  - Estructuración de layouts mediante CSS Grid y Flexbox moderno.
-  - Efectos visuales: `backdrop-filter: blur(16px)` para navegación sticky, fondo radial oscuro y ruido visual animado con SVG fractal (`.grain`).
-  - Accesibilidad: Soporte para `@media (prefers-reduced-motion: reduce)` y estados `:focus-visible` optimizados.
-- **JavaScript Vanilla:** Script minimalista (< 25 líneas) embebido en `index.html` para:
-  - Estilo sólido del header al hacer scroll (`.nav--solid`).
-  - Detección de entrada en viewport con `IntersectionObserver` para animaciones suaves (`.reveal.is-visible`).
+  - Estructuración de layouts mediante CSS Grid con separadores de 1px y Flexbox moderno.
+  - Contraste estricto conforme a WCAG AA/AAA.
+  - Accesibilidad: Soporte para `@media (prefers-reduced-motion: reduce)`, foco visible con outline esmeralda y enlaces skip-to-content.
+- **JavaScript Vanilla:** Script minimalista embebido en `index.html` para:
+  - Detección de entrada en viewport con `IntersectionObserver` para revelado sutil (`.reveal.is-visible`).
 - **Google Fonts:**
-  - `Epilogue`: Familia display sans-serif (pesos 400, 600, 700, 800) para encabezados, títulos y texto editorial.
-  - `Martian Mono`: Familia monospace (pesos 400, 500, 600) para metadatos, números tabulares, etiquetas y botones.
+  - `Epilogue`: Familia display sans-serif (pesos 600, 700, 800) para encabezados, títulos y jerarquía arquitectónica.
+  - `Martian Mono`: Familia monospace (pesos 400, 500, 600) para metadatos técnicos, números tabulares de catálogo `[01]`, métricas de ingeniería, tags y botones.
 
-### Paleta de Colores Principal
-- Fondo oscuro principal: `--bg: #09070E`
-- Fondo de tarjetas/superficies: `--surface: #120E1A`
-- Bordes y separadores: `--border: #231C30`
-- Texto principal: `--text: #EDE9F5`
-- Texto secundario / muted: `--muted: #B8A8D6`
-- Acento eléctrico: `--accent: #A259FF`
+### Paleta de Colores (Modo Claro Papel de Archivo + Terminal Emerald)
+- Papel de archivo principal: `--bg: #F7F6F2`
+- Superficie limpia: `--bg-surface: #FFFFFF`
+- Papel secundario / sutil: `--bg-subtle: #EFECE4`
+- Línea divisoria hairline: `--border: #DDD8CD`
+- Borde estructural / tinta negra: `--border-strong: #111215`
+- Tinta negra pura de alto contraste: `--text: #111215` (contraste >16:1, WCAG AAA)
+- Gris grafito de lectura: `--text-muted: #52555F` (contraste >6:1, WCAG AA/AAA)
+- Gris para metadatos secundarios: `--text-dim: #848792`
+- Acento Terminal Emerald: `--accent: #059669` (contraste 4.54:1, WCAG AA)
+- Acento hover: `--accent-hover: #047857`
+- Acento sutil (fondos de tags y métricas): `--accent-muted: rgba(5, 150, 105, 0.08)`
+- Borde de acento: `--accent-border: rgba(5, 150, 105, 0.35)`
 
 ---
 
 ## 4. Secciones y Contenido del Sitio
 
-1. **Header / Barra de Navegación:**
-   - Logotipo/Monograma "ELIO UCÁN".
-   - Enlaces internos: `#projects`, `#skills`, `#contact`.
-   - Botón de descarga de CV: `assets/Elio_Resume.pdf`.
-2. **Hero:**
-   - Nombre principal y propuesta de valor enfocada a Data e IA.
-   - Badge de estado / disponibilidad inmediata para pasantías.
-   - Acciones principales (Resume, GitHub, LinkedIn).
-3. **Métricas de Impacto (Stats Bar):**
-   - 05 Projects Shipped, 06 Certifications, AWS Certified Engineer, C1 English (iTEP 4.7).
-4. **Acerca de (About):**
-   - Declaración de enfoque técnico en arquitectura de datos y DevOps.
-5. **Proyectos Destacados (Projects):**
-   - *01. DC Operations Dashboard*: Streamlit, Plotly, Docker, Terraform, AWS (Data center 100 MW).
-   - *02. ETL Pipeline (CoinGecko REST API)*: Airflow, Docker, PostgreSQL.
-   - *03. Infrastructure as Code*: Terraform, AWS (EC2 + S3).
-   - *04. AI Agent*: Anthropic API, FastAPI, memoria persistente en EC2.
-   - *05. better-readmes*: Herramienta open-source / skill de Claude Code en npm/npx.
-6. **Habilidades Técnicas (Skills Grid):**
-   - 6 categorías: Languages, ETL & Pipeline, Cloud & IaC, Data, AI & ML, Dev Tools.
-7. **Certificaciones y Premios:**
-   - 6 credenciales (AWS, DataCamp) y 2 premios (Datathon UPY 2025, Olimpiadas Holberton 2025).
-8. **Educación:**
-   - Universidad Politécnica de Yucatán (Ingeniería de Datos e Inteligencia Artificial).
+1. **Header / Barra de Navegación Sticky:**
+   - Logotipo editorial "ELIO UCÁN // DATA & AI".
+   - Enlaces de navegación: `#projects` (Work), `#skills` (Skills), `#certs` (Credentials), `#education` (Education), `#contact` (Contact).
+   - Botón de descarga directa de CV: `assets/Elio_Resume.pdf`.
+2. **Hero Editorial:**
+   - Metadatos de ingeniería: `REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS` y localización/disponibilidad.
+   - Gran impacto tipográfico: `ELIO EDUARDO UCÁN ZAPATA` con subtítulo `BUILDING DATA PIPELINES & AI`.
+   - Síntesis profesional directa y concisa.
+   - Botones de acción de alto contraste (Download CV [PDF], GitHub, LinkedIn, Email).
+3. **Barra de Métricas (Stats Ledger):**
+   - Cuadrícula técnica de 4 columnas: `05` Projects Shipped, `06` Certifications, `AWS` Certified Engineer, `C1` English (iTEP 4.7).
+4. **Acerca de (About / Thesis):**
+   - Planteamiento conciso del enfoque en infraestructura de datos, reproducibilidad y despliegue cloud.
+5. **Catálogo de Proyectos Indexado (Projects):**
+   - Índice numérico `[01]` a `[05]`, tags semánticos, métricas técnicas destacadas (SLA 99.982%, <1% Failure Rate, -90% Provisioning, etc.) y enlaces directos a código/demo:
+     * *01. DC Operations Dashboard*: Streamlit, Plotly, Docker, Terraform, AWS.
+     * *02. ETL Pipeline (CoinGecko REST API)*: Airflow, Docker, PostgreSQL, pandas.
+     * *03. Infrastructure as Code*: Terraform, AWS (EC2 + S3), IAM.
+     * *04. AI Agent*: Anthropic API, FastAPI, Docker, memoria persistente PostgreSQL.
+     * *05. better-readmes*: Claude Code skill / CLI open-source publicado en npm/npx.
+6. **Habilidades Técnicas (Technical Skills Grid):**
+   - Grilla de 6 dominios: Languages, ETL & Pipeline, Cloud, Data, AI, Dev Tools.
+7. **Credenciales y Reconocimientos (Credentials & Awards):**
+   - 6 certificaciones normalizadas (AWS, DataCamp) con enlaces a Credly y certificados oficiales.
+   - 2 reconocimientos competitivos (Datathon UPY 2025, Olimpiadas Holberton 2025 con beca del 50%).
+8. **Educación (Academic Background):**
+   - Universidad Politécnica de Yucatán (Ing. Datos e IA).
    - Holberton School Mérida (DevOps Engineering).
-9. **Footer & Contacto:**
-   - Correo electrónico: `elioeduardo06@gmail.com`.
-   - Enlaces a redes sociales y plataformas profesionales.
+9. **Colofón / Footer:**
+   - Llamado al contacto directo ("LET'S BUILD RELIABLE SYSTEMS.").
+   - Vías de contacto directas (Email, LinkedIn, GitHub, CV).
+   - Ficha técnica de colofón (Mérida MX, UTC-6, Zero-framework HTML5/CSS3, Swiss-Editorial Engineering).
 
 ---
 
@@ -125,13 +138,13 @@ Al realizar cambios o mejoras en este repositorio, los agentes y desarrolladores
 
 1. **Mantener la disciplina Zero-Framework:**
    No añadir frameworks pesados de frontend (React, Vue, Next.js, etc.) ni empaquetadores complejos a menos que el usuario lo solicite expresamente. La esencia del portafolio es la ligereza extrema y el rendimiento nativo.
-2. **Preservar la identidad de marca (`PRODUCT.md`):**
-   Evitar clichés de diseño (temas genéricos de VS Code, estilos corporativos aburridos o páginas saturadas de WebGL). Mantener el tono *Precision-engineering dark* con tipografía Epilogue y Martian Mono.
+2. **Preservar la identidad Swiss-Editorial Engineering:**
+   Evitar efectos decorativos innecesarios (sombras neón, fondos oscuros genéricos, animaciones flotantes aleatorias). Mantener la claridad tipográfica, las líneas divisorias nítidas de 1px y la coherencia en la paleta Papel de Archivo + Terminal Emerald.
 3. **Manejo de rutas relativas:**
    Todos los enlaces a recursos (`style.css`, `images/*`, `assets/*`) deben mantenerse relativos para garantizar compatibilidad tanto en local como en GitHub Pages.
 4. **Verificación de responsividad y accesibilidad:**
    - Comprobar que cualquier nuevo bloque visual sea compatible con pantallas pequeñas (`@media (max-width: ...)`).
-   - Mantener ratios de contraste legibles (WCAG AA) y estados de foco visibles.
+   - Mantener ratios de contraste legibles (WCAG AA/AAA) y estados de foco visibles.
 
 ---
 

@@ -6,7 +6,7 @@ brand
 
 ## Users
 
-Tech recruiters and engineering hiring managers evaluating candidates for data engineering / AI internship roles. They scan dozens of portfolios in a session; the portfolio has roughly 10–15 seconds to earn continued attention. Context: desktop browser, professional review setting, time-pressured. Secondary: engineering peers who may encounter the site via GitHub or LinkedIn.
+Tech recruiters and engineering hiring managers evaluating candidates for data engineering / AI roles. They scan dozens of portfolios in a session; the portfolio has roughly 10–15 seconds to earn continued attention. Context: desktop browser, professional review setting, time-pressured. Secondary: engineering peers who may encounter the site via GitHub or LinkedIn.
 
 ## Product Purpose
 
