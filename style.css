@@ -127,6 +127,7 @@ img {
    GLOBAL SHEET CONTAINER
    ========================================================= */
 .site-wrapper {
+  position: relative;
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 0 var(--container-pad);
@@ -136,10 +137,31 @@ img {
   min-height: 100vh;
 }
 
+/* Swiss Editorial Crop Marks */
+.crop-corner {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--border-strong);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 10;
+}
+.crop-corner--tl { top: 6px; left: 8px; }
+.crop-corner--tr { top: 6px; right: 8px; }
+.crop-corner--bl { bottom: 6px; left: 8px; }
+.crop-corner--br { bottom: 6px; right: 8px; }
+
 @media (max-width: 768px) {
   .site-wrapper {
     border-left: none;
     border-right: none;
+  }
+  .crop-corner {
+    display: none;
   }
 }
 
@@ -331,7 +353,24 @@ img {
 }
 
 .hero__spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--text-dim);
+}
+
+.hero__clock {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  background: var(--accent-muted);
+  border: 1px solid var(--accent-border);
+  padding: 2px 7px;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
 }
 
 .hero__title {
@@ -420,6 +459,65 @@ img {
   border-color: var(--border-strong);
   color: var(--text);
   transform: translateY(-1px);
+}
+
+.btn-copy-email {
+  cursor: pointer;
+  background: var(--bg-subtle);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 11px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition);
+}
+
+.btn-copy-email:hover,
+.btn-copy-email:focus-visible {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.btn-copy-email.is-copied {
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+button.btn-copy-footer {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+button.btn-copy-footer:hover,
+button.btn-copy-footer:focus-visible {
+  color: var(--accent);
+  background: transparent;
+  transform: none;
+}
+
+button.btn-copy-footer.is-copied {
+  color: var(--accent-text);
+  font-weight: 600;
 }
 
 /* =========================================================

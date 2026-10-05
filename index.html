@@ -38,6 +38,12 @@
 
   <div class="site-wrapper">
 
+    <!-- Swiss Editorial Crop Marks -->
+    <span class="crop-corner crop-corner--tl" aria-hidden="true">+</span>
+    <span class="crop-corner crop-corner--tr" aria-hidden="true">+</span>
+    <span class="crop-corner crop-corner--bl" aria-hidden="true">+</span>
+    <span class="crop-corner crop-corner--br" aria-hidden="true">+</span>
+
     <!-- ===================== TOP NAVIGATION ===================== -->
     <header class="nav" id="nav">
       <div class="nav__inner">
@@ -70,7 +76,10 @@
       <section class="hero" id="top">
         <div class="hero__meta">
           <span>REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS</span>
-          <span class="hero__spec">LOC: MÉRIDA, MX · UTC-6</span>
+          <span class="hero__spec">
+            <span>MÉRIDA, MX</span>
+            <span class="hero__clock" id="localClock" aria-label="Local time in Mérida">--:--:-- CST</span>
+          </span>
         </div>
 
         <h1 class="hero__title">
@@ -92,9 +101,10 @@
           <a class="btn-secondary" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">
             LINKEDIN <span aria-hidden="true">↗</span>
           </a>
-          <a class="btn-secondary" href="mailto:elioeduardo06@gmail.com">
-            EMAIL DIRECT <span aria-hidden="true">↗</span>
-          </a>
+          <button class="btn-copy-email" type="button" data-email="elioeduardo06@gmail.com" aria-label="Copy email address to clipboard">
+            <span class="btn-copy-label">EMAIL DIRECT</span>
+            <span class="btn-copy-icon" aria-hidden="true">↗</span>
+          </button>
         </div>
       </section>
 
@@ -605,9 +615,10 @@
         </div>
 
         <div class="footer-links">
-          <a class="footer-link" href="mailto:elioeduardo06@gmail.com">
-            elioeduardo06@gmail.com <span aria-hidden="true">↗</span>
-          </a>
+          <button class="footer-link btn-copy-email btn-copy-footer" type="button" data-email="elioeduardo06@gmail.com" aria-label="Copy email address to clipboard">
+            <span class="btn-copy-label">elioeduardo06@gmail.com</span>
+            <span class="btn-copy-icon" aria-hidden="true">↗</span>
+          </button>
           <a class="footer-link" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">
             LinkedIn <span aria-hidden="true">↗</span>
           </a>
@@ -631,6 +642,57 @@
   </div>
 
   <script>
+    // --- Real-time Local Clock (Mérida, Mexico UTC-6) ---
+    function updateClock() {
+      const clockEl = document.getElementById('localClock');
+      if (!clockEl) return;
+      try {
+        const timeStr = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'America/Merida',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false
+        }).format(new Date());
+        clockEl.textContent = `${timeStr} CST`;
+      } catch (err) {
+        const now = new Date();
+        clockEl.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')} UTC-6`;
+      }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // --- Interactive Copy Email Buttons ---
+    function setupCopyEmail() {
+      document.querySelectorAll('.btn-copy-email').forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const email = btn.getAttribute('data-email') || 'elioeduardo06@gmail.com';
+          const label = btn.querySelector('.btn-copy-label');
+          const icon = btn.querySelector('.btn-copy-icon');
+          const originalText = label ? label.textContent : '';
+          const originalIcon = icon ? icon.textContent : '';
+
+          try {
+            await navigator.clipboard.writeText(email);
+            btn.classList.add('is-copied');
+            if (label) label.textContent = 'COPIED TO CLIPBOARD';
+            if (icon) icon.textContent = '✓';
+
+            setTimeout(() => {
+              btn.classList.remove('is-copied');
+              if (label) label.textContent = originalText;
+              if (icon) icon.textContent = originalIcon;
+            }, 2200);
+          } catch (err) {
+            window.location.href = `mailto:${email}`;
+          }
+        });
+      });
+    }
+    setupCopyEmail();
+
     // --- Section reveals on scroll ---
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
