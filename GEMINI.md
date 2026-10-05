@@ -99,22 +99,27 @@ El sistema se basa en el rigor editorial suizo: grillas estrictas con bordes vis
    - Cuadrícula técnica de 4 columnas: `05` Projects Shipped, `06` Certifications, `AWS` Certified Engineer, `C1` English (iTEP 4.7).
 4. **Acerca de (About / Thesis):**
    - Planteamiento conciso del enfoque en infraestructura de datos, reproducibilidad y despliegue cloud.
-5. **Catálogo de Proyectos Indexado (Projects):**
+5. **Enfoque Actual (Now // Active Focus):**
+   - Tablero de 4 tarjetas de enfoque activo: Investigación en RAG & Reranking, Automatización en servidor Debian headless (4GB RAM), Arquitecturas de datos en AWS y Tesis técnica en LaTeX.
+6. **Catálogo de Proyectos Indexado (Projects):**
    - Índice numérico `[01]` a `[05]`, tags semánticos, métricas técnicas destacadas (SLA 99.982%, <1% Failure Rate, -90% Provisioning, etc.) y enlaces directos a código/demo:
      * *01. DC Operations Dashboard*: Streamlit, Plotly, Docker, Terraform, AWS.
      * *02. ETL Pipeline (CoinGecko REST API)*: Airflow, Docker, PostgreSQL, pandas.
      * *03. Infrastructure as Code*: Terraform, AWS (EC2 + S3), IAM.
      * *04. AI Agent*: Anthropic API, FastAPI, Docker, memoria persistente PostgreSQL.
      * *05. better-readmes*: Claude Code skill / CLI open-source publicado en npm/npx.
-6. **Habilidades Técnicas (Technical Skills Grid):**
+7. **Trayectoria Profesional (Professional Experience):**
+   - *01. The Palace Company* — AI Research Intern (RAG, Embeddings, optimización de tokens y prototipado de APIs de IA).
+   - *02. Holberton School Mérida* — DevOps Engineering Fellow (Programación en C de bajo nivel, Bash, Docker, CI/CD, AWS y beca del 50%).
+8. **Habilidades Técnicas (Technical Skills Grid):**
    - Grilla de 6 dominios: Languages, ETL & Pipeline, Cloud, Data, AI, Dev Tools.
-7. **Credenciales y Reconocimientos (Credentials & Awards):**
+9. **Credenciales y Reconocimientos (Credentials & Awards):**
    - 6 certificaciones normalizadas (AWS, DataCamp) con enlaces a Credly y certificados oficiales.
    - 2 reconocimientos competitivos (Datathon UPY 2025, Olimpiadas Holberton 2025 con beca del 50%).
-8. **Educación (Academic Background):**
+10. **Educación (Academic Background):**
    - Universidad Politécnica de Yucatán (Ing. Datos e IA).
    - Holberton School Mérida (DevOps Engineering).
-9. **Colofón / Footer:**
+11. **Colofón / Footer:**
    - Llamado al contacto directo ("LET'S BUILD RELIABLE SYSTEMS.").
    - Vías de contacto directas (Email, LinkedIn, GitHub, CV).
    - Ficha técnica de colofón (Mérida MX, UTC-6, Zero-framework HTML5/CSS3, Swiss-Editorial Engineering).
