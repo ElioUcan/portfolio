@@ -76,15 +76,12 @@
       <section class="hero" id="top">
         <div class="hero__meta">
           <span>REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS</span>
-          <span class="hero__spec">
-            <span>MÉRIDA, MX</span>
-            <span class="hero__clock" id="localClock" aria-label="Local time in Mérida">--:--:-- CST</span>
-          </span>
+          <span class="hero__spec">LOC: MÉRIDA, MX · UTC-6</span>
         </div>
 
         <h1 class="hero__title">
-          ELIO EDUARDO UCÁN ZAPATA
-          <span class="hero__title-accent">BUILDING DATA PIPELINES &amp; AI</span>
+          <span class="scramble-text">ELIO EDUARDO UCÁN ZAPATA</span>
+          <span class="hero__title-accent scramble-text">BUILDING DATA PIPELINES &amp; AI</span>
         </h1>
 
         <p class="hero__lead">
@@ -135,7 +132,7 @@
       <!-- ===================== ABOUT SECTION ===================== -->
       <section class="about reveal" id="about">
         <div class="about__inner">
-          <div class="about__heading">THESIS // ABOUT</div>
+          <div class="about__heading scramble-text">THESIS // ABOUT</div>
           <div class="about__content">
             <p>I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.</p>
             <p>My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.</p>
@@ -146,7 +143,7 @@
       <!-- ===================== NOW SECTION ===================== -->
       <section class="now-board reveal" id="now" aria-label="Current technical focus">
         <div class="section-head">
-          <h2 class="section-title">NOW // ACTIVE FOCUS</h2>
+          <h2 class="section-title scramble-text">NOW // ACTIVE FOCUS</h2>
           <span class="section-index">[WHAT I'M RESEARCHING &amp; BUILDING · FALL 2026]</span>
         </div>
 
@@ -192,7 +189,7 @@
       <!-- ===================== PROJECTS CATALOG ===================== -->
       <section class="section reveal" id="projects">
         <div class="section-head">
-          <h2 class="section-title">FEATURED PROJECTS</h2>
+          <h2 class="section-title scramble-text">FEATURED PROJECTS</h2>
           <span class="section-index">[05 ENTRIES INDEXED · ALL REPRODUCIBLE]</span>
         </div>
 
@@ -343,7 +340,7 @@
       <!-- ===================== EXPERIENCE SECTION ===================== -->
       <section class="section reveal" id="experience">
         <div class="section-head">
-          <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+          <h2 class="section-title scramble-text">PROFESSIONAL EXPERIENCE</h2>
           <span class="section-index">[02 ROLES RECORDED · APPLIED ENGINEERING]</span>
         </div>
 
@@ -415,7 +412,7 @@
       <!-- ===================== TECHNICAL SKILLS ===================== -->
       <section class="section reveal" id="skills">
         <div class="section-head">
-          <h2 class="section-title">TECHNICAL SKILLS</h2>
+          <h2 class="section-title scramble-text">TECHNICAL SKILLS</h2>
           <span class="section-index">[6 DOMAINS · 20 CORE TECHNOLOGIES]</span>
         </div>
 
@@ -481,7 +478,7 @@
       <!-- ===================== CREDENTIALS & AWARDS ===================== -->
       <section class="section reveal" id="certs">
         <div class="section-head">
-          <h2 class="section-title">CREDENTIALS &amp; RECOGNITION</h2>
+          <h2 class="section-title scramble-text">CREDENTIALS &amp; RECOGNITION</h2>
           <span class="section-index">[6 VERIFIED CERTS · 2 HONORS]</span>
         </div>
 
@@ -577,7 +574,7 @@
       <!-- ===================== EDUCATION ===================== -->
       <section class="section reveal" id="education">
         <div class="section-head">
-          <h2 class="section-title">ACADEMIC BACKGROUND</h2>
+          <h2 class="section-title scramble-text">ACADEMIC BACKGROUND</h2>
           <span class="section-index">[FORMAL DEGREES &amp; SPECIALIZATIONS]</span>
         </div>
 
@@ -608,7 +605,9 @@
     <footer class="footer-colophon" id="contact">
       <div class="footer-top">
         <div class="footer-statement">
-          <h2 class="footer-title">LET'S BUILD RELIABLE <span>SYSTEMS.</span></h2>
+          <h2 class="footer-title">
+            <span class="scramble-text">LET'S BUILD RELIABLE</span> <span class="scramble-text">SYSTEMS.</span>
+          </h2>
           <p class="footer-sub">
             Open to engineering collaborations, technical discussions, and new challenges. Reach out to discuss data pipelines, cloud infrastructure, or AI systems.
           </p>
@@ -642,27 +641,6 @@
   </div>
 
   <script>
-    // --- Real-time Local Clock (Mérida, Mexico UTC-6) ---
-    function updateClock() {
-      const clockEl = document.getElementById('localClock');
-      if (!clockEl) return;
-      try {
-        const timeStr = new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'America/Merida',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        }).format(new Date());
-        clockEl.textContent = `${timeStr} CST`;
-      } catch (err) {
-        const now = new Date();
-        clockEl.textContent = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')} UTC-6`;
-      }
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-
     // --- Interactive Copy Email Buttons ---
     function setupCopyEmail() {
       document.querySelectorAll('.btn-copy-email').forEach((btn) => {
@@ -692,6 +670,83 @@
       });
     }
     setupCopyEmail();
+
+    // --- Matrix Text Scramble Decoding on Scroll ---
+    const MATRIX_CHARS = '0123456789ABCDEF$#@%&*<>[]{}/*+=~!?X_';
+
+    function escapeChar(c) {
+      if (c === '&') return '&amp;';
+      if (c === '<') return '&lt;';
+      if (c === '>') return '&gt;';
+      if (c === '"') return '&quot;';
+      return c;
+    }
+
+    function scrambleElement(el) {
+      if (el.dataset.scrambled === 'true') return;
+      el.dataset.scrambled = 'true';
+
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      const originalText = el.textContent.trim();
+      const length = originalText.length;
+      if (length === 0) return;
+
+      const duration = Math.min(950, Math.max(450, length * 24));
+      const scrambleLeadMs = 120;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        let resolvedCount = 0;
+
+        if (elapsed > scrambleLeadMs) {
+          const resolveProgress = Math.min(1, (elapsed - scrambleLeadMs) / (duration - scrambleLeadMs));
+          resolvedCount = Math.floor(resolveProgress * length);
+        }
+
+        let html = '';
+        for (let i = 0; i < length; i++) {
+          const char = originalText[i];
+          if (char === ' ' || char === '\n' || char === '\t') {
+            html += char;
+          } else if (i < resolvedCount) {
+            html += escapeChar(char);
+          } else {
+            const randChar = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
+            html += `<span class="matrix-char">${escapeChar(randChar)}</span>`;
+          }
+        }
+
+        el.innerHTML = html;
+
+        if (elapsed < duration) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = originalText;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const scrambleElements = document.querySelectorAll('.scramble-text');
+    if ('IntersectionObserver' in window) {
+      const scrambleObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            scrambleElement(entry.target);
+            scrambleObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -20px 0px' });
+
+      scrambleElements.forEach((el) => scrambleObserver.observe(el));
+    } else {
+      scrambleElements.forEach((el) => scrambleElement(el));
+    }
 
     // --- Section reveals on scroll ---
     const reveals = document.querySelectorAll('.reveal');

@@ -353,24 +353,16 @@ img {
 }
 
 .hero__spec {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   color: var(--text-dim);
 }
 
-.hero__clock {
+/* Matrix text scramble decoding effect */
+.matrix-char {
+  color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--accent-text);
-  background: var(--accent-muted);
-  border: 1px solid var(--accent-border);
-  padding: 2px 7px;
-  letter-spacing: 0.05em;
-  font-variant-numeric: tabular-nums;
-  display: inline-flex;
-  align-items: center;
+  font-weight: 500;
+  display: inline;
+  opacity: 0.9;
 }
 
 .hero__title {
