@@ -3,391 +3,525 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elio Ucán — Data Engineering & AI</title>
-  <meta name="description" content="Elio Eduardo Ucán Zapata — Data Engineering & AI student. AWS Certified. Building ETL pipelines, cloud infrastructure, and AI-powered APIs. Seeking remote internship Sep–Dec 2026.">
+  <title>Elio Ucán — Data Engineering &amp; AI</title>
+  <meta name="description" content="Elio Eduardo Ucán Zapata — Data Engineering &amp; AI student at UPY with DevOps specialization at Holberton. AWS Certified. Building ETL pipelines, cloud infrastructure, and AI-powered APIs.">
   <meta name="author" content="Elio Eduardo Ucán Zapata">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://elioucan.dev/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Elio Ucán — Data Engineering & AI">
-  <meta property="og:description" content="AWS Certified · ETL · Cloud Infrastructure · AI-Powered APIs">
+  <meta property="og:title" content="Elio Ucán — Data Engineering &amp; AI">
+  <meta property="og:description" content="AWS Certified · ETL Pipelines · Cloud Infrastructure · AI-Powered APIs">
   <meta property="og:url" content="https://elioucan.dev/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://elioucan.dev/images/aws-data-engineer.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Elio Ucán — Data Engineering & AI">
-  <meta name="twitter:description" content="AWS Certified · ETL · Cloud Infrastructure · AI-Powered APIs">
+  <meta name="twitter:title" content="Elio Ucán — Data Engineering &amp; AI">
+  <meta name="twitter:description" content="AWS Certified · ETL Pipelines · Cloud Infrastructure · AI-Powered APIs">
   <meta name="twitter:image" content="https://elioucan.dev/images/aws-data-engineer.png">
 
+  <!-- Google Fonts: Epilogue (Headings/Display) + Martian Mono (Metadata/Tech) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23A259FF'/><text x='16' y='23' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='20' fill='%2309070E'>E</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='20' fill='%23FFFFFF'>E</text></svg>">
   <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Animated grain / noise overlay -->
-  <div class="grain" aria-hidden="true"></div>
+  <div class="site-wrapper">
 
-  <!-- Fixed nav -->
-  <header class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#top" class="nav__brand">ELIO UCÁN</a>
-      <nav class="nav__links" aria-label="Page sections">
-        <a href="#projects" class="nav__link">Work</a>
-        <a href="#skills" class="nav__link">Skills</a>
-        <a href="#contact" class="nav__link">Contact</a>
-      </nav>
-      <a href="assets/Elio_Resume.pdf" download class="nav__resume">RESUME <span aria-hidden="true">↓</span></a>
-    </div>
-  </header>
+    <!-- ===================== TOP NAVIGATION ===================== -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#top" class="nav__brand">
+          <span>ELIO UCÁN</span>
+          <span class="nav__brand-tag">// DATA &amp; AI</span>
+        </a>
 
-  <main id="main-content">
+        <nav class="nav__center" aria-label="Page sections">
+          <a href="#projects" class="nav__link">Work</a>
+          <a href="#skills" class="nav__link">Skills</a>
+          <a href="#certs" class="nav__link">Credentials</a>
+          <a href="#education" class="nav__link">Education</a>
+          <a href="#contact" class="nav__link">Contact</a>
+        </nav>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="top">
-    <!-- Floating abstract shapes -->
-    <div class="shapes" aria-hidden="true">
-      <span class="shape shape--circle-lg"></span>
-      <span class="shape shape--circle-sm"></span>
-      <span class="shape shape--rect"></span>
-      <span class="shape shape--ring"></span>
-      <span class="shape shape--ring2"></span>
-      <span class="shape shape--tri"></span>
-    </div>
-
-    <div class="hero__inner">
-      <span class="hero__label">AVAILABLE SEP–DEC 2026</span>
-
-      <div class="hero__display">
-        <h1 class="hero__title">ELIO UCÁN</h1>
-        <p class="hero__name">DATA ENGINEERING & AI</p>
+        <div class="nav__actions">
+          <a href="assets/Elio_Resume.pdf" download class="btn-nav-resume">
+            RESUME <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
+    </header>
 
-      <p class="hero__tagline">Building ETL Pipelines · Cloud Infrastructure · AI-Powered APIs</p>
+    <main id="main-content">
 
-      <div class="hero__ctas">
-        <a class="btn btn--primary" href="assets/Elio_Resume.pdf" download>RESUME <span aria-hidden="true">↓</span></a>
-        <a class="btn" href="https://github.com/ElioUcan" target="_blank" rel="noopener">GITHUB <span aria-hidden="true">↗</span></a>
-        <a class="btn" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">LINKEDIN <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-  </section>
+      <!-- ===================== HERO SECTION ===================== -->
+      <section class="hero" id="top">
+        <div class="hero__meta">
+          <span>REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS</span>
+          <span class="hero__spec">LOC: MÉRIDA, MX · UTC-6</span>
+        </div>
 
-  <!-- ===================== STATS BAR ===================== -->
-  <section class="stats">
-    <div class="stats__inner">
-      <div class="stat">
-        <span class="stat__num">05</span>
-        <span class="stat__label">Projects Shipped</span>
-      </div>
-      <div class="stat">
-        <span class="stat__num">06</span>
-        <span class="stat__label">Certifications</span>
-      </div>
-      <div class="stat">
-        <span class="stat__num">AWS</span>
-        <span class="stat__label">Certified Engineer</span>
-      </div>
-      <div class="stat">
-        <span class="stat__num">C1</span>
-        <span class="stat__label">English · iTEP 4.7</span>
-      </div>
-    </div>
-  </section>
+        <h1 class="hero__title">
+          ELIO EDUARDO UCÁN ZAPATA
+          <span class="hero__title-accent">BUILDING DATA PIPELINES &amp; AI</span>
+        </h1>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about reveal">
-    <div class="about__inner">
-      <p class="about__text">I build the data infrastructure layer — ingestion pipelines, cloud environments, and the APIs that connect them. Based in Mérida, México, studying data engineering full-time while shipping production-grade systems. Available remotely from September 2026.</p>
-    </div>
-  </section>
+        <p class="hero__lead">
+          Data Engineering &amp; AI student at <strong>UPY</strong> specializing in DevOps at <strong>Holberton School</strong>, currently conducting AI Research at <strong>The Palace Company</strong>. Focused on architecting reproducible ETL workflows, automated cloud infrastructure on AWS, and production-ready AI agent APIs.
+        </p>
 
-  <!-- ===================== PROJECTS ===================== -->
-  <section class="section reveal" id="projects">
-    <div class="section__head">
-      <h2 class="section__label">PROJECTS</h2>
-    </div>
+        <div class="hero__actions">
+          <a class="btn-primary" href="assets/Elio_Resume.pdf" download>
+            DOWNLOAD CV [PDF] <span aria-hidden="true">↓</span>
+          </a>
+          <a class="btn-secondary" href="https://github.com/ElioUcan" target="_blank" rel="noopener">
+            GITHUB <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn-secondary" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">
+            LINKEDIN <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn-secondary" href="mailto:elioeduardo06@gmail.com">
+            EMAIL DIRECT <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
 
-    <div class="projects">
+      <!-- ===================== STATS LEDGER ===================== -->
+      <section class="stats-ledger" aria-label="Key technical metrics">
+        <div class="stat-item">
+          <span class="stat-value">05</span>
+          <span class="stat-label">Projects Shipped</span>
+          <span class="stat-sub">Production &amp; Open Source</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">06</span>
+          <span class="stat-label">Certifications</span>
+          <span class="stat-sub">AWS &amp; DataCamp Verified</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">AWS</span>
+          <span class="stat-label">Certified Engineer</span>
+          <span class="stat-sub">Data &amp; Cloud Foundations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">C1</span>
+          <span class="stat-label">English · iTEP 4.7</span>
+          <span class="stat-sub">Professional Working Fluency</span>
+        </div>
+      </section>
 
-      <a class="project" href="https://github.com/ElioUcan/dc-dashboard" target="_blank" rel="noopener">
-        <span class="project__num">01</span>
-        <div class="project__body">
-          <h3 class="project__title">DC Operations Dashboard</h3>
-          <div class="project__tags">
-            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Plotly</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">AWS</span>
+      <!-- ===================== ABOUT SECTION ===================== -->
+      <section class="about reveal" id="about">
+        <div class="about__inner">
+          <div class="about__heading">THESIS // ABOUT</div>
+          <div class="about__content">
+            <p>I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.</p>
+            <p>My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.</p>
           </div>
-          <p class="project__desc">Multi-page operational dashboard for a 100&nbsp;MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO&nbsp;27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.</p>
         </div>
-        <div class="project__meta">
-          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
-          <span class="project__year">2026</span>
-        </div>
-      </a>
+      </section>
 
-      <a class="project" href="https://github.com/ElioUcan/airflow-etl" target="_blank" rel="noopener">
-        <span class="project__num">02</span>
-        <div class="project__body">
-          <h3 class="project__title">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
-          <div class="project__tags">
-            <span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">PostgreSQL</span><span class="tag">pandas</span>
+      <!-- ===================== PROJECTS CATALOG ===================== -->
+      <section class="section reveal" id="projects">
+        <div class="section-head">
+          <h2 class="section-title">FEATURED PROJECTS</h2>
+          <span class="section-index">[05 ENTRIES INDEXED · ALL REPRODUCIBLE]</span>
+        </div>
+
+        <div class="project-catalog">
+
+          <!-- Project 01 -->
+          <a class="project-entry" href="https://github.com/ElioUcan/dc-dashboard" target="_blank" rel="noopener">
+            <span class="project-entry__num">[01]</span>
+            <div class="project-entry__body">
+              <div class="project-entry__top">
+                <h3 class="project-entry__title">DC Operations Dashboard</h3>
+                <span class="badge-tag">PRODUCTION</span>
+              </div>
+              <div class="project-entry__tags">
+                <span class="tag-mono">Python</span>
+                <span class="tag-mono">Streamlit</span>
+                <span class="tag-mono">Plotly</span>
+                <span class="tag-mono">Docker</span>
+                <span class="tag-mono">Terraform</span>
+                <span class="tag-mono">AWS</span>
+              </div>
+              <p class="project-entry__desc">
+                Multi-page operational dashboard for a 100&nbsp;MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO&nbsp;27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.
+              </p>
+              <div class="project-entry__metric">
+                <span>99.982% SLA · Terraform IaC Automated</span>
+              </div>
+            </div>
+            <div class="project-entry__meta">
+              <span class="project-entry__action">CODE &amp; DEMO <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__year">2026</span>
+            </div>
+          </a>
+
+          <!-- Project 02 -->
+          <a class="project-entry" href="https://github.com/ElioUcan/airflow-etl" target="_blank" rel="noopener">
+            <span class="project-entry__num">[02]</span>
+            <div class="project-entry__body">
+              <div class="project-entry__top">
+                <h3 class="project-entry__title">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
+                <span class="badge-tag">DATA PIPELINE</span>
+              </div>
+              <div class="project-entry__tags">
+                <span class="tag-mono">Python</span>
+                <span class="tag-mono">Airflow</span>
+                <span class="tag-mono">Docker</span>
+                <span class="tag-mono">PostgreSQL</span>
+                <span class="tag-mono">pandas</span>
+              </div>
+              <p class="project-entry__desc">
+                Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.
+              </p>
+              <div class="project-entry__metric">
+                <span>&lt;1% Failure Rate · Daily Automated Ingestion</span>
+              </div>
+            </div>
+            <div class="project-entry__meta">
+              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__year">2025–26</span>
+            </div>
+          </a>
+
+          <!-- Project 03 -->
+          <a class="project-entry" href="https://github.com/ElioUcan/terraform-aws-infra" target="_blank" rel="noopener">
+            <span class="project-entry__num">[03]</span>
+            <div class="project-entry__body">
+              <div class="project-entry__top">
+                <h3 class="project-entry__title">Infrastructure as Code — Terraform on AWS</h3>
+                <span class="badge-tag">CLOUD IAC</span>
+              </div>
+              <div class="project-entry__tags">
+                <span class="tag-mono">Terraform</span>
+                <span class="tag-mono">AWS EC2</span>
+                <span class="tag-mono">S3</span>
+                <span class="tag-mono">IAM</span>
+              </div>
+              <p class="project-entry__desc">
+                Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.
+              </p>
+              <div class="project-entry__metric">
+                <span>-90% Provisioning Time · Modular Remote State</span>
+              </div>
+            </div>
+            <div class="project-entry__meta">
+              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__year">2025</span>
+            </div>
+          </a>
+
+          <!-- Project 04 -->
+          <a class="project-entry" href="https://github.com/ElioUcan/ai-agent" target="_blank" rel="noopener">
+            <span class="project-entry__num">[04]</span>
+            <div class="project-entry__body">
+              <div class="project-entry__top">
+                <h3 class="project-entry__title">AI Agent — Anthropic API + FastAPI</h3>
+                <span class="badge-tag">AI SYSTEMS</span>
+              </div>
+              <div class="project-entry__tags">
+                <span class="tag-mono">Python</span>
+                <span class="tag-mono">FastAPI</span>
+                <span class="tag-mono">Docker</span>
+                <span class="tag-mono">Anthropic SDK</span>
+                <span class="tag-mono">AWS EC2</span>
+              </div>
+              <p class="project-entry__desc">
+                Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.
+              </p>
+              <div class="project-entry__metric">
+                <span>Live Tool Use · Persistent PostgreSQL Memory</span>
+              </div>
+            </div>
+            <div class="project-entry__meta">
+              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__year">2025–26</span>
+            </div>
+          </a>
+
+          <!-- Project 05 -->
+          <a class="project-entry" href="https://github.com/ElioUcan/better-readmes" target="_blank" rel="noopener">
+            <span class="project-entry__num">[05]</span>
+            <div class="project-entry__body">
+              <div class="project-entry__top">
+                <h3 class="project-entry__title">better-readmes</h3>
+                <span class="badge-tag badge-tag--dark">OPEN SOURCE</span>
+              </div>
+              <div class="project-entry__tags">
+                <span class="tag-mono">Anthropic SDK</span>
+                <span class="tag-mono">Claude Code</span>
+                <span class="tag-mono">npm/npx</span>
+                <span class="tag-mono">TypeScript</span>
+              </div>
+              <p class="project-entry__desc">
+                Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.
+              </p>
+              <div class="project-entry__metric">
+                <span>Global npm/npx Distribution · Claude Code Skill</span>
+              </div>
+            </div>
+            <div class="project-entry__meta">
+              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__year">2026</span>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ===================== TECHNICAL SKILLS ===================== -->
+      <section class="section reveal" id="skills">
+        <div class="section-head">
+          <h2 class="section-title">TECHNICAL SKILLS</h2>
+          <span class="section-index">[6 DOMAINS · 20 CORE TECHNOLOGIES]</span>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-card__title">Languages</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">C</span>
+              <span class="skill-pill">Bash</span>
+            </div>
           </div>
-          <p class="project__desc">Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.</p>
-        </div>
-        <div class="project__meta">
-          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
-          <span class="project__year">2025–26</span>
-        </div>
-      </a>
 
-      <a class="project" href="https://github.com/ElioUcan/terraform-aws-infra" target="_blank" rel="noopener">
-        <span class="project__num">03</span>
-        <div class="project__body">
-          <h3 class="project__title">Infrastructure as Code — Terraform on AWS</h3>
-          <div class="project__tags">
-            <span class="tag">Terraform</span><span class="tag">AWS EC2</span><span class="tag">S3</span><span class="tag">IAM</span>
+          <div class="skill-card">
+            <div class="skill-card__title">ETL &amp; Pipeline</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">Airflow</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">pandas</span>
+              <span class="skill-pill">REST APIs</span>
+            </div>
           </div>
-          <p class="project__desc">Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.</p>
-        </div>
-        <div class="project__meta">
-          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
-          <span class="project__year">2025</span>
-        </div>
-      </a>
 
-      <a class="project" href="https://github.com/ElioUcan/ai-agent" target="_blank" rel="noopener">
-        <span class="project__num">04</span>
-        <div class="project__body">
-          <h3 class="project__title">AI Agent — Anthropic API + FastAPI</h3>
-          <div class="project__tags">
-            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Docker</span><span class="tag">Anthropic SDK</span><span class="tag">AWS EC2</span>
+          <div class="skill-card">
+            <div class="skill-card__title">Cloud</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">AWS</span>
+              <span class="skill-pill">Linux</span>
+            </div>
           </div>
-          <p class="project__desc">Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.</p>
-        </div>
-        <div class="project__meta">
-          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
-          <span class="project__year">2025–26</span>
-        </div>
-      </a>
 
-      <a class="project" href="https://github.com/ElioUcan/better-readmes" target="_blank" rel="noopener">
-        <span class="project__num">05</span>
-        <div class="project__body">
-          <h3 class="project__title">better-readmes <span class="pill">OPEN SOURCE</span></h3>
-          <div class="project__tags">
-            <span class="tag">Anthropic SDK</span><span class="tag">Claude Code</span><span class="tag">npm/npx</span>
+          <div class="skill-card">
+            <div class="skill-card__title">Data</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">Snowflake</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Power BI</span>
+            </div>
           </div>
-          <p class="project__desc">Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.</p>
-        </div>
-        <div class="project__meta">
-          <span class="project__view">VIEW <span aria-hidden="true">↗</span></span>
-          <span class="project__year">2026</span>
-        </div>
-      </a>
 
-    </div>
-  </section>
-
-  <!-- ===================== SKILLS ===================== -->
-  <section class="section reveal" id="skills">
-    <div class="section__head">
-      <h2 class="section__label">TECHNICAL SKILLS</h2>
-    </div>
-
-    <div class="skills">
-      <div class="skill">
-        <h3 class="skill__head">Languages</h3>
-        <div class="skill__tags">
-          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PySpark</span><span class="tag">Bash</span>
-        </div>
-      </div>
-      <div class="skill">
-        <h3 class="skill__head">ETL &amp; Pipeline</h3>
-        <div class="skill__tags">
-          <span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">FastAPI</span><span class="tag">pandas</span><span class="tag">REST APIs</span>
-        </div>
-      </div>
-      <div class="skill">
-        <h3 class="skill__head">Cloud &amp; IaC</h3>
-        <div class="skill__tags">
-          <span class="tag">AWS</span><span class="tag">Terraform</span><span class="tag">Linux</span>
-        </div>
-      </div>
-      <div class="skill">
-        <h3 class="skill__head">Data</h3>
-        <div class="skill__tags">
-          <span class="tag">Snowflake</span><span class="tag">PostgreSQL</span><span class="tag">Power BI</span>
-        </div>
-      </div>
-      <div class="skill">
-        <h3 class="skill__head">AI &amp; ML</h3>
-        <div class="skill__tags">
-          <span class="tag">scikit-learn</span><span class="tag">Anthropic SDK</span>
-        </div>
-      </div>
-      <div class="skill">
-        <h3 class="skill__head">Dev Tools</h3>
-        <div class="skill__tags">
-          <span class="tag">Git</span><span class="tag">GitHub Actions</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CERTIFICATIONS & AWARDS ===================== -->
-  <section class="section reveal" id="certs">
-    <div class="section__head">
-      <h2 class="section__label">CERTIFICATIONS &amp; AWARDS</h2>
-    </div>
-
-    <div class="certs">
-      <ul class="cert-list">
-        <li>
-          <a class="cert" href="https://www.credly.com/badges/f5315b8d-38ce-45dc-8e81-c56c49070194/public_url" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/aws-data-engineer.png" alt="AWS Academy Data Engineering badge">
-            <div class="cert__body">
-              <p class="cert__title">AWS Academy Data Engineer</p>
-              <p class="cert__issuer">Amazon Web Services · Credly verified</p>
+          <div class="skill-card">
+            <div class="skill-card__title">AI</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">Anthropic SDK</span>
+              <span class="skill-pill">OpenAI API</span>
+              <span class="skill-pill">Hugging Face</span>
+              <span class="skill-pill">Claude Code</span>
             </div>
-            <span class="cert__year">2025</span>
-          </a>
-        </li>
-        <li>
-          <a class="cert" href="https://www.credly.com/badges/c78530a7-ad85-4f06-915c-28ce07fa56a7/public_url" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations badge">
-            <div class="cert__body">
-              <p class="cert__title">AWS Academy Cloud Foundations</p>
-              <p class="cert__issuer">Amazon Web Services · Credly verified</p>
-            </div>
-            <span class="cert__year">2025</span>
-          </a>
-        </li>
-        <li>
-          <a class="cert" href="https://www.datacamp.com/certificate/DEA0018844546600" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
-            <div class="cert__body">
-              <p class="cert__title">Associate Data Engineer</p>
-              <p class="cert__issuer">DataCamp · Certified</p>
-            </div>
-            <span class="cert__year">2026</span>
-          </a>
-        </li>
-        <li>
-          <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/a2b0620a66aea4a6063a3809b8eced5f82c5bac6" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/dataanalyst.png" alt="DataCamp Data Analyst badge">
-            <div class="cert__body">
-              <p class="cert__title">Data Analyst in Power BI</p>
-              <p class="cert__issuer">DataCamp · 50 hrs</p>
-            </div>
-            <span class="cert__year">2026</span>
-          </a>
-        </li>
-        <li>
-          <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6c44648a07e760b97f5a0caabdc6f372b0148d4f" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/dbdesign.png" alt="DataCamp Database Design badge">
-            <div class="cert__body">
-              <p class="cert__title">Database Design</p>
-              <p class="cert__issuer">DataCamp</p>
-            </div>
-            <span class="cert__year">2026</span>
-          </a>
-        </li>
-        <li>
-          <a class="cert" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/a183e20afedd51baf7bb7007780294559420817f" target="_blank" rel="noopener">
-            <img class="cert__badge" loading="lazy" src="images/snowflakedatacamp.png" alt="DataCamp Introduction to Snowflake SQL badge">
-            <div class="cert__body">
-              <p class="cert__title">Introduction to Snowflake SQL</p>
-              <p class="cert__issuer">DataCamp</p>
-            </div>
-            <span class="cert__year">2026</span>
-          </a>
-        </li>
-      </ul>
+          </div>
 
-      <div class="awards">
-        <aside class="award">
-          <span class="award__rank" aria-label="3rd place">3</span>
-          <p class="award__eyebrow">Award · 2025</p>
-          <h3 class="award__title">UPY Datathon 2025</h3>
-          <p class="award__issuer">Universidad Politécnica de Yucatán</p>
-        </aside>
-        <aside class="award">
-          <span class="award__rank" aria-label="3rd place">3</span>
-          <p class="award__eyebrow">Award · 2025</p>
-          <h3 class="award__title">Holberton Programming Olympics 2025</h3>
-          <p class="award__issuer">Holberton School Mérida</p>
-          <span class="award__badge">50% SCHOLARSHIP AWARDED</span>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== EDUCATION ===================== -->
-  <section class="section reveal" id="education">
-    <div class="section__head">
-      <h2 class="section__label">EDUCATION</h2>
-    </div>
-
-    <div class="edu-list">
-      <div class="edu">
-        <img class="edu__logo" loading="lazy" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
-        <div class="edu__body">
-          <h3 class="edu__inst">Universidad Politécnica de Yucatán</h3>
-          <p class="edu__prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
+          <div class="skill-card">
+            <div class="skill-card__title">Dev Tools</div>
+            <div class="skill-card__tags">
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub Actions</span>
+            </div>
+          </div>
         </div>
-        <span class="edu__year">Expected 2027</span>
-      </div>
-      <div class="edu">
-        <img class="edu__logo" loading="lazy" src="images/holberton.png" alt="Holberton School logo">
-        <div class="edu__body">
-          <h3 class="edu__inst">Holberton School Mérida</h3>
-          <p class="edu__prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
+      </section>
+
+      <!-- ===================== CREDENTIALS & AWARDS ===================== -->
+      <section class="section reveal" id="certs">
+        <div class="section-head">
+          <h2 class="section-title">CREDENTIALS &amp; RECOGNITION</h2>
+          <span class="section-index">[6 VERIFIED CERTS · 2 HONORS]</span>
         </div>
-        <span class="edu__year">Expected Jul 2027</span>
-      </div>
-    </div>
-  </section>
 
-  </main>
+        <div class="creds-container">
+          <!-- Certifications List -->
+          <ul class="cert-ledger">
+            <li>
+              <a class="cert-row" href="https://www.credly.com/badges/f5315b8d-38ce-45dc-8e81-c56c49070194/public_url" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/aws-data-engineer.png" alt="AWS Academy Data Engineering badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">AWS Academy Data Engineer</div>
+                  <div class="cert-row__org">Amazon Web Services · Credly verified</div>
+                </div>
+                <span class="cert-row__year">2025</span>
+              </a>
+            </li>
+            <li>
+              <a class="cert-row" href="https://www.credly.com/badges/c78530a7-ad85-4f06-915c-28ce07fa56a7/public_url" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">AWS Academy Cloud Foundations</div>
+                  <div class="cert-row__org">Amazon Web Services · Credly verified</div>
+                </div>
+                <span class="cert-row__year">2025</span>
+              </a>
+            </li>
+            <li>
+              <a class="cert-row" href="https://www.datacamp.com/certificate/DEA0018844546600" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">Associate Data Engineer</div>
+                  <div class="cert-row__org">DataCamp · Certified</div>
+                </div>
+                <span class="cert-row__year">2026</span>
+              </a>
+            </li>
+            <li>
+              <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/a2b0620a66aea4a6063a3809b8eced5f82c5bac6" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/dataanalyst.png" alt="DataCamp Data Analyst badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">Data Analyst in Power BI</div>
+                  <div class="cert-row__org">DataCamp · 50 hrs</div>
+                </div>
+                <span class="cert-row__year">2026</span>
+              </a>
+            </li>
+            <li>
+              <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6c44648a07e760b97f5a0caabdc6f372b0148d4f" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/dbdesign.png" alt="DataCamp Database Design badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">Database Design</div>
+                  <div class="cert-row__org">DataCamp · Accomplishment</div>
+                </div>
+                <span class="cert-row__year">2026</span>
+              </a>
+            </li>
+            <li>
+              <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/a183e20afedd51baf7bb7007780294559420817f" target="_blank" rel="noopener">
+                <img class="cert-row__badge" loading="lazy" src="images/snowflakedatacamp.png" alt="DataCamp Snowflake SQL badge">
+                <div class="cert-row__body">
+                  <div class="cert-row__name">Introduction to Snowflake SQL</div>
+                  <div class="cert-row__org">DataCamp · Accomplishment</div>
+                </div>
+                <span class="cert-row__year">2026</span>
+              </a>
+            </li>
+          </ul>
 
-  <!-- ===================== FOOTER / CTA ===================== -->
-  <footer class="cta" id="contact">
-    <div class="cta__inner">
-      <h2 class="cta__title">LET'S WORK<br><span>TOGETHER.</span></h2>
-      <div class="cta__links">
-        <a href="mailto:elioeduardo06@gmail.com">elioeduardo06@gmail.com</a>
-        <a href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://github.com/ElioUcan" target="_blank" rel="noopener">GitHub ↗</a>
+          <!-- Awards Stack -->
+          <div class="awards-stack">
+            <aside class="award-item">
+              <div class="award-item__header">
+                <span class="award-rank" aria-label="3rd place">03</span>
+                <span class="award-year">Award · 2025</span>
+              </div>
+              <h3 class="award-title">UPY Datathon 2025</h3>
+              <p class="award-org">Universidad Politécnica de Yucatán</p>
+            </aside>
+
+            <aside class="award-item">
+              <div class="award-item__header">
+                <span class="award-rank" aria-label="3rd place">03</span>
+                <span class="award-year">Award · 2025</span>
+              </div>
+              <h3 class="award-title">Holberton Programming Olympics 2025</h3>
+              <p class="award-org">Holberton School Mérida</p>
+              <span class="award-pill">50% SCHOLARSHIP AWARDED</span>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EDUCATION ===================== -->
+      <section class="section reveal" id="education">
+        <div class="section-head">
+          <h2 class="section-title">ACADEMIC BACKGROUND</h2>
+          <span class="section-index">[FORMAL DEGREES &amp; SPECIALIZATIONS]</span>
+        </div>
+
+        <div class="edu-catalog">
+          <div class="edu-entry">
+            <img class="edu-entry__logo" loading="lazy" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
+            <div class="edu-entry__body">
+              <h3 class="edu-entry__inst">Universidad Politécnica de Yucatán</h3>
+              <p class="edu-entry__prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
+            </div>
+            <span class="edu-entry__time">Expected 2027</span>
+          </div>
+
+          <div class="edu-entry">
+            <img class="edu-entry__logo" loading="lazy" src="images/holberton.png" alt="Holberton School Mérida logo">
+            <div class="edu-entry__body">
+              <h3 class="edu-entry__inst">Holberton School Mérida</h3>
+              <p class="edu-entry__prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
+            </div>
+            <span class="edu-entry__time">Expected Jul 2027</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===================== FOOTER / COLOFON ===================== -->
+    <footer class="footer-colophon" id="contact">
+      <div class="footer-top">
+        <div class="footer-statement">
+          <h2 class="footer-title">LET'S BUILD RELIABLE <span>SYSTEMS.</span></h2>
+          <p class="footer-sub">
+            Open to engineering collaborations, technical discussions, and new challenges. Reach out to discuss data pipelines, cloud infrastructure, or AI systems.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a class="footer-link" href="mailto:elioeduardo06@gmail.com">
+            elioeduardo06@gmail.com <span aria-hidden="true">↗</span>
+          </a>
+          <a class="footer-link" href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+          <a class="footer-link" href="https://github.com/ElioUcan" target="_blank" rel="noopener">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a class="footer-link" href="assets/Elio_Resume.pdf" download>
+            Download Resume [PDF] <span aria-hidden="true">↓</span>
+          </a>
+        </div>
       </div>
-      <p class="cta__copy">© 2026 Elio Eduardo Ucán Zapata · Mérida, México</p>
-    </div>
-  </footer>
+
+      <div class="footer-specs">
+        <span>LOC: <strong>Mérida, México</strong> (UTC-6)</span>
+        <span>SPEC: <strong>Zero-framework pure HTML5/CSS3</strong></span>
+        <span>EDITION: <strong>Swiss-Editorial Engineering</strong></span>
+        <span>&copy; 2026 <strong>Elio Eduardo Ucán Zapata</strong></span>
+      </div>
+    </footer>
+
+  </div>
 
   <script>
-    // --- Nav: transparent → solid on scroll ---
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('nav--solid', window.scrollY > 40);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
     // --- Section reveals on scroll ---
     const reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       reveals.forEach((el) => io.observe(el));
     } else {
       reveals.forEach((el) => el.classList.add('is-visible'));
