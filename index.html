@@ -672,7 +672,7 @@
     setupCopyEmail();
 
     // --- Matrix Text Scramble Decoding System (Green Accents & Headings) ---
-    const MATRIX_CHARS = '0123456789ABCDEF$#@%&*<>[]{}/*+=~!?X_';
+    const MATRIX_CHARS = '0123456789ABCDEFXYZ#*+=-_<>[]{}!?$/';
 
     function escapeChar(c) {
       if (c === '&') return '&amp;';
@@ -727,7 +727,7 @@
             html += escapeChar(char);
           } else {
             const randChar = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
-            html += `<span class="matrix-char">${escapeChar(randChar)}</span>`;
+            html += `<span class="scramble-slot"><span class="scramble-ghost">${escapeChar(char)}</span><span class="matrix-char">${escapeChar(randChar)}</span></span>`;
           }
         }
 
