@@ -671,7 +671,7 @@
     }
     setupCopyEmail();
 
-    // --- Matrix Text Scramble Decoding on Scroll ---
+    // --- Matrix Text Scramble Decoding System (Green Accents & Headings) ---
     const MATRIX_CHARS = '0123456789ABCDEF$#@%&*<>[]{}/*+=~!?X_';
 
     function escapeChar(c) {
@@ -682,28 +682,39 @@
       return c;
     }
 
-    function scrambleElement(el) {
-      if (el.dataset.scrambled === 'true') return;
-      el.dataset.scrambled = 'true';
+    function scrambleElement(el, isHover = false) {
+      if (!el) return;
+      if (el.dataset.animating === 'true') return;
 
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         return;
       }
 
-      const originalText = el.textContent.trim();
+      if (!el.dataset.originalText) {
+        el.dataset.originalText = el.textContent.trim();
+      }
+      const originalText = el.dataset.originalText;
       const length = originalText.length;
       if (length === 0) return;
 
-      const duration = Math.min(950, Math.max(450, length * 24));
-      const scrambleLeadMs = 120;
+      el.dataset.animating = 'true';
+
+      const duration = isHover
+        ? Math.min(480, Math.max(240, length * 15))
+        : Math.min(850, Math.max(320, length * 22));
+
+      const leadMs = isHover
+        ? Math.min(60, Math.max(25, length * 2))
+        : Math.min(100, Math.max(35, length * 3));
+
       const startTime = performance.now();
 
       function update(now) {
         const elapsed = now - startTime;
         let resolvedCount = 0;
 
-        if (elapsed > scrambleLeadMs) {
-          const resolveProgress = Math.min(1, (elapsed - scrambleLeadMs) / (duration - scrambleLeadMs));
+        if (elapsed > leadMs) {
+          const resolveProgress = Math.min(1, (elapsed - leadMs) / (duration - leadMs));
           resolvedCount = Math.floor(resolveProgress * length);
         }
 
@@ -726,26 +737,64 @@
           requestAnimationFrame(update);
         } else {
           el.textContent = originalText;
+          el.dataset.animating = 'false';
         }
       }
 
       requestAnimationFrame(update);
     }
 
-    const scrambleElements = document.querySelectorAll('.scramble-text');
+    // Target all green accent elements and headings
+    const SCRAMBLE_SELECTORS = [
+      '.scramble-text',
+      '.hero__meta > span:first-child',
+      '.hero__title-accent',
+      '.stat-value',
+      '.about__heading',
+      '.now-card__num',
+      '.project-entry__num',
+      '.badge-tag',
+      '.project-entry__metric > span',
+      '.experience-entry__num',
+      '.experience-entry__company',
+      '.skill-card__title',
+      '.cert-row__year',
+      '.award-pill',
+      '.edu-entry__time',
+      '.footer-title span'
+    ];
+
+    const elementsToScramble = document.querySelectorAll(SCRAMBLE_SELECTORS.join(', '));
+
+    elementsToScramble.forEach((el) => {
+      // Pre-cache original text to prevent drift
+      if (!el.dataset.originalText) {
+        el.dataset.originalText = el.textContent.trim();
+      }
+
+      // Interactive hover scramble
+      el.addEventListener('mouseenter', () => {
+        scrambleElement(el, true);
+      });
+    });
+
     if ('IntersectionObserver' in window) {
       const scrambleObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            scrambleElement(entry.target);
-            scrambleObserver.unobserve(entry.target);
+            const target = entry.target;
+            if (target.dataset.scrolledScramble !== 'true') {
+              target.dataset.scrolledScramble = 'true';
+              scrambleElement(target, false);
+              scrambleObserver.unobserve(target);
+            }
           }
         });
-      }, { threshold: 0.2, rootMargin: '0px 0px -20px 0px' });
+      }, { threshold: 0.15, rootMargin: '0px 0px -25px 0px' });
 
-      scrambleElements.forEach((el) => scrambleObserver.observe(el));
+      elementsToScramble.forEach((el) => scrambleObserver.observe(el));
     } else {
-      scrambleElements.forEach((el) => scrambleElement(el));
+      elementsToScramble.forEach((el) => scrambleElement(el, false));
     }
 
     // --- Section reveals on scroll ---
