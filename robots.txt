@@ -1,0 +1,9 @@
+# robots.txt for https://elioucan.dev
+# Welcomes web crawlers, AI search indexers, and LLM agents.
+
+User-agent: *
+Allow: /
+
+# LLM & AI agent context discovery:
+# See /llms.txt for machine-readable context formatted for LLMs.
+# Specification: https://llmstxt.org

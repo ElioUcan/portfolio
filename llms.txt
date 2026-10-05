@@ -1,0 +1,68 @@
+# Elio Eduardo Ucán Zapata
+
+> Data Engineering & AI student at Universidad Politécnica de Yucatán (UPY) specializing in DevOps at Holberton School Mérida, currently conducting AI Research at The Palace Company. AWS Certified. Building reproducible ETL pipelines, cloud infrastructure with Terraform, and production-ready AI agent APIs.
+
+## Overview
+
+- **Name:** Elio Eduardo Ucán Zapata
+- **Role:** Data Engineering & AI Student · DevOps Fellow · AI Research Intern
+- **Location:** Mérida, Yucatán, México (UTC-6)
+- **Email:** elioeduardo06@gmail.com
+- **Website:** https://elioucan.dev
+- **GitHub:** https://github.com/ElioUcan
+- **LinkedIn:** https://linkedin.com/in/elio-ucan-87a077352
+- **Resume (PDF):** https://elioucan.dev/assets/Elio_Resume.pdf
+- **Languages:** Spanish (Native), English (C1 — iTEP 4.7)
+
+## Core Technical Skills
+
+- **Programming Languages:** Python, SQL, C (low-level systems & memory management), Bash
+- **ETL & Data Pipelines:** Apache Airflow, Docker, FastAPI, pandas, REST APIs
+- **Cloud & DevOps:** Amazon Web Services (AWS), Linux (Debian, Ubuntu), Terraform (IaC), Docker Compose, GitHub Actions (CI/CD)
+- **Databases & Data Warehousing:** PostgreSQL, Snowflake, Database Design, Power BI
+- **Artificial Intelligence:** Anthropic API / Claude Code, OpenAI API, Hugging Face, Retrieval-Augmented Generation (RAG), Semantic Embeddings, Reranking, Context Window & Token Economics
+
+## Professional Experience
+
+- **AI Research Intern** — The Palace Company (*Sep 2026 – Dec 2026 | Mérida, México*):
+  - Leading technical research and benchmark evaluations of diverse AI partners and vendors to drive multi-area enterprise AI integrations.
+  - Participating directly in cross-functional technical negotiations and solution selection.
+  - Researching and prototyping Retrieval-Augmented Generation (RAG) architectures with semantic embeddings, reranking algorithms, and token-cost optimization.
+  - Designing automated AI workflows and internal APIs for operational acceleration.
+- **DevOps Engineering Fellow** — Holberton School Mérida (*Jan 2025 – Present | Mérida, México*):
+  - Mastered low-level systems programming fundamentals in C, POSIX system calls, memory management, and Unix system administration with Bash.
+  - Engineered automated CI/CD pipelines, containerized microservices with Docker, and provisioned modular cloud infrastructure on AWS.
+  - Awarded 50% merit scholarship after securing 3rd place in the Holberton Programming Olympics 2025.
+
+## Featured Projects
+
+- [DC Operations Dashboard](https://github.com/ElioUcan/dc-dashboard): Multi-page operational dashboard for a 100 MW data center monitoring uptime SLA (99.982%), PUE trends, and TIA-942 / ISO 27001 compliance across 5 views. Built with Python, Streamlit, Plotly, Docker, and deployed on AWS with Terraform IaC and GitHub Actions CI/CD.
+- [ETL Pipeline — Airflow + Docker + PostgreSQL](https://github.com/ElioUcan/airflow-etl): Production-grade daily ingestion pipeline consuming the CoinGecko REST API with <1% failure rate via Airflow retry logic and Docker Compose, loading into PostgreSQL.
+- [Infrastructure as Code — Terraform on AWS](https://github.com/ElioUcan/terraform-aws-infra): Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% (from hours to under 10 minutes).
+- [AI Agent — Anthropic API + FastAPI](https://github.com/ElioUcan/ai-agent): Conversational AI agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.
+- [better-readmes](https://github.com/ElioUcan/better-readmes): Published open-source Claude Code skill and CLI tool distributed globally via npm/npx to auto-generate production-ready READMEs and repository metadata.
+
+## Credentials & Certifications
+
+- [AWS Academy Graduate - AWS Academy Data Engineer](https://www.credly.com/badges/f5315b8d-38ce-45dc-8e81-c56c49070194/public_url): Amazon Web Services (2025)
+- [AWS Academy Graduate - AWS Academy Cloud Foundations](https://www.credly.com/badges/c78530a7-ad85-4f06-915c-28ce07fa56a7/public_url): Amazon Web Services (2025)
+- [Associate Data Engineer](https://www.datacamp.com/certificate/DEA0018844546600): DataCamp Certified (2026)
+- [Data Analyst in Power BI](https://www.datacamp.com/completed/statement-of-accomplishment/track/a2b0620a66aea4a6063a3809b8eced5f82c5bac6): DataCamp 50h Track (2026)
+- [Database Design](https://www.datacamp.com/completed/statement-of-accomplishment/course/6c44648a07e760b97f5a0caabdc6f372b0148d4f): DataCamp (2026)
+- [Introduction to Snowflake SQL](https://www.datacamp.com/completed/statement-of-accomplishment/course/a183e20afedd51baf7bb7007780294559420817f): DataCamp (2026)
+
+## Academic Background & Honors
+
+- **B.S. Data Engineering & Artificial Intelligence** — Universidad Politécnica de Yucatán (UPY) (*Expected 2027*)
+- **DevOps Engineering Certification** — Holberton School Mérida (*Expected Jul 2027*)
+- **Honors & Competitions:**
+  - 3rd Place — UPY Datathon 2025
+  - 3rd Place — Holberton Programming Olympics 2025 (50% Scholarship Awarded)
+
+## Contact & Links
+
+- **Email:** elioeduardo06@gmail.com
+- **Website:** https://elioucan.dev
+- **GitHub:** https://github.com/ElioUcan
+- **LinkedIn:** https://linkedin.com/in/elio-ucan-87a077352
+- **Download Resume:** https://elioucan.dev/assets/Elio_Resume.pdf

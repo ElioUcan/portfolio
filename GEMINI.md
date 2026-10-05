@@ -43,6 +43,8 @@ Este documento sirve como guía contextual, técnica y operativa para agentes de
 ├── PRODUCT.md                      # Estrategia de producto, tono, audiencia y principios de marca
 ├── GEMINI.md                       # Guía contextual del repositorio para agentes IA
 ├── index.html                      # Documento principal SPA (Single Page Application)
+├── llms.txt                        # Contexto estructurado para LLMs y agentes de búsqueda de IA
+├── robots.txt                      # Instrucciones de rastreo web y descubrimiento de llms.txt
 └── style.css                       # Hoja de estilos centralizada (Sistema de diseño)
 ```
 

@@ -10,6 +10,9 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://elioucan.dev/">
 
+  <!-- LLM Context -->
+  <link rel="alternate" type="text/markdown" href="https://elioucan.dev/llms.txt" title="LLM Context">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Elio Ucán — Data Engineering &amp; AI">
   <meta property="og:description" content="AWS Certified · ETL Pipelines · Cloud Infrastructure · AI-Powered APIs">
@@ -34,7 +37,7 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a class="skip-link" href="#main-content" data-i18n="nav.skip">Skip to main content</a>
 
   <div class="site-wrapper">
 
@@ -49,22 +52,27 @@
       <div class="nav__inner">
         <a href="#top" class="nav__brand">
           <span>ELIO UCÁN</span>
-          <span class="nav__brand-tag">// DATA &amp; AI</span>
+          <span class="nav__brand-tag" data-i18n="nav.brand_tag">// DATA &amp; AI</span>
         </a>
 
         <nav class="nav__center" aria-label="Page sections">
-          <a href="#projects" class="nav__link">Work</a>
-          <a href="#experience" class="nav__link">Experience</a>
-          <a href="#now" class="nav__link">Now</a>
-          <a href="#skills" class="nav__link">Skills</a>
-          <a href="#certs" class="nav__link">Credentials</a>
-          <a href="#education" class="nav__link">Education</a>
-          <a href="#contact" class="nav__link">Contact</a>
+          <a href="#projects" class="nav__link" data-i18n="nav.work">Work</a>
+          <a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a>
+          <a href="#now" class="nav__link" data-i18n="nav.now">Now</a>
+          <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
+          <a href="#certs" class="nav__link" data-i18n="nav.certs">Credentials</a>
+          <a href="#education" class="nav__link" data-i18n="nav.education">Education</a>
+          <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
         </nav>
 
         <div class="nav__actions">
+          <div class="lang-switch" role="group" aria-label="Language selection">
+            <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true" aria-label="Switch to English">EN</button>
+            <span class="lang-divider" aria-hidden="true">/</span>
+            <button type="button" class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Cambiar a Español">ES</button>
+          </div>
           <a href="assets/Elio_Resume.pdf" download class="btn-nav-resume">
-            RESUME <span aria-hidden="true">↓</span>
+            <span data-i18n="nav.resume">RESUME</span> <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
@@ -75,21 +83,21 @@
       <!-- ===================== HERO SECTION ===================== -->
       <section class="hero" id="top">
         <div class="hero__meta">
-          <span>REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS</span>
+          <span data-i18n="hero.meta_ref">REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS</span>
           <span class="hero__spec">LOC: MÉRIDA, MX · UTC-6</span>
         </div>
 
         <h1 class="hero__title">
           <span class="scramble-text">ELIO EDUARDO UCÁN ZAPATA</span>
-          <span class="hero__title-accent scramble-text">BUILDING DATA PIPELINES &amp; AI</span>
+          <span class="hero__title-accent scramble-text" data-i18n="hero.title_accent">BUILDING DATA PIPELINES &amp; AI</span>
         </h1>
 
-        <p class="hero__lead">
+        <p class="hero__lead" data-i18n="hero.lead">
           Data Engineering &amp; AI student at <strong>UPY</strong> specializing in DevOps at <strong>Holberton School</strong>, currently conducting AI Research at <strong>The Palace Company</strong>. Focused on architecting reproducible ETL workflows, automated cloud infrastructure on AWS, and production-ready AI agent APIs.
         </p>
 
         <div class="hero__actions">
-          <a class="btn-primary" href="assets/Elio_Resume.pdf" download>
+          <a class="btn-primary" href="assets/Elio_Resume.pdf" download data-i18n="hero.btn_cv">
             DOWNLOAD CV [PDF] <span aria-hidden="true">↓</span>
           </a>
           <a class="btn-secondary" href="https://github.com/ElioUcan" target="_blank" rel="noopener">
@@ -99,7 +107,7 @@
             LINKEDIN <span aria-hidden="true">↗</span>
           </a>
           <button class="btn-copy-email" type="button" data-email="elioeduardo06@gmail.com" aria-label="Copy email address to clipboard">
-            <span class="btn-copy-label">EMAIL DIRECT</span>
+            <span class="btn-copy-label" data-i18n="hero.btn_email">EMAIL DIRECT</span>
             <span class="btn-copy-icon" aria-hidden="true">↗</span>
           </button>
         </div>
@@ -109,33 +117,33 @@
       <section class="stats-ledger" aria-label="Key technical metrics">
         <div class="stat-item">
           <span class="stat-value">05</span>
-          <span class="stat-label">Projects Shipped</span>
-          <span class="stat-sub">Production &amp; Open Source</span>
+          <span class="stat-label" data-i18n="stats.s1_label">Projects Shipped</span>
+          <span class="stat-sub" data-i18n="stats.s1_sub">Production &amp; Open Source</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">06</span>
-          <span class="stat-label">Certifications</span>
-          <span class="stat-sub">AWS &amp; DataCamp Verified</span>
+          <span class="stat-label" data-i18n="stats.s2_label">Certifications</span>
+          <span class="stat-sub" data-i18n="stats.s2_sub">AWS &amp; DataCamp Verified</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">AWS</span>
-          <span class="stat-label">Certified Engineer</span>
-          <span class="stat-sub">Data &amp; Cloud Foundations</span>
+          <span class="stat-label" data-i18n="stats.s3_label">Certified Engineer</span>
+          <span class="stat-sub" data-i18n="stats.s3_sub">Data &amp; Cloud Foundations</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">C1</span>
           <span class="stat-label">English · iTEP 4.7</span>
-          <span class="stat-sub">Professional Working Fluency</span>
+          <span class="stat-sub" data-i18n="stats.s4_sub">Professional Working Fluency</span>
         </div>
       </section>
 
       <!-- ===================== ABOUT SECTION ===================== -->
       <section class="about reveal" id="about">
         <div class="about__inner">
-          <div class="about__heading scramble-text">THESIS // ABOUT</div>
+          <div class="about__heading scramble-text" data-i18n="about.heading">THESIS // ABOUT</div>
           <div class="about__content">
-            <p>I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.</p>
-            <p>My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.</p>
+            <p data-i18n="about.p1">I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.</p>
+            <p data-i18n="about.p2">My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.</p>
           </div>
         </div>
       </section>
@@ -143,18 +151,18 @@
       <!-- ===================== NOW SECTION ===================== -->
       <section class="now-board reveal" id="now" aria-label="Current technical focus">
         <div class="section-head">
-          <h2 class="section-title scramble-text">NOW // ACTIVE FOCUS</h2>
-          <span class="section-index">[WHAT I'M RESEARCHING &amp; BUILDING · FALL 2026]</span>
+          <h2 class="section-title scramble-text" data-i18n="now.title">NOW // ACTIVE FOCUS</h2>
+          <span class="section-index" data-i18n="now.index">[WHAT I'M RESEARCHING &amp; BUILDING · FALL 2026]</span>
         </div>
 
         <div class="now-grid">
           <div class="now-card">
             <div class="now-card__top">
               <span class="now-card__num">[01]</span>
-              <span class="now-card__badge">RESEARCH</span>
+              <span class="now-card__badge" data-i18n="now.badge_research">RESEARCH</span>
             </div>
-            <h3 class="now-card__title">RAG &amp; Reranking Optimization</h3>
-            <p class="now-card__desc">Investigating reranking algorithms and context-window token economics to maximize retrieval precision in agentic AI architectures.</p>
+            <h3 class="now-card__title" data-i18n="now.c1_title">RAG &amp; Reranking Optimization</h3>
+            <p class="now-card__desc" data-i18n="now.c1_desc">Investigating reranking algorithms and context-window token economics to maximize retrieval precision in agentic AI architectures.</p>
           </div>
 
           <div class="now-card">
@@ -162,8 +170,8 @@
               <span class="now-card__num">[02]</span>
               <span class="now-card__badge">INFRA</span>
             </div>
-            <h3 class="now-card__title">Self-Hosted Server Automation</h3>
-            <p class="now-card__desc">Running continuous workflows on a headless Debian server with n8n and containerized AI tasks under strict 4&nbsp;GB RAM constraints.</p>
+            <h3 class="now-card__title" data-i18n="now.c2_title">Self-Hosted Server Automation</h3>
+            <p class="now-card__desc" data-i18n="now.c2_desc">Running continuous workflows on a headless Debian server with n8n and containerized AI tasks under strict 4&nbsp;GB RAM constraints.</p>
           </div>
 
           <div class="now-card">
@@ -171,17 +179,17 @@
               <span class="now-card__num">[03]</span>
               <span class="now-card__badge">CLOUD</span>
             </div>
-            <h3 class="now-card__title">Cloud Data Engineering on AWS</h3>
-            <p class="now-card__desc">Deepening hands-on data architectures on AWS (S3, Glue, Athena, Redshift) driven by reproducible Infrastructure as Code and automation.</p>
+            <h3 class="now-card__title" data-i18n="now.c3_title">Cloud Data Engineering on AWS</h3>
+            <p class="now-card__desc" data-i18n="now.c3_desc">Deepening hands-on data architectures on AWS (S3, Glue, Athena, Redshift) driven by reproducible Infrastructure as Code and automation.</p>
           </div>
 
           <div class="now-card">
             <div class="now-card__top">
               <span class="now-card__num">[04]</span>
-              <span class="now-card__badge">WRITING</span>
+              <span class="now-card__badge" data-i18n="now.badge_writing">WRITING</span>
             </div>
-            <h3 class="now-card__title">Internship Technical Thesis</h3>
-            <p class="now-card__desc">Authoring a comprehensive 40-page research and systems report in LaTeX detailing production AI architectures and pipeline benchmarks.</p>
+            <h3 class="now-card__title" data-i18n="now.c4_title">Internship Technical Thesis</h3>
+            <p class="now-card__desc" data-i18n="now.c4_desc">Authoring a comprehensive 40-page research and systems report in LaTeX detailing production AI architectures and pipeline benchmarks.</p>
           </div>
         </div>
       </section>
@@ -189,8 +197,8 @@
       <!-- ===================== PROJECTS CATALOG ===================== -->
       <section class="section reveal" id="projects">
         <div class="section-head">
-          <h2 class="section-title scramble-text">FEATURED PROJECTS</h2>
-          <span class="section-index">[05 ENTRIES INDEXED · ALL REPRODUCIBLE]</span>
+          <h2 class="section-title scramble-text" data-i18n="projects.title">FEATURED PROJECTS</h2>
+          <span class="section-index" data-i18n="projects.index">[05 ENTRIES INDEXED · ALL REPRODUCIBLE]</span>
         </div>
 
         <div class="project-catalog">
@@ -201,7 +209,7 @@
             <div class="project-entry__body">
               <div class="project-entry__top">
                 <h3 class="project-entry__title">DC Operations Dashboard</h3>
-                <span class="badge-tag">PRODUCTION</span>
+                <span class="badge-tag" data-i18n="projects.badge_prod">PRODUCTION</span>
               </div>
               <div class="project-entry__tags">
                 <span class="tag-mono">Python</span>
@@ -211,15 +219,15 @@
                 <span class="tag-mono">Terraform</span>
                 <span class="tag-mono">AWS</span>
               </div>
-              <p class="project-entry__desc">
+              <p class="project-entry__desc" data-i18n="projects.p1_desc">
                 Multi-page operational dashboard for a 100&nbsp;MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO&nbsp;27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.
               </p>
               <div class="project-entry__metric">
-                <span>99.982% SLA · Terraform IaC Automated</span>
+                <span data-i18n="projects.p1_metric">99.982% SLA · Terraform IaC Automated</span>
               </div>
             </div>
             <div class="project-entry__meta">
-              <span class="project-entry__action">CODE &amp; DEMO <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__action" data-i18n="projects.action_code_demo">CODE &amp; DEMO <span aria-hidden="true">↗</span></span>
               <span class="project-entry__year">2026</span>
             </div>
           </a>
@@ -230,7 +238,7 @@
             <div class="project-entry__body">
               <div class="project-entry__top">
                 <h3 class="project-entry__title">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
-                <span class="badge-tag">DATA PIPELINE</span>
+                <span class="badge-tag" data-i18n="projects.badge_pipeline">DATA PIPELINE</span>
               </div>
               <div class="project-entry__tags">
                 <span class="tag-mono">Python</span>
@@ -239,15 +247,15 @@
                 <span class="tag-mono">PostgreSQL</span>
                 <span class="tag-mono">pandas</span>
               </div>
-              <p class="project-entry__desc">
+              <p class="project-entry__desc" data-i18n="projects.p2_desc">
                 Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.
               </p>
               <div class="project-entry__metric">
-                <span>&lt;1% Failure Rate · Daily Automated Ingestion</span>
+                <span data-i18n="projects.p2_metric">&lt;1% Failure Rate · Daily Automated Ingestion</span>
               </div>
             </div>
             <div class="project-entry__meta">
-              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__action" data-i18n="projects.action_code">CODE <span aria-hidden="true">↗</span></span>
               <span class="project-entry__year">2025–26</span>
             </div>
           </a>
@@ -258,7 +266,7 @@
             <div class="project-entry__body">
               <div class="project-entry__top">
                 <h3 class="project-entry__title">Infrastructure as Code — Terraform on AWS</h3>
-                <span class="badge-tag">CLOUD IAC</span>
+                <span class="badge-tag" data-i18n="projects.badge_cloud">CLOUD IAC</span>
               </div>
               <div class="project-entry__tags">
                 <span class="tag-mono">Terraform</span>
@@ -266,15 +274,15 @@
                 <span class="tag-mono">S3</span>
                 <span class="tag-mono">IAM</span>
               </div>
-              <p class="project-entry__desc">
+              <p class="project-entry__desc" data-i18n="projects.p3_desc">
                 Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.
               </p>
               <div class="project-entry__metric">
-                <span>-90% Provisioning Time · Modular Remote State</span>
+                <span data-i18n="projects.p3_metric">-90% Provisioning Time · Modular Remote State</span>
               </div>
             </div>
             <div class="project-entry__meta">
-              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__action" data-i18n="projects.action_code">CODE <span aria-hidden="true">↗</span></span>
               <span class="project-entry__year">2025</span>
             </div>
           </a>
@@ -285,7 +293,7 @@
             <div class="project-entry__body">
               <div class="project-entry__top">
                 <h3 class="project-entry__title">AI Agent — Anthropic API + FastAPI</h3>
-                <span class="badge-tag">AI SYSTEMS</span>
+                <span class="badge-tag" data-i18n="projects.badge_ai">AI SYSTEMS</span>
               </div>
               <div class="project-entry__tags">
                 <span class="tag-mono">Python</span>
@@ -294,15 +302,15 @@
                 <span class="tag-mono">Anthropic SDK</span>
                 <span class="tag-mono">AWS EC2</span>
               </div>
-              <p class="project-entry__desc">
+              <p class="project-entry__desc" data-i18n="projects.p4_desc">
                 Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.
               </p>
               <div class="project-entry__metric">
-                <span>Live Tool Use · Persistent PostgreSQL Memory</span>
+                <span data-i18n="projects.p4_metric">Live Tool Use · Persistent PostgreSQL Memory</span>
               </div>
             </div>
             <div class="project-entry__meta">
-              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__action" data-i18n="projects.action_code">CODE <span aria-hidden="true">↗</span></span>
               <span class="project-entry__year">2025–26</span>
             </div>
           </a>
@@ -313,7 +321,7 @@
             <div class="project-entry__body">
               <div class="project-entry__top">
                 <h3 class="project-entry__title">better-readmes</h3>
-                <span class="badge-tag badge-tag--dark">OPEN SOURCE</span>
+                <span class="badge-tag badge-tag--dark" data-i18n="projects.badge_oss">OPEN SOURCE</span>
               </div>
               <div class="project-entry__tags">
                 <span class="tag-mono">Anthropic SDK</span>
@@ -321,15 +329,15 @@
                 <span class="tag-mono">npm/npx</span>
                 <span class="tag-mono">TypeScript</span>
               </div>
-              <p class="project-entry__desc">
+              <p class="project-entry__desc" data-i18n="projects.p5_desc">
                 Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.
               </p>
               <div class="project-entry__metric">
-                <span>Global npm/npx Distribution · Claude Code Skill</span>
+                <span data-i18n="projects.p5_metric">Global npm/npx Distribution · Claude Code Skill</span>
               </div>
             </div>
             <div class="project-entry__meta">
-              <span class="project-entry__action">CODE <span aria-hidden="true">↗</span></span>
+              <span class="project-entry__action" data-i18n="projects.action_code">CODE <span aria-hidden="true">↗</span></span>
               <span class="project-entry__year">2026</span>
             </div>
           </a>
@@ -340,8 +348,8 @@
       <!-- ===================== EXPERIENCE SECTION ===================== -->
       <section class="section reveal" id="experience">
         <div class="section-head">
-          <h2 class="section-title scramble-text">PROFESSIONAL EXPERIENCE</h2>
-          <span class="section-index">[02 ROLES RECORDED · APPLIED ENGINEERING]</span>
+          <h2 class="section-title scramble-text" data-i18n="exp.title">PROFESSIONAL EXPERIENCE</h2>
+          <span class="section-index" data-i18n="exp.index">[02 ROLES RECORDED · APPLIED ENGINEERING]</span>
         </div>
 
         <div class="experience-catalog">
@@ -351,9 +359,9 @@
             <span class="experience-entry__num">[01]</span>
             <div class="experience-entry__body">
               <div class="experience-entry__top">
-                <h3 class="experience-entry__role">AI Research Intern</h3>
+                <h3 class="experience-entry__role" data-i18n="exp.e1_role">AI Research Intern</h3>
                 <span class="experience-entry__company">The Palace Company</span>
-                <span class="badge-tag">ACTIVE ROLE</span>
+                <span class="badge-tag" data-i18n="exp.badge_active">ACTIVE ROLE</span>
               </div>
               <div class="experience-entry__tags">
                 <span class="tag-mono">AI Partner Research</span>
@@ -364,15 +372,15 @@
                 <span class="tag-mono">Docker</span>
               </div>
               <ul class="experience-entry__bullets">
-                <li>Leading technical research and comprehensive benchmark evaluations of diverse AI partners and vendors to drive multi-area enterprise AI integrations.</li>
-                <li>Liaising between cross-functional business stakeholders and technology providers, participating directly in technical negotiations and solution selection.</li>
-                <li>Researching and prototyping Retrieval-Augmented Generation (RAG) architectures with semantic embeddings, reranking, and token-cost optimization.</li>
-                <li>Designing automated AI workflows and internal APIs to accelerate intelligence across diverse operational departments.</li>
+                <li data-i18n="exp.e1_b1">Leading technical research and comprehensive benchmark evaluations of diverse AI partners and vendors to drive multi-area enterprise AI integrations.</li>
+                <li data-i18n="exp.e1_b2">Liaising between cross-functional business stakeholders and technology providers, participating directly in technical negotiations and solution selection.</li>
+                <li data-i18n="exp.e1_b3">Researching and prototyping Retrieval-Augmented Generation (RAG) architectures with semantic embeddings, reranking, and token-cost optimization.</li>
+                <li data-i18n="exp.e1_b4">Designing automated AI workflows and internal APIs to accelerate intelligence across diverse operational departments.</li>
               </ul>
             </div>
             <div class="experience-entry__meta">
-              <span class="experience-entry__period">Sep 2026 – Dec 2026</span>
-              <span class="experience-entry__loc">Mérida, México · On-site</span>
+              <span class="experience-entry__period" data-i18n="exp.e1_period">Sep 2026 – Dec 2026</span>
+              <span class="experience-entry__loc" data-i18n="exp.e1_loc">Mérida, México · On-site</span>
             </div>
           </article>
 
@@ -381,9 +389,9 @@
             <span class="experience-entry__num">[02]</span>
             <div class="experience-entry__body">
               <div class="experience-entry__top">
-                <h3 class="experience-entry__role">DevOps Engineering Fellow</h3>
+                <h3 class="experience-entry__role" data-i18n="exp.e2_role">DevOps Engineering Fellow</h3>
                 <span class="experience-entry__company">Holberton School Mérida</span>
-                <span class="badge-tag badge-tag--dark">FELLOWSHIP</span>
+                <span class="badge-tag badge-tag--dark" data-i18n="exp.badge_fellow">FELLOWSHIP</span>
               </div>
               <div class="experience-entry__tags">
                 <span class="tag-mono">C</span>
@@ -395,13 +403,13 @@
                 <span class="tag-mono">AWS</span>
               </div>
               <ul class="experience-entry__bullets">
-                <li>Mastered low-level systems programming fundamentals in C, POSIX system calls, memory management, and Unix system administration with Bash.</li>
-                <li>Engineered automated CI/CD pipelines, containerized microservices with Docker, and provisioned modular cloud infrastructure on AWS.</li>
-                <li>Awarded a 50% merit scholarship after securing 3rd place in the Holberton Programming Olympics 2025.</li>
+                <li data-i18n="exp.e2_b1">Mastered low-level systems programming fundamentals in C, POSIX system calls, memory management, and Unix system administration with Bash.</li>
+                <li data-i18n="exp.e2_b2">Engineered automated CI/CD pipelines, containerized microservices with Docker, and provisioned modular cloud infrastructure on AWS.</li>
+                <li data-i18n="exp.e2_b3">Awarded a 50% merit scholarship after securing 3rd place in the Holberton Programming Olympics 2025.</li>
               </ul>
             </div>
             <div class="experience-entry__meta">
-              <span class="experience-entry__period">Jan 2025 – Present</span>
+              <span class="experience-entry__period" data-i18n="exp.e2_period">Jan 2025 – Present</span>
               <span class="experience-entry__loc">Mérida, México</span>
             </div>
           </article>
@@ -412,13 +420,13 @@
       <!-- ===================== TECHNICAL SKILLS ===================== -->
       <section class="section reveal" id="skills">
         <div class="section-head">
-          <h2 class="section-title scramble-text">TECHNICAL SKILLS</h2>
-          <span class="section-index">[6 DOMAINS · 20 CORE TECHNOLOGIES]</span>
+          <h2 class="section-title scramble-text" data-i18n="skills.title">TECHNICAL SKILLS</h2>
+          <span class="section-index" data-i18n="skills.index">[6 DOMAINS · 20 CORE TECHNOLOGIES]</span>
         </div>
 
         <div class="skills-grid">
           <div class="skill-card">
-            <div class="skill-card__title">Languages</div>
+            <div class="skill-card__title" data-i18n="skills.c1">Languages</div>
             <div class="skill-card__tags">
               <span class="skill-pill">Python</span>
               <span class="skill-pill">SQL</span>
@@ -428,7 +436,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-card__title">ETL &amp; Pipeline</div>
+            <div class="skill-card__title" data-i18n="skills.c2">ETL &amp; Pipeline</div>
             <div class="skill-card__tags">
               <span class="skill-pill">Airflow</span>
               <span class="skill-pill">Docker</span>
@@ -439,7 +447,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-card__title">Cloud</div>
+            <div class="skill-card__title" data-i18n="skills.c3">Cloud</div>
             <div class="skill-card__tags">
               <span class="skill-pill">AWS</span>
               <span class="skill-pill">Linux</span>
@@ -447,7 +455,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-card__title">Data</div>
+            <div class="skill-card__title" data-i18n="skills.c4">Data</div>
             <div class="skill-card__tags">
               <span class="skill-pill">Snowflake</span>
               <span class="skill-pill">PostgreSQL</span>
@@ -456,7 +464,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-card__title">AI</div>
+            <div class="skill-card__title" data-i18n="skills.c5">AI</div>
             <div class="skill-card__tags">
               <span class="skill-pill">Anthropic SDK</span>
               <span class="skill-pill">OpenAI API</span>
@@ -466,7 +474,7 @@
           </div>
 
           <div class="skill-card">
-            <div class="skill-card__title">Dev Tools</div>
+            <div class="skill-card__title" data-i18n="skills.c6">Dev Tools</div>
             <div class="skill-card__tags">
               <span class="skill-pill">Git</span>
               <span class="skill-pill">GitHub Actions</span>
@@ -478,8 +486,8 @@
       <!-- ===================== CREDENTIALS & AWARDS ===================== -->
       <section class="section reveal" id="certs">
         <div class="section-head">
-          <h2 class="section-title scramble-text">CREDENTIALS &amp; RECOGNITION</h2>
-          <span class="section-index">[6 VERIFIED CERTS · 2 HONORS]</span>
+          <h2 class="section-title scramble-text" data-i18n="certs.title">CREDENTIALS &amp; RECOGNITION</h2>
+          <span class="section-index" data-i18n="certs.index">[6 VERIFIED CERTS · 2 HONORS]</span>
         </div>
 
         <div class="creds-container">
@@ -490,7 +498,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/aws-data-engineer.png" alt="AWS Academy Data Engineering badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">AWS Academy Data Engineer</div>
-                  <div class="cert-row__org">Amazon Web Services · Credly verified</div>
+                  <div class="cert-row__org" data-i18n="certs.aws_org1">Amazon Web Services · Credly verified</div>
                 </div>
                 <span class="cert-row__year">2025</span>
               </a>
@@ -500,7 +508,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">AWS Academy Cloud Foundations</div>
-                  <div class="cert-row__org">Amazon Web Services · Credly verified</div>
+                  <div class="cert-row__org" data-i18n="certs.aws_org2">Amazon Web Services · Credly verified</div>
                 </div>
                 <span class="cert-row__year">2025</span>
               </a>
@@ -510,7 +518,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">Associate Data Engineer</div>
-                  <div class="cert-row__org">DataCamp · Certified</div>
+                  <div class="cert-row__org" data-i18n="certs.dc_cert">DataCamp · Certified</div>
                 </div>
                 <span class="cert-row__year">2026</span>
               </a>
@@ -520,7 +528,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/dataanalyst.png" alt="DataCamp Data Analyst badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">Data Analyst in Power BI</div>
-                  <div class="cert-row__org">DataCamp · 50 hrs</div>
+                  <div class="cert-row__org" data-i18n="certs.dc_50h">DataCamp · 50 hrs</div>
                 </div>
                 <span class="cert-row__year">2026</span>
               </a>
@@ -530,7 +538,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/dbdesign.png" alt="DataCamp Database Design badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">Database Design</div>
-                  <div class="cert-row__org">DataCamp · Accomplishment</div>
+                  <div class="cert-row__org" data-i18n="certs.dc_acc1">DataCamp · Accomplishment</div>
                 </div>
                 <span class="cert-row__year">2026</span>
               </a>
@@ -540,7 +548,7 @@
                 <img class="cert-row__badge" loading="lazy" src="images/snowflakedatacamp.png" alt="DataCamp Snowflake SQL badge">
                 <div class="cert-row__body">
                   <div class="cert-row__name">Introduction to Snowflake SQL</div>
-                  <div class="cert-row__org">DataCamp · Accomplishment</div>
+                  <div class="cert-row__org" data-i18n="certs.dc_acc2">DataCamp · Accomplishment</div>
                 </div>
                 <span class="cert-row__year">2026</span>
               </a>
@@ -552,7 +560,7 @@
             <aside class="award-item">
               <div class="award-item__header">
                 <span class="award-rank" aria-label="3rd place">03</span>
-                <span class="award-year">Award · 2025</span>
+                <span class="award-year" data-i18n="certs.award_year1">Award · 2025</span>
               </div>
               <h3 class="award-title">UPY Datathon 2025</h3>
               <p class="award-org">Universidad Politécnica de Yucatán</p>
@@ -561,11 +569,11 @@
             <aside class="award-item">
               <div class="award-item__header">
                 <span class="award-rank" aria-label="3rd place">03</span>
-                <span class="award-year">Award · 2025</span>
+                <span class="award-year" data-i18n="certs.award_year2">Award · 2025</span>
               </div>
               <h3 class="award-title">Holberton Programming Olympics 2025</h3>
               <p class="award-org">Holberton School Mérida</p>
-              <span class="award-pill">50% SCHOLARSHIP AWARDED</span>
+              <span class="award-pill" data-i18n="certs.scholarship">50% SCHOLARSHIP AWARDED</span>
             </aside>
           </div>
         </div>
@@ -574,8 +582,8 @@
       <!-- ===================== EDUCATION ===================== -->
       <section class="section reveal" id="education">
         <div class="section-head">
-          <h2 class="section-title scramble-text">ACADEMIC BACKGROUND</h2>
-          <span class="section-index">[FORMAL DEGREES &amp; SPECIALIZATIONS]</span>
+          <h2 class="section-title scramble-text" data-i18n="edu.title">ACADEMIC BACKGROUND</h2>
+          <span class="section-index" data-i18n="edu.index">[FORMAL DEGREES &amp; SPECIALIZATIONS]</span>
         </div>
 
         <div class="edu-catalog">
@@ -583,18 +591,18 @@
             <img class="edu-entry__logo" loading="lazy" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
             <div class="edu-entry__body">
               <h3 class="edu-entry__inst">Universidad Politécnica de Yucatán</h3>
-              <p class="edu-entry__prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
+              <p class="edu-entry__prog" data-i18n="edu.e1_prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
             </div>
-            <span class="edu-entry__time">Expected 2027</span>
+            <span class="edu-entry__time" data-i18n="edu.e1_time">Expected 2027</span>
           </div>
 
           <div class="edu-entry">
             <img class="edu-entry__logo" loading="lazy" src="images/holberton.png" alt="Holberton School Mérida logo">
             <div class="edu-entry__body">
               <h3 class="edu-entry__inst">Holberton School Mérida</h3>
-              <p class="edu-entry__prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
+              <p class="edu-entry__prog" data-i18n="edu.e2_prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
             </div>
-            <span class="edu-entry__time">Expected Jul 2027</span>
+            <span class="edu-entry__time" data-i18n="edu.e2_time">Expected Jul 2027</span>
           </div>
         </div>
       </section>
@@ -605,10 +613,10 @@
     <footer class="footer-colophon" id="contact">
       <div class="footer-top">
         <div class="footer-statement">
-          <h2 class="footer-title">
+          <h2 class="footer-title" data-i18n="footer.title">
             <span class="scramble-text">LET'S BUILD RELIABLE</span> <span class="scramble-text">SYSTEMS.</span>
           </h2>
-          <p class="footer-sub">
+          <p class="footer-sub" data-i18n="footer.sub">
             Open to engineering collaborations, technical discussions, and new challenges. Reach out to discuss data pipelines, cloud infrastructure, or AI systems.
           </p>
         </div>
@@ -624,7 +632,7 @@
           <a class="footer-link" href="https://github.com/ElioUcan" target="_blank" rel="noopener">
             GitHub <span aria-hidden="true">↗</span>
           </a>
-          <a class="footer-link" href="assets/Elio_Resume.pdf" download>
+          <a class="footer-link" href="assets/Elio_Resume.pdf" download data-i18n="footer.resume">
             Download Resume [PDF] <span aria-hidden="true">↓</span>
           </a>
         </div>
@@ -632,8 +640,8 @@
 
       <div class="footer-specs">
         <span>LOC: <strong>Mérida, México</strong> (UTC-6)</span>
-        <span>SPEC: <strong>Zero-framework pure HTML5/CSS3</strong></span>
-        <span>EDITION: <strong>Swiss-Editorial Engineering</strong></span>
+        <span data-i18n="footer.spec_stack">SPEC: <strong>Zero-framework pure HTML5/CSS3</strong></span>
+        <span data-i18n="footer.spec_edition">EDITION: <strong>Swiss-Editorial Engineering</strong></span>
         <span>&copy; 2026 <strong>Elio Eduardo Ucán Zapata</strong></span>
       </div>
     </footer>
@@ -641,6 +649,276 @@
   </div>
 
   <script>
+    // --- Internationalization (i18n) System ---
+    const TRANSLATIONS = {
+      en: {
+        "nav.skip": "Skip to main content",
+        "nav.brand_tag": "// DATA &amp; AI",
+        "nav.work": "Work",
+        "nav.experience": "Experience",
+        "nav.now": "Now",
+        "nav.skills": "Skills",
+        "nav.certs": "Credentials",
+        "nav.education": "Education",
+        "nav.contact": "Contact",
+        "nav.resume": "RESUME",
+        "hero.meta_ref": "REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS",
+        "hero.title_accent": "BUILDING DATA PIPELINES &amp; AI",
+        "hero.lead": "Data Engineering &amp; AI student at <strong>UPY</strong> specializing in DevOps at <strong>Holberton School</strong>, currently conducting AI Research at <strong>The Palace Company</strong>. Focused on architecting reproducible ETL workflows, automated cloud infrastructure on AWS, and production-ready AI agent APIs.",
+        "hero.btn_cv": "DOWNLOAD CV [PDF] <span aria-hidden=\"true\">↓</span>",
+        "hero.btn_email": "EMAIL DIRECT",
+        "stats.s1_label": "Projects Shipped",
+        "stats.s1_sub": "Production &amp; Open Source",
+        "stats.s2_label": "Certifications",
+        "stats.s2_sub": "AWS &amp; DataCamp Verified",
+        "stats.s3_label": "Certified Engineer",
+        "stats.s3_sub": "Data &amp; Cloud Foundations",
+        "stats.s4_label": "English · iTEP 4.7",
+        "stats.s4_sub": "Professional Working Fluency",
+        "about.heading": "THESIS // ABOUT",
+        "about.p1": "I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.",
+        "about.p2": "My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.",
+        "now.title": "NOW // ACTIVE FOCUS",
+        "now.index": "[WHAT I'M RESEARCHING &amp; BUILDING · FALL 2026]",
+        "now.badge_research": "RESEARCH",
+        "now.c1_title": "RAG &amp; Reranking Optimization",
+        "now.c1_desc": "Investigating reranking algorithms and context-window token economics to maximize retrieval precision in agentic AI architectures.",
+        "now.badge_infra": "INFRA",
+        "now.c2_title": "Self-Hosted Server Automation",
+        "now.c2_desc": "Running continuous workflows on a headless Debian server with n8n and containerized AI tasks under strict 4&nbsp;GB RAM constraints.",
+        "now.badge_cloud": "CLOUD",
+        "now.c3_title": "Cloud Data Engineering on AWS",
+        "now.c3_desc": "Deepening hands-on data architectures on AWS (S3, Glue, Athena, Redshift) driven by reproducible Infrastructure as Code and automation.",
+        "now.badge_writing": "WRITING",
+        "now.c4_title": "Internship Technical Thesis",
+        "now.c4_desc": "Authoring a comprehensive 40-page research and systems report in LaTeX detailing production AI architectures and pipeline benchmarks.",
+        "projects.title": "FEATURED PROJECTS",
+        "projects.index": "[05 ENTRIES INDEXED · ALL REPRODUCIBLE]",
+        "projects.badge_prod": "PRODUCTION",
+        "projects.p1_desc": "Multi-page operational dashboard for a 100&nbsp;MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO&nbsp;27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.",
+        "projects.p1_metric": "99.982% SLA · Terraform IaC Automated",
+        "projects.action_code_demo": "CODE &amp; DEMO <span aria-hidden=\"true\">↗</span>",
+        "projects.badge_pipeline": "DATA PIPELINE",
+        "projects.p2_desc": "Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.",
+        "projects.p2_metric": "&lt;1% Failure Rate · Daily Automated Ingestion",
+        "projects.action_code": "CODE <span aria-hidden=\"true\">↗</span>",
+        "projects.badge_cloud": "CLOUD IAC",
+        "projects.p3_desc": "Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.",
+        "projects.p3_metric": "-90% Provisioning Time · Modular Remote State",
+        "projects.badge_ai": "AI SYSTEMS",
+        "projects.p4_desc": "Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.",
+        "projects.p4_metric": "Live Tool Use · Persistent PostgreSQL Memory",
+        "projects.badge_oss": "OPEN SOURCE",
+        "projects.p5_desc": "Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.",
+        "projects.p5_metric": "Global npm/npx Distribution · Claude Code Skill",
+        "exp.title": "PROFESSIONAL EXPERIENCE",
+        "exp.index": "[02 ROLES RECORDED · APPLIED ENGINEERING]",
+        "exp.e1_role": "AI Research Intern",
+        "exp.badge_active": "ACTIVE ROLE",
+        "exp.e1_loc": "Mérida, México · On-site",
+        "exp.e1_period": "Sep 2026 – Dec 2026",
+        "exp.e1_b1": "Leading technical research and comprehensive benchmark evaluations of diverse AI partners and vendors to drive multi-area enterprise AI integrations.",
+        "exp.e1_b2": "Liaising between cross-functional business stakeholders and technology providers, participating directly in technical negotiations and solution selection.",
+        "exp.e1_b3": "Researching and prototyping Retrieval-Augmented Generation (RAG) architectures with semantic embeddings, reranking, and token-cost optimization.",
+        "exp.e1_b4": "Designing automated AI workflows and internal APIs to accelerate intelligence across diverse operational departments.",
+        "exp.e2_role": "DevOps Engineering Fellow",
+        "exp.badge_fellow": "FELLOWSHIP",
+        "exp.e2_period": "Jan 2025 – Present",
+        "exp.e2_b1": "Mastered low-level systems programming fundamentals in C, POSIX system calls, memory management, and Unix system administration with Bash.",
+        "exp.e2_b2": "Engineered automated CI/CD pipelines, containerized microservices with Docker, and provisioned modular cloud infrastructure on AWS.",
+        "exp.e2_b3": "Awarded a 50% merit scholarship after securing 3rd place in the Holberton Programming Olympics 2025.",
+        "skills.title": "TECHNICAL SKILLS",
+        "skills.index": "[6 DOMAINS · 20 CORE TECHNOLOGIES]",
+        "skills.c1": "Languages",
+        "skills.c2": "ETL &amp; Pipeline",
+        "skills.c3": "Cloud",
+        "skills.c4": "Data",
+        "skills.c5": "AI",
+        "skills.c6": "Dev Tools",
+        "certs.title": "CREDENTIALS &amp; RECOGNITION",
+        "certs.index": "[6 VERIFIED CERTS · 2 HONORS]",
+        "certs.aws_org1": "Amazon Web Services · Credly verified",
+        "certs.aws_org2": "Amazon Web Services · Credly verified",
+        "certs.dc_cert": "DataCamp · Certified",
+        "certs.dc_50h": "DataCamp · 50 hrs",
+        "certs.dc_acc1": "DataCamp · Accomplishment",
+        "certs.dc_acc2": "DataCamp · Accomplishment",
+        "certs.award_year1": "Award · 2025",
+        "certs.award_year2": "Award · 2025",
+        "certs.scholarship": "50% SCHOLARSHIP AWARDED",
+        "edu.title": "ACADEMIC BACKGROUND",
+        "edu.index": "[FORMAL DEGREES &amp; SPECIALIZATIONS]",
+        "edu.e1_prog": "B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México",
+        "edu.e1_time": "Expected 2027",
+        "edu.e2_prog": "DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC",
+        "edu.e2_time": "Expected Jul 2027",
+        "footer.title": "<span class=\"scramble-text\">LET'S BUILD RELIABLE</span> <span class=\"scramble-text\">SYSTEMS.</span>",
+        "footer.sub": "Open to engineering collaborations, technical discussions, and new challenges. Reach out to discuss data pipelines, cloud infrastructure, or AI systems.",
+        "footer.resume": "Download Resume [PDF] <span aria-hidden=\"true\">↓</span>",
+        "footer.spec_stack": "SPEC: <strong>Zero-framework pure HTML5/CSS3</strong>",
+        "footer.spec_edition": "EDITION: <strong>Swiss-Editorial Engineering</strong>"
+      },
+      es: {
+        "nav.skip": "Saltar al contenido principal",
+        "nav.brand_tag": "// DATOS E IA",
+        "nav.work": "Proyectos",
+        "nav.experience": "Experiencia",
+        "nav.now": "Enfoque",
+        "nav.skills": "Habilidades",
+        "nav.certs": "Credenciales",
+        "nav.education": "Educación",
+        "nav.contact": "Contacto",
+        "nav.resume": "CV",
+        "hero.meta_ref": "REF: INGENIERÍA DE DATOS · DEVOPS · SISTEMAS IA",
+        "hero.title_accent": "CONSTRUYENDO PIPELINES DE DATOS E IA",
+        "hero.lead": "Estudiante de Ingeniería de Datos e IA en <strong>UPY</strong> con especialización en DevOps en <strong>Holberton School</strong>, actualmente realizando AI Research en <strong>The Palace Company</strong>. Enfocado en diseñar pipelines ETL reproducibles, infraestructura cloud automatizada en AWS y APIs de agentes de IA listas para producción.",
+        "hero.btn_cv": "DESCARGAR CV [PDF] <span aria-hidden=\"true\">↓</span>",
+        "hero.btn_email": "EMAIL DIRECTO",
+        "stats.s1_label": "Proyectos Desplegados",
+        "stats.s1_sub": "Producción y Código Abierto",
+        "stats.s2_label": "Certificaciones",
+        "stats.s2_sub": "Verificadas por AWS y DataCamp",
+        "stats.s3_label": "Ingeniero Certificado",
+        "stats.s3_sub": "Datos y Fundamentos Cloud",
+        "stats.s4_label": "Inglés · iTEP 4.7",
+        "stats.s4_sub": "Fluidez Profesional y Técnica",
+        "about.heading": "TESIS // ACERCA DE",
+        "about.p1": "Construyo la capa fundamental de infraestructura de datos: pipelines de ingesta, entornos cloud y las APIs que los conectan en sistemas confiables. Radicado en Mérida, México, estudiando ingeniería de datos a tiempo completo mientras diseño e implemento arquitecturas de nivel de producción.",
+        "about.p2": "Mi enfoque son los pipelines deterministas, la estricta validación de esquemas y despliegues eficientes en costos en la nube con Infraestructura como Código. Cada proyecto refleja rigor de ingeniería, cero sobrecarga innecesaria y total reproducibilidad.",
+        "now.title": "AHORA // ENFOQUE ACTIVO",
+        "now.index": "[INVESTIGACIÓN Y DESARROLLO ACTIVO · OTOÑO 2026]",
+        "now.badge_research": "INVESTIGACIÓN",
+        "now.c1_title": "Optimización de RAG y Reranking",
+        "now.c1_desc": "Investigando algoritmos de reranking y optimización de tokens en ventanas de contexto para maximizar la precisión de recuperación en arquitecturas de agentes de IA.",
+        "now.badge_infra": "INFRA",
+        "now.c2_title": "Automatización en Servidor Doméstico",
+        "now.c2_desc": "Ejecutando flujos continuos en un servidor Debian headless con n8n y tareas de IA contenerizadas bajo restricciones estrictas de 4&nbsp;GB de RAM.",
+        "now.badge_cloud": "CLOUD",
+        "now.c3_title": "Ingeniería de Datos Cloud en AWS",
+        "now.c3_desc": "Profundizando en arquitecturas prácticas de datos en AWS (S3, Glue, Athena, Redshift) impulsadas por Infraestructura como Código reproducible y automatización.",
+        "now.badge_writing": "REDACCIÓN",
+        "now.c4_title": "Reporte Técnico de Estadías",
+        "now.c4_desc": "Redactando un reporte técnico exhaustivo de 40 páginas en LaTeX sobre arquitecturas de IA en producción y benchmarks de pipelines.",
+        "projects.title": "PROYECTOS DESTACADOS",
+        "projects.index": "[05 ENTRADAS INDEXADAS · TODAS REPRODUCIBLES]",
+        "projects.badge_prod": "PRODUCCIÓN",
+        "projects.p1_desc": "Dashboard operativo multipágina para un centro de datos de 100&nbsp;MW: SLA de disponibilidad (99.982%), tendencias de PUE y cumplimiento TIA-942 / ISO&nbsp;27001 en 5 vistas. Desplegado en AWS con Terraform IaC y GitHub Actions CI/CD.",
+        "projects.p1_metric": "99.982% SLA · Terraform IaC Automatizado",
+        "projects.action_code_demo": "CÓDIGO Y DEMO <span aria-hidden=\"true\">↗</span>",
+        "projects.badge_pipeline": "PIPELINE DE DATOS",
+        "projects.p2_desc": "Pipeline de ingesta diaria de nivel producción consumiendo la REST API de CoinGecko con menos del 1% de tasa de fallos mediante lógica de reintentos en Airflow. Despliegue sin configuración con Docker Compose.",
+        "projects.p2_metric": "&lt;1% Tasa de Fallos · Ingesta Diaria Automatizada",
+        "projects.action_code": "CÓDIGO <span aria-hidden=\"true\">↗</span>",
+        "projects.badge_cloud": "CLOUD IAC",
+        "projects.p3_desc": "Entornos AWS reproducibles (EC2 + S3) usando Terraform modular con estado remoto. Reducción del tiempo de aprovisionamiento en ~90% — de horas a menos de 10 minutos.",
+        "projects.p3_metric": "-90% Tiempo de Aprovisionamiento · Estado Remoto Modular",
+        "projects.badge_ai": "SISTEMAS IA",
+        "projects.p4_desc": "Agente conversacional con uso de herramientas en vivo (lector CSV + consultas PostgreSQL) y memoria persistente, servido como API REST de producción. Desplegado en AWS EC2 con Docker Compose.",
+        "projects.p4_metric": "Uso de Herramientas en Vivo · Memoria Persistente en PostgreSQL",
+        "projects.badge_oss": "CÓDIGO ABIERTO",
+        "projects.p5_desc": "Skill de Claude Code open-source publicado que autogenera READMEs y completa metadatos de repositorios GitHub. Distribuido vía npm/npx — utilizable por cualquier usuario de Claude Code globalmente.",
+        "projects.p5_metric": "Distribución Global en npm/npx · Skill de Claude Code",
+        "exp.title": "EXPERIENCIA PROFESIONAL",
+        "exp.index": "[02 ROLES REGISTRADOS · INGENIERÍA APLICADA]",
+        "exp.e1_role": "Pasante de Investigación en IA",
+        "exp.badge_active": "ROL ACTIVO",
+        "exp.e1_loc": "Mérida, México · Presencial",
+        "exp.e1_period": "Sep 2026 – Dic 2026",
+        "exp.e1_b1": "Liderando investigación técnica y evaluaciones de benchmark de proveedores y partners de IA para impulsar integraciones empresariales multiárea.",
+        "exp.e1_b2": "Enlace entre áreas de negocio interdisciplinarias y proveedores tecnológicos, participando directamente en negociaciones técnicas y selección de soluciones.",
+        "exp.e1_b3": "Investigando y prototipando arquitecturas RAG con embeddings semánticos, reranking y optimización de costos de tokens.",
+        "exp.e1_b4": "Diseñando flujos de trabajo automatizados con IA y APIs internas para acelerar capacidades analíticas en diversas áreas operativas.",
+        "exp.e2_role": "Becario de Ingeniería DevOps",
+        "exp.badge_fellow": "FELLOWSHIP",
+        "exp.e2_period": "Ene 2025 – Presente",
+        "exp.e2_b1": "Dominio de fundamentos de programación de bajo nivel en C, llamadas al sistema POSIX, gestión de memoria y administración de sistemas Unix con Bash.",
+        "exp.e2_b2": "Desarrollo de pipelines CI/CD automatizados, contenedorización de microservicios con Docker y aprovisionamiento de infraestructura cloud modular en AWS.",
+        "exp.e2_b3": "Beca al mérito del 50% otorgada tras obtener el 3.er lugar en las Olimpiadas de Programación Holberton 2025.",
+        "skills.title": "HABILIDADES TÉCNICAS",
+        "skills.index": "[6 DOMINIOS · 20 TECNOLOGÍAS CLAVE]",
+        "skills.c1": "Lenguajes",
+        "skills.c2": "ETL y Pipelines",
+        "skills.c3": "Cloud",
+        "skills.c4": "Datos",
+        "skills.c5": "Inteligencia Artificial",
+        "skills.c6": "Herramientas Dev",
+        "certs.title": "CREDENCIALES Y RECONOCIMIENTOS",
+        "certs.index": "[6 CERTIFICACIONES VERIFICADAS · 2 DISTINCIONES]",
+        "certs.aws_org1": "Amazon Web Services · Verificado en Credly",
+        "certs.aws_org2": "Amazon Web Services · Verificado en Credly",
+        "certs.dc_cert": "DataCamp · Certificado",
+        "certs.dc_50h": "DataCamp · 50 hrs",
+        "certs.dc_acc1": "DataCamp · Acreditación",
+        "certs.dc_acc2": "DataCamp · Acreditación",
+        "certs.award_year1": "Distinción · 2025",
+        "certs.award_year2": "Distinción · 2025",
+        "certs.scholarship": "BECA DEL 50% OTORGADA",
+        "edu.title": "FORMACIÓN ACADÉMICA",
+        "edu.index": "[TÍTULOS FORMALES Y ESPECIALIZACIONES]",
+        "edu.e1_prog": "Ing. en Datos e Inteligencia Artificial · Universidad politécnica · Mérida, México",
+        "edu.e1_time": "Graduación prevista 2027",
+        "edu.e2_prog": "Certificación en Ingeniería DevOps · Formación basada en proyectos · CI/CD · Cloud · IaC",
+        "edu.e2_time": "Previsto Jul 2027",
+        "footer.title": "<span class=\"scramble-text\">CONSTRUYAMOS SISTEMAS</span> <span class=\"scramble-text\">CONFIABLES.</span>",
+        "footer.sub": "Abierto a colaboraciones técnicas, debates de ingeniería y nuevos desafíos. Escríbeme para conversar sobre pipelines de datos, infraestructura cloud o sistemas de IA.",
+        "footer.resume": "Descargar CV [PDF] <span aria-hidden=\"true\">↓</span>",
+        "footer.spec_stack": "ESPEC: <strong>HTML5/CSS3 puro sin frameworks</strong>",
+        "footer.spec_edition": "EDICIÓN: <strong>Ingeniería Swiss-Editorial</strong>"
+      }
+    };
+
+    function setLanguage(lang, triggerScramble = false) {
+      if (!TRANSLATIONS[lang]) return;
+      document.documentElement.lang = lang;
+
+      // Update meta information
+      if (lang === 'es') {
+        document.title = 'Elio Ucán — Ingeniería de Datos e IA';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'Elio Eduardo Ucán Zapata — Estudiante de Ingeniería de Datos e IA en UPY con especialización en DevOps en Holberton. Certificado por AWS. Construyendo pipelines ETL, infraestructura cloud y APIs con IA.');
+      } else {
+        document.title = 'Elio Ucán — Data Engineering & AI';
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', 'Elio Eduardo Ucán Zapata — Data Engineering & AI student at UPY with DevOps specialization at Holberton. AWS Certified. Building ETL pipelines, cloud infrastructure, and AI-powered APIs.');
+      }
+
+      // Update toggle buttons active state
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+
+      // Replace data-i18n strings
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (TRANSLATIONS[lang][key] !== undefined) {
+          el.innerHTML = TRANSLATIONS[lang][key];
+          el.dataset.originalText = el.textContent.trim();
+        }
+      });
+
+      // Synchronize matrix scramble original text cache
+      if (typeof elementsToScramble !== 'undefined') {
+        elementsToScramble.forEach((el) => {
+          el.dataset.originalText = el.textContent.trim();
+        });
+      }
+
+      // Optional subtle matrix scramble effect on language switch
+      if (triggerScramble) {
+        const heroAccent = document.querySelector('.hero__title-accent');
+        if (heroAccent) scrambleElement(heroAccent, true);
+        document.querySelectorAll('.section-title').forEach((titleEl) => {
+          scrambleElement(titleEl, true);
+        });
+      }
+
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+    }
+
     // --- Interactive Copy Email Buttons ---
     function setupCopyEmail() {
       document.querySelectorAll('.btn-copy-email').forEach((btn) => {
@@ -649,18 +927,26 @@
           const email = btn.getAttribute('data-email') || 'elioeduardo06@gmail.com';
           const label = btn.querySelector('.btn-copy-label');
           const icon = btn.querySelector('.btn-copy-icon');
+          const currentLang = document.documentElement.lang || 'en';
+          const copiedText = currentLang === 'es' ? 'COPIADO AL PORTAPAPELES' : 'COPIED TO CLIPBOARD';
           const originalText = label ? label.textContent : '';
           const originalIcon = icon ? icon.textContent : '';
 
           try {
             await navigator.clipboard.writeText(email);
             btn.classList.add('is-copied');
-            if (label) label.textContent = 'COPIED TO CLIPBOARD';
+            if (label) label.textContent = copiedText;
             if (icon) icon.textContent = '✓';
 
             setTimeout(() => {
               btn.classList.remove('is-copied');
-              if (label) label.textContent = originalText;
+              if (label) {
+                if (btn.classList.contains('btn-copy-footer')) {
+                  label.textContent = email;
+                } else {
+                  label.textContent = (document.documentElement.lang === 'es') ? 'EMAIL DIRECTO' : 'EMAIL DIRECT';
+                }
+              }
               if (icon) icon.textContent = originalIcon;
             }, 2200);
           } catch (err) {
@@ -795,6 +1081,31 @@
       elementsToScramble.forEach((el) => scrambleObserver.observe(el));
     } else {
       elementsToScramble.forEach((el) => scrambleElement(el, false));
+    }
+
+    // --- Setup Language Toggle Event Listeners & Initialize ---
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetLang = btn.dataset.lang;
+        if (targetLang && targetLang !== document.documentElement.lang) {
+          setLanguage(targetLang, true);
+        }
+      });
+    });
+
+    // Language initialization: check localStorage, otherwise navigator language
+    let initialLang = 'en';
+    try {
+      const savedLang = localStorage.getItem('portfolio_lang');
+      if (savedLang === 'es' || savedLang === 'en') {
+        initialLang = savedLang;
+      } else if (navigator.language && navigator.language.startsWith('es')) {
+        initialLang = 'es';
+      }
+    } catch (e) {}
+
+    if (initialLang === 'es') {
+      setLanguage('es', false);
     }
 
     // --- Section reveals on scroll ---
