@@ -357,12 +357,33 @@ img {
 }
 
 /* Matrix text scramble decoding effect */
-.matrix-char {
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-weight: 600;
+.scramble-slot {
+  display: inline-block;
+  position: relative;
+  vertical-align: baseline;
+  line-height: inherit;
+}
+
+.scramble-ghost {
+  visibility: hidden;
   display: inline;
-  opacity: 0.95;
+  pointer-events: none;
+  user-select: none;
+}
+
+.matrix-char {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.96em;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
   transition: none;
 }
 
