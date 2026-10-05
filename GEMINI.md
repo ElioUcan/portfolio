@@ -109,7 +109,7 @@ El sistema se basa en el rigor editorial suizo: grillas estrictas con bordes vis
      * *04. AI Agent*: Anthropic API, FastAPI, Docker, memoria persistente PostgreSQL.
      * *05. better-readmes*: Claude Code skill / CLI open-source publicado en npm/npx.
 7. **Trayectoria Profesional (Professional Experience):**
-   - *01. The Palace Company* — AI Research Intern (RAG, Embeddings, optimización de tokens y prototipado de APIs de IA).
+   - *01. The Palace Company* — AI Research Intern (Evaluación e investigación de partners para integraciones de IA, negociaciones técnicas, RAG, embeddings y optimización de tokens).
    - *02. Holberton School Mérida* — DevOps Engineering Fellow (Programación en C de bajo nivel, Bash, Docker, CI/CD, AWS y beca del 50%).
 8. **Habilidades Técnicas (Technical Skills Grid):**
    - Grilla de 6 dominios: Languages, ETL & Pipeline, Cloud, Data, AI, Dev Tools.
