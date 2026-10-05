@@ -319,12 +319,72 @@ img {
   border-color: var(--border-strong);
 }
 
+/* =========================================================
+   LANGUAGE SWITCHER (SWISS-EDITORIAL TOGGLE)
+   ========================================================= */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  padding: 2px 3px;
+  gap: 2px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  transition: all var(--transition);
+}
+
+.lang-btn:hover:not(.is-active) {
+  color: var(--text);
+  background: rgba(17, 18, 21, 0.05);
+}
+
+.lang-btn.is-active {
+  background: var(--border-strong);
+  color: #FFFFFF;
+  font-weight: 600;
+  cursor: default;
+}
+
+.lang-divider {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--border);
+  user-select: none;
+  padding: 0 1px;
+}
+
 @media (max-width: 900px) {
   .nav__center {
     display: none;
   }
   .nav__brand-tag {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__actions {
+    gap: 0.5rem;
+  }
+  .lang-btn {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+  }
+  .btn-nav-resume {
+    padding: 5px 9px;
+    font-size: 0.68rem;
   }
 }
 
