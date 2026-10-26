@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Mayan Revival / Mesoamerican Art Déco — Elio Ucán</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Martian+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --bg-deep: #0D0E11;
+      --bg-surface: #15171C;
+      --border-gold: #C5A059;
+      --border-stone: #2A2E38;
+      --text-primary: #F0ECE1;
+      --text-muted: #A39E93;
+      --accent-jade: #1E6B52;
+      --accent-jade-bright: #34D399;
+      --max-width: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Martian Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 100%;
+      overflow-x: hidden;
+      opacity: 1;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--border-gold); outline-offset: 3px; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+    .font-cinzel { font-family: 'Cinzel', serif; }
+    h1, h2, h3, h4 { font-family: 'Cinzel', serif; color: var(--text-primary); letter-spacing: 0.04em; }
+
+    /* Architectural Talud-Tablero Dividers */
+    .divider-talud {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3.5rem 0 2rem;
+      color: var(--border-gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+    }
+    .divider-talud::before, .divider-talud::after {
+      content: "";
+      flex: 1;
+      height: 3px;
+      border-top: 1px solid var(--border-stone);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    /* Mayan Bracket Cards */
+    .bracket-card {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-stone);
+      padding: 1.5rem;
+      transition: border-color 0.25s ease, transform 0.2s ease;
+    }
+    .bracket-card::before {
+      content: "";
+      position: absolute;
+      top: -2px; left: -2px;
+      width: 10px; height: 10px;
+      border-top: 2px solid var(--border-gold);
+      border-left: 2px solid var(--border-gold);
+    }
+    .bracket-card::after {
+      content: "";
+      position: absolute;
+      bottom: -2px; right: -2px;
+      width: 10px; height: 10px;
+      border-bottom: 2px solid var(--border-gold);
+      border-right: 2px solid var(--border-gold);
+    }
+    .bracket-card:hover { border-color: var(--border-gold); transform: translateY(-2px); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-gold);
+      background: transparent;
+      color: var(--border-gold);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn:hover { background: rgba(197, 160, 89, 0.15); box-shadow: 0 0 16px rgba(197, 160, 89, 0.25); }
+    .btn-solid { background: var(--border-gold); color: var(--bg-deep); }
+    .btn-solid:hover { background: #dfb76c; color: var(--bg-deep); box-shadow: 0 0 16px rgba(223, 183, 108, 0.4); }
+    .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.7rem; }
+
+    /* Pills & Badges */
+    .pill {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(30, 107, 82, 0.3);
+      border: 1px solid var(--border-stone);
+      color: var(--accent-jade-bright);
+    }
+    .pill-gold { background: rgba(197, 160, 89, 0.12); border-color: var(--border-gold); color: var(--border-gold); }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 14, 17, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-stone);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand-title { font-family: 'Cinzel', serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.1em; color: var(--border-gold); }
+    .brand-sub { color: var(--text-muted); font-size: 0.7rem; font-family: 'Martian Mono', monospace; }
+    .site-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-link { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-link:hover { color: var(--border-gold); }
+
+    /* Hero */
+    .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--border-stone); }
+    .hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.18em; color: var(--border-gold); margin-bottom: 1.25rem; text-transform: uppercase; }
+    .hero-h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
+    .hero-subtitle { font-size: clamp(0.85rem, 1.8vw, 1.1rem); color: var(--border-gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+    .hero-text { max-width: 680px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.25rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    /* Stats Ledger */
+    .stats-ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border-stone); border: 1px solid var(--border-stone); margin: 3rem 0; }
+    .stat-item { background: var(--bg-surface); padding: 1.5rem; text-align: center; }
+    .stat-val { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 800; color: var(--border-gold); margin-bottom: 0.25rem; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
+
+    /* Grid Layouts & Components */
+    .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .grid-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .project-num { color: var(--border-gold); font-size: 0.8rem; font-weight: 600; }
+    .project-title { font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .project-desc { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 1.25rem; }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-stone); padding-top: 1rem; margin-top: 1rem; }
+
+    /* Experience */
+    .exp-item { display: flex; flex-direction: column; gap: 0.75rem; }
+    .exp-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--border-gold); border-bottom: 1px solid var(--border-stone); padding-bottom: 0.5rem; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .exp-bullets li { position: relative; padding-left: 1.2rem; color: var(--text-muted); font-size: 0.82rem; }
+    .exp-bullets li::before { content: "❖"; position: absolute; left: 0; color: var(--border-gold); font-size: 0.65rem; }
+
+    /* Skills & Specs */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .skill-cat-title { font-size: 0.85rem; color: var(--border-gold); margin-bottom: 1rem; letter-spacing: 0.1em; border-bottom: 1px solid var(--border-stone); padding-bottom: 0.4rem; }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .spec-table td { padding: 0.45rem 0; border-bottom: 1px solid var(--border-stone); }
+    .spec-table td:first-child { color: var(--border-gold); font-weight: 600; width: 45%; }
+    .spec-table td:last-child { color: var(--text-muted); }
+
+    /* Footer */
+    .site-footer { border-top: 2px solid var(--border-gold); background: var(--bg-surface); padding: 3.5rem 0 2.5rem; margin-top: 5rem; }
+    .footer-cta { text-align: center; margin-bottom: 2.5rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
+    .colophon { text-align: center; font-size: 0.7rem; color: var(--text-muted); border-top: 1px solid var(--border-stone); padding-top: 1.5rem; }
+
+    @media (max-width: 768px) {
+      .site-nav { display: none; }
+      .hero { padding: 3rem 0 2rem; }
+      .project-footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 01. HEADER / NAVIGATION -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a href="#hero" class="brand-title">ELIO UCÁN</a>
+        <span class="brand-sub"> // DATA &amp; AI</span>
+      </div>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#focus" class="nav-link">Focus</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="btn btn-sm btn-solid">DOWNLOAD CV [PDF]</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 02. HERO SECTION -->
+    <section id="hero" class="hero">
+      <div class="hero-kicker">[ ❖ ] REF: DATA ENGINEERING · DEVOPS · MESOAMERICAN ARCHITECTURE</div>
+      <h1 class="hero-h1">ELIO EDUARDO UCÁN ZAPATA</h1>
+      <div class="hero-subtitle">BUILDING SCALABLE DATA PLATFORMS &amp; CLOUD INFRASTRUCTURE</div>
+      <div class="hero-badges">
+        <span class="pill pill-gold">STATUS // AVAILABLE FOR HIRE</span>
+        <span class="pill">LOCATION // MÉRIDA, YUCATÁN</span>
+        <span class="pill">STACK // PYTHON · TERRAFORM · AWS</span>
+      </div>
+      <p class="hero-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-solid">EXPLORE WORK [01-02]</a>
+        <a href="#about" class="btn">READ THESIS</a>
+        <a href="#contact" class="btn">GET IN TOUCH</a>
+      </div>
+    </section>
+
+    <!-- 03. STATS LEDGER -->
+    <section class="stats-ledger" aria-label="Métricas de ingeniería">
+      <div class="stat-item">
+        <div class="stat-val">05+</div>
+        <div class="stat-label">Shipped Pipelines</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">99.98%</div>
+        <div class="stat-label">High Availability SLA</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">C1</div>
+        <div class="stat-label">iTEP English Score 4.7</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">AWS</div>
+        <div class="stat-label">Certified Data Engineer</div>
+      </div>
+    </section>
+
+    <!-- 04. ABOUT / THESIS -->
+    <div class="divider-talud">[ ❖ ] SECTION 01 // ARCHITECTURAL THESIS</div>
+    <section id="about" class="grid-2col">
+      <article class="bracket-card">
+        <h2 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--border-gold);">ENGINEERING PHILOSOPHY</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">
+          Fusce lacinia, tellus non mollis pharetra, diam lacus accumsan turpis, eu condimentum lectus elit ac lorem. Vivamus tincidunt ex a metus sodales, eu facilisis turpis convallis.
+        </p>
+      </article>
+      <aside class="bracket-card">
+        <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--border-gold);">SYSTEM LEDGER</h3>
+        <table class="spec-table">
+          <tr><td>CORE ENGINE</td><td>Python 3.12 (uv package manager)</td></tr>
+          <tr><td>CLOUD RUNTIME</td><td>AWS (EC2, S3, RDS, IAM Declarative)</td></tr>
+          <tr><td>ORCHESTRATION</td><td>Apache Airflow &amp; Docker Compose</td></tr>
+          <tr><td>PRIMARY DB</td><td>PostgreSQL (Strict Idempotency)</td></tr>
+          <tr><td>HARDWARE DISCIPLINE</td><td>Debian Headless 4GB RAM Budget</td></tr>
+        </table>
+      </aside>
+    </section>
+
+    <!-- 05. NOW / ACTIVE FOCUS -->
+    <div class="divider-talud" id="focus">[ ❖ ] SECTION 02 // NOW · ACTIVE RESEARCH</div>
+    <section class="grid-2col">
+      <div class="bracket-card">
+        <span class="project-num">[01] FOCUS</span>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">RAG &amp; Dense Retrieval Reranking</h3>
+        <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 1rem;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cross-encoder rerankers and contextual token optimization reducing LLM input context by 65%.
+        </p>
+        <span class="pill">TOP-25 VECTOR TO TOP-5 RERANK</span>
+      </div>
+      <div class="bracket-card">
+        <span class="project-num">[02] FOCUS</span>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Ultra-Low RAM Debian Server</h3>
+        <p style="color: var(--text-muted); font-size: 0.82rem; margin-bottom: 1rem;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Streaming iterators and generator-based ETL chunking inside strict 4GB RAM environment.
+        </p>
+        <span class="pill">DOCKER MEM_LIMIT 512M GUARD</span>
+      </div>
+    </section>
+
+    <!-- 06. FEATURED PROJECTS -->
+    <div class="divider-talud" id="work">[ ❖ ] SECTION 03 // INDEXED WORK CATALOG</div>
+    <section class="grid-projects">
+      <article class="bracket-card">
+        <div class="project-header">
+          <span class="project-num">[01] PRODUCTION SYSTEM</span>
+          <span class="pill pill-gold">ACTIVE SLA 99.98%</span>
+        </div>
+        <h3 class="project-title">DC Real-Time Metrics &amp; ETL Pipeline</h3>
+        <div class="project-tags">
+          <span class="pill">TERRAFORM</span>
+          <span class="pill">POSTGRESQL</span>
+          <span class="pill">DOCKER</span>
+          <span class="pill">PYTHON</span>
+        </div>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Idempotent incremental batch ingestion pipeline processing external financial feeds with automated schema validation.
+        </p>
+        <div class="project-footer">
+          <span class="pill pill-gold">10M+ ROWS/DAY</span>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="#contact" class="btn btn-sm">SOURCE CODE</a>
+            <a href="#contact" class="btn btn-sm btn-solid">LIVE DEMO</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bracket-card">
+        <div class="project-header">
+          <span class="project-num">[02] CLOUD INFRASTRUCTURE</span>
+          <span class="pill pill-gold">PRODUCTION READY</span>
+        </div>
+        <h3 class="project-title">Distributed Airflow Gateway &amp; IaC</h3>
+        <div class="project-tags">
+          <span class="pill">AIRFLOW</span>
+          <span class="pill">AWS S3</span>
+          <span class="pill">FASTAPI</span>
+          <span class="pill">TERRAFORM</span>
+        </div>
+        <p class="project-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Declarative infrastructure deployment with zero-drift state lock, automated alerting, and multi-node worker pools.
+        </p>
+        <div class="project-footer">
+          <span class="pill pill-gold">P99 LATENCY &lt; 42MS</span>
+          <div style="display: flex; gap: 0.5rem;">
+            <a href="#contact" class="btn btn-sm">SOURCE CODE</a>
+            <a href="#contact" class="btn btn-sm btn-solid">LIVE DEMO</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 07. PROFESSIONAL EXPERIENCE -->
+    <div class="divider-talud">[ ❖ ] SECTION 04 // PROFESSIONAL LEDGER</div>
+    <section class="bracket-card exp-item">
+      <div class="exp-meta">
+        <span style="font-weight: 700; color: var(--text-primary);">THE PALACE COMPANY // AI RESEARCH FELLOW</span>
+        <span>2024 — PRESENT · CANCÚN / MÉRIDA</span>
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.85rem;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Architecting and validating enterprise artificial intelligence solutions across distributed hospitality workflows.
+      </p>
+      <ul class="exp-bullets">
+        <li>Lorem ipsum dolor sit amet, evaluando modelos RAG y reduciendo costos de inferencia en un 38% mediante token economics.</li>
+        <li>Consectetur adipiscing elit, implementando validaciones de consistencia de esquemas sobre PostgreSQL transaccional.</li>
+      </ul>
+    </section>
+
+    <!-- 08. TECHNICAL SKILLS -->
+    <div class="divider-talud" id="skills">[ ❖ ] SECTION 05 // TECHNICAL TAXONOMY</div>
+    <section class="skills-grid">
+      <div class="bracket-card">
+        <h3 class="skill-cat-title">01. CLOUD &amp; DEVOPS</h3>
+        <div class="skill-pills">
+          <span class="pill">AWS S3 / EC2</span>
+          <span class="pill">TERRAFORM IAC</span>
+          <span class="pill">DOCKER COMPOSE</span>
+          <span class="pill">GITHUB ACTIONS CI/CD</span>
+        </div>
+      </div>
+      <div class="bracket-card">
+        <h3 class="skill-cat-title">02. DATA &amp; PIPELINES</h3>
+        <div class="skill-pills">
+          <span class="pill">POSTGRESQL STRICT</span>
+          <span class="pill">APACHE AIRFLOW</span>
+          <span class="pill">PYTHON (UV RUNTIME)</span>
+          <span class="pill">ETL GENERATORS</span>
+        </div>
+      </div>
+      <div class="bracket-card">
+        <h3 class="skill-cat-title">03. AI &amp; RUNTIME</h3>
+        <div class="skill-pills">
+          <span class="pill">RAG &amp; VECTOR RETRIEVAL</span>
+          <span class="pill">RERANKING MODELS</span>
+          <span class="pill">FASTAPI REST</span>
+          <span class="pill">TOKEN OPTIMIZATION</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. CREDENTIALS AND AWARDS -->
+    <div class="divider-talud">[ ❖ ] SECTION 06 // CREDENTIALS &amp; DISTINCTIONS</div>
+    <section class="grid-2col">
+      <div class="bracket-card">
+        <h3 style="font-size: 1.1rem; color: var(--border-gold); margin-bottom: 1rem;">VERIFIED CERTIFICATIONS</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div style="border-left: 2px solid var(--border-gold); padding-left: 0.8rem;">
+            <div style="font-weight: 600; font-size: 0.85rem;">AWS Academy Graduate — Data Engineering</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">Amazon Web Services · Issued 2024 · Verified Credly</div>
+          </div>
+          <div style="border-left: 2px solid var(--border-gold); padding-left: 0.8rem;">
+            <div style="font-weight: 600; font-size: 0.85rem;">DataCamp Certified Associate Data Engineer</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">SQL, Python &amp; Data Pipeline Architecture · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="bracket-card">
+        <h3 style="font-size: 1.1rem; color: var(--border-gold); margin-bottom: 1rem;">HONORS &amp; AWARDS</h3>
+        <div style="border-left: 2px solid var(--accent-jade-bright); padding-left: 0.8rem;">
+          <div style="font-weight: 600; font-size: 0.85rem; color: var(--accent-jade-bright);">1st Place — Datathon UPY 2025</div>
+          <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.4rem;">Universidad Politécnica de Yucatán</div>
+          <p style="font-size: 0.78rem; color: var(--text-muted);">
+            Lorem ipsum dolor sit amet: primer lugar en modelado predictivo y construcción de pipeline de datos en tiempo real.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ACADEMIC BACKGROUND -->
+    <div class="divider-talud">[ ❖ ] SECTION 07 // ACADEMIC RECORD</div>
+    <section class="bracket-card">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h3 style="font-size: 1.1rem; color: var(--border-gold);">UNIVERSIDAD POLITÉCNICA DE YUCATÁN (UPY)</h3>
+        <span class="pill pill-gold">2022 — 2026 (FINAL YEAR)</span>
+      </div>
+      <div style="font-size: 0.82rem; color: var(--text-primary); margin-bottom: 0.5rem;">
+        B.S. in Data Engineering &amp; Artificial Intelligence (Ingeniería de Datos e IA)
+      </div>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Especialidad en pipelines de datos distribuidos, infraestructura en la nube y optimización de algoritmos de inteligencia artificial.
+      </p>
+    </section>
+  </main>
+
+  <!-- 11. FOOTER / COLOPHON -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <div class="footer-cta">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--border-gold);">CONSTRUCT RELIABLE SYSTEMS</h2>
+        <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 520px; margin: 0 auto 1.5rem;">
+          Lorem ipsum dolor sit amet, open for data engineering, cloud infrastructure, and AI research opportunities.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="mailto:contact@elioucan.dev" class="btn btn-solid">TRANSMIT INQUIRY</a>
+          <a href="#hero" class="btn">RETURN TO TOP [▲]</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/eliotito" class="nav-link" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <span style="color: var(--border-stone);">·</span>
+        <a href="https://linkedin.com/in/elioucan" class="nav-link" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <span style="color: var(--border-stone);">·</span>
+        <a href="mailto:contact@elioucan.dev" class="nav-link">EMAIL</a>
+      </div>
+      <div class="colophon">
+        COLOPHON // DESIGNED IN MÉRIDA, YUCATÁN · UTC-6<br>
+        ZERO-FRAMEWORK HTML5 &amp; CSS3 · BASALT (#0D0E11) &amp; MAYAN JADE (#34D399) AESTHETICS
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
