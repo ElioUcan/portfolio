@@ -94,12 +94,32 @@
 
     /* Grid Layouts & Cards */
     .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .grid-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    /* Bauhaus Slideshow / Carousel */
+    .carousel-section { position: relative; outline: none; }
+    .carousel-section:focus-visible { outline: 2px solid var(--accent-crimson); outline-offset: 4px; }
+    .carousel-controls { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+    .carousel-meta { display: flex; align-items: center; gap: 1rem; }
+    .carousel-dots { display: inline-flex; align-items: center; gap: 0.25rem; }
+    .dot-btn { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; padding: 0; }
+    .dot-btn .dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--border-hairline); background: var(--bg-canvas); transition: all 0.2s ease; }
+    .dot-btn.is-active .dot { background: var(--accent-crimson); border-color: var(--accent-crimson); transform: scale(1.2); }
+    .carousel-counter { font-family: 'Martian Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; }
+    .carousel-nav { display: inline-flex; gap: 0.5rem; }
+    .circle-btn { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-hairline); background: var(--bg-canvas); color: var(--ink-primary); display: inline-flex; align-items: center; justify-content: center; font-family: 'Martian Mono', monospace; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+    .circle-btn:hover { background: var(--accent-crimson); color: #FFF; border-color: var(--accent-crimson); }
+    .carousel-viewport { overflow: hidden; touch-action: pan-y; border: 1px solid var(--border-hairline); background: var(--bg-surface); }
+    .carousel-track { display: flex; width: 100%; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 1.5rem; background: var(--bg-surface); }
+    .slide-layout { display: flex; gap: 1.5rem; align-items: stretch; }
+    .slide-media { flex: 0 0 45%; max-width: 45%; border: 1px solid var(--border-hairline); overflow: hidden; background: #EEE4D0; }
+    .slide-cover { width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+    .slide-body { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
     .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
     .project-title { font-size: 1.25rem; margin-bottom: 0.75rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
     .project-desc { color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1.25rem; }
     .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-hairline); padding-top: 1rem; margin-top: 1rem; }
+    @media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
 
     /* Experience */
     .exp-item { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -129,6 +149,9 @@
       .hero-layout { flex-direction: column-reverse; align-items: center; }
       .art-hero-circle { width: 140px; }
       .project-footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .slide-layout { flex-direction: column; }
+      .slide-media { flex: 0 0 auto; max-width: 100%; width: 100%; }
+      .slide-cover { aspect-ratio: 16 / 9; height: auto; }
     }
   </style>
 </head>
@@ -159,17 +182,13 @@
           <h1 class="hero-h1">ELIO EDUARDO UCÁN ZAPATA</h1>
           <div class="hero-subtitle">DATA PLATFORMS · CLOUD RUNTIMES · MACHINE INTELLIGENCE</div>
           <div class="hero-badges">
-            <span class="pill pill-crimson">STATUS // OPEN TO NEW ROLES</span>
-            <span class="pill">BASE // MÉRIDA, YUCATÁN (UTC-6)</span>
-            <span class="pill">CORE // PYTHON · POSTGRESQL · TERRAFORM</span>
+            <span class="pill pill-crimson">STATUS // OPEN TO NEW ROLES</span> <span class="pill">BASE // MÉRIDA, YUCATÁN (UTC-6)</span> <span class="pill">CORE // PYTHON · POSTGRESQL · TERRAFORM</span>
           </div>
           <p class="hero-text">
             Ingeniero de datos especializado en pipelines distribuidos, infraestructura en la nube con Terraform y sistemas RAG de alta fidelidad, uniendo rigor técnico y disciplina constructivista.
           </p>
           <div class="hero-actions">
-            <a href="#work" class="btn btn-crimson">CATALOG WORK [01-02]</a>
-            <a href="#about" class="btn">READ THESIS</a>
-            <a href="#contact" class="btn">INITIATE CONTACT</a>
+            <a href="#work" class="btn btn-crimson">CATALOG WORK [01-02]</a> <a href="#about" class="btn">READ THESIS</a> <a href="#contact" class="btn">INITIATE CONTACT</a>
           </div>
         </div>
         <figure class="art-hero-circle">
@@ -180,32 +199,16 @@
 
     <!-- 03. STATS LEDGER -->
     <section class="stats-ledger" aria-label="Métricas de ingeniería">
-      <div class="stat-item">
-        <div class="stat-val crimson">05+</div>
-        <div class="stat-label">Shipped Data Pipelines</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">99.98%</div>
-        <div class="stat-label">High Availability SLA</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val crimson">C1</div>
-        <div class="stat-label">iTEP English Proficiency</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-val">AWS</div>
-        <div class="stat-label">Certified Data Engineer</div>
-      </div>
+      <div class="stat-item"><div class="stat-val crimson">05+</div><div class="stat-label">Shipped Data Pipelines</div></div>
+      <div class="stat-item"><div class="stat-val">99.98%</div><div class="stat-label">High Availability SLA</div></div>
+      <div class="stat-item"><div class="stat-val crimson">C1</div><div class="stat-label">iTEP English Proficiency</div></div>
+      <div class="stat-item"><div class="stat-val">AWS</div><div class="stat-label">Certified Data Engineer</div></div>
     </section>
 
     <!-- 04. ABOUT / THESIS -->
     <div class="section-banner">
       <span>SECTION 01 // ARCHITECTURAL CONSTRUCTIVISM</span>
-      <div class="constructivist-legend">
-        <span class="chip-dot chip-red"></span> CR-01
-        <span class="chip-dot chip-stone"></span> ST-02
-        <span class="chip-dot chip-dark"></span> BK-03
-      </div>
+      <div class="constructivist-legend"><span class="chip-dot chip-red"></span> CR-01 <span class="chip-dot chip-stone"></span> ST-02 <span class="chip-dot chip-dark"></span> BK-03</div>
     </div>
     <section id="about" class="grid-2col">
       <article class="bauhaus-card">
@@ -274,66 +277,77 @@
       <span>SECTION 03 // INDEXED PRODUCTION CATALOG</span>
       <span class="circle-badge">03</span>
     </div>
-    <section class="grid-projects">
-      <article class="bauhaus-card">
-        <figure class="art-thumb">
-          <img src="reference-art/bilingual-poster.jpg" alt="Póster constructivista bilingüe" loading="lazy" decoding="async">
-        </figure>
-        <div class="project-header">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="circle-badge crimson">01</span>
-            <span style="font-size: 0.72rem; font-weight: 700;">PRODUCTION</span>
+    <section class="carousel-section" id="projects-carousel" aria-label="Catálogo de Proyectos Destacados" tabindex="0">
+      <div class="carousel-controls">
+        <div class="carousel-meta">
+          <div class="carousel-dots" role="tablist" aria-label="Diapositivas de proyectos">
+            <button type="button" class="dot-btn is-active" role="tab" aria-selected="true" aria-controls="slide-01" aria-label="Diapositiva 1: DC Real-Time Metrics &amp; ETL Pipeline"><span class="dot"></span></button>
+            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-02" aria-label="Diapositiva 2: RAG Retrieval &amp; Cross-Encoder Reranker"><span class="dot"></span></button>
           </div>
-          <span class="pill pill-crimson">SLA 99.98%</span>
+          <span class="carousel-counter" id="carousel-counter" aria-live="polite">[ 01 / 02 ]</span>
         </div>
-        <h3 class="project-title">DC Real-Time Metrics &amp; ETL Pipeline</h3>
-        <div class="project-tags">
-          <span class="pill">TERRAFORM</span>
-          <span class="pill">POSTGRESQL</span>
-          <span class="pill">DOCKER</span>
-          <span class="pill">PYTHON</span>
+        <div class="carousel-nav">
+          <button type="button" class="circle-btn" id="prev-slide" aria-label="Diapositiva anterior">←</button>
+          <button type="button" class="circle-btn" id="next-slide" aria-label="Diapositiva siguiente">→</button>
         </div>
-        <p class="project-desc">
-          Pipeline incremental idempotente para ingesta de datos financieros en lotes con validación de esquemas y métricas en vivo.
-        </p>
-        <div class="project-footer">
-          <span class="pill pill-crimson">10M+ ROWS/DAY</span>
-          <div style="display: flex; gap: 0.5rem;">
-            <a href="#contact" class="btn btn-sm">SOURCE CODE</a>
-            <a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <!-- Slide 01 -->
+          <article class="carousel-slide" id="slide-01" role="tabpanel" aria-label="Proyecto 1: DC Real-Time Metrics &amp; ETL Pipeline">
+            <div class="slide-layout">
+              <div class="slide-media">
+                <img src="reference-art/portada-etl.svg" alt="Portada Bauhaus del pipeline ETL con métricas y arquitectura de datos" class="slide-cover" loading="eager" width="1600" height="900">
+              </div>
+              <div class="slide-body">
+                <div class="project-header">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="circle-badge crimson">01</span>
+                    <span style="font-size: 0.72rem; font-weight: 700;">PRODUCTION // 99.98% SLA</span>
+                  </div>
+                  <span class="pill pill-crimson">10M+ ROWS/DAY</span>
+                </div>
+                <h3 class="project-title">DC Real-Time Metrics &amp; ETL Pipeline</h3>
+                <div class="project-tags">
+                  <span class="pill">AIRFLOW</span> <span class="pill">DOCKER</span> <span class="pill">POSTGRESQL</span> <span class="pill">PANDAS</span>
+                </div>
+                <p class="project-desc">Pipeline incremental idempotente para ingesta de datos financieros en lotes con validación de esquemas y métricas en vivo.</p>
+                <div class="project-footer">
+                  <span class="pill pill-crimson">LATENCY &lt; 250MS</span>
+                  <div style="display: flex; gap: 0.5rem;"><a href="#contact" class="btn btn-sm">SOURCE CODE</a><a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a></div>
+                </div>
+              </div>
+            </div>
+          </article>
 
-      <article class="bauhaus-card">
-        <figure class="art-thumb">
-          <img src="reference-art/mural-monumental.jpg" alt="Mural geométrico constructivista" loading="lazy" decoding="async">
-        </figure>
-        <div class="project-header">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="circle-badge crimson">02</span>
-            <span style="font-size: 0.72rem; font-weight: 700;">CLOUD INFRA</span>
-          </div>
-          <span class="pill pill-crimson">AUTOMATED</span>
+          <!-- Slide 02 -->
+          <article class="carousel-slide" id="slide-02" role="tabpanel" aria-label="Proyecto 2: RAG Retrieval &amp; Cross-Encoder Reranker">
+            <div class="slide-layout">
+              <div class="slide-media">
+                <img src="reference-art/portada-rag.svg" alt="Portada Bauhaus del sistema RAG con reranking y recuperación semántica" class="slide-cover" loading="lazy" width="1600" height="900">
+              </div>
+              <div class="slide-body">
+                <div class="project-header">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span class="circle-badge crimson">02</span>
+                    <span style="font-size: 0.72rem; font-weight: 700;">RESEARCH // -60% TOKENS</span>
+                  </div>
+                  <span class="pill pill-crimson">TOP-25 TO TOP-5</span>
+                </div>
+                <h3 class="project-title">RAG Retrieval &amp; Cross-Encoder Reranker</h3>
+                <div class="project-tags">
+                  <span class="pill">PYTHON</span> <span class="pill">FASTAPI</span> <span class="pill">CHROMADB</span> <span class="pill">CROSS-ENCODER</span>
+                </div>
+                <p class="project-desc">Pipeline de dos etapas combinando búsqueda vectorial aproximada con reranking contextual para reducción estricta de costos y tokens de contexto.</p>
+                <div class="project-footer">
+                  <span class="pill pill-crimson">P99 &lt; 42MS</span>
+                  <div style="display: flex; gap: 0.5rem;"><a href="#contact" class="btn btn-sm">SOURCE CODE</a><a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a></div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
-        <h3 class="project-title">Distributed Airflow Gateway &amp; IaC</h3>
-        <div class="project-tags">
-          <span class="pill">AIRFLOW</span>
-          <span class="pill">AWS S3</span>
-          <span class="pill">FASTAPI</span>
-          <span class="pill">TERRAFORM</span>
-        </div>
-        <p class="project-desc">
-          Infraestructura declarativa en AWS con bloqueo de estado sin desviaciones, alertas automáticas y workers distribuidos.
-        </p>
-        <div class="project-footer">
-          <span class="pill pill-crimson">P99 &lt; 42MS</span>
-          <div style="display: flex; gap: 0.5rem;">
-            <a href="#contact" class="btn btn-sm">SOURCE CODE</a>
-            <a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a>
-          </div>
-        </div>
-      </article>
+      </div>
     </section>
 
     <!-- 07. PROFESSIONAL EXPERIENCE -->
@@ -364,28 +378,19 @@
       <div class="bauhaus-card">
         <h3 class="skill-cat-title">01. CLOUD &amp; DEVOPS</h3>
         <div class="skill-pills">
-          <span class="pill">AWS S3 / EC2</span>
-          <span class="pill">TERRAFORM IAC</span>
-          <span class="pill">DOCKER COMPOSE</span>
-          <span class="pill">GITHUB ACTIONS CI/CD</span>
+          <span class="pill">AWS S3 / EC2</span> <span class="pill">TERRAFORM IAC</span> <span class="pill">DOCKER COMPOSE</span> <span class="pill">GITHUB ACTIONS CI/CD</span>
         </div>
       </div>
       <div class="bauhaus-card">
         <h3 class="skill-cat-title">02. DATA &amp; PIPELINES</h3>
         <div class="skill-pills">
-          <span class="pill">POSTGRESQL STRICT</span>
-          <span class="pill">APACHE AIRFLOW</span>
-          <span class="pill">PYTHON (UV RUNTIME)</span>
-          <span class="pill">ETL GENERATORS</span>
+          <span class="pill">POSTGRESQL STRICT</span> <span class="pill">APACHE AIRFLOW</span> <span class="pill">PYTHON (UV RUNTIME)</span> <span class="pill">ETL GENERATORS</span>
         </div>
       </div>
       <div class="bauhaus-card">
         <h3 class="skill-cat-title">03. AI &amp; RUNTIME</h3>
         <div class="skill-pills">
-          <span class="pill">RAG &amp; VECTOR RETRIEVAL</span>
-          <span class="pill">RERANKING MODELS</span>
-          <span class="pill">FASTAPI REST</span>
-          <span class="pill">TOKEN OPTIMIZATION</span>
+          <span class="pill">RAG &amp; VECTOR RETRIEVAL</span> <span class="pill">RERANKING MODELS</span> <span class="pill">FASTAPI REST</span> <span class="pill">TOKEN OPTIMIZATION</span>
         </div>
       </div>
     </section>
@@ -466,5 +471,55 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      const track = document.querySelector('.carousel-track');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot-btn');
+      const counter = document.getElementById('carousel-counter');
+      const prevBtn = document.getElementById('prev-slide');
+      const nextBtn = document.getElementById('next-slide');
+      const carousel = document.getElementById('projects-carousel');
+      if (!track || slides.length === 0) return;
+      let currentIndex = 0;
+      const total = slides.length;
+      function goToSlide(index) {
+        currentIndex = (index + total) % total;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        if (counter) counter.textContent = `[ 0${currentIndex + 1} / 0${total} ]`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('is-active', i === currentIndex);
+          dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        });
+        slides.forEach((slide, i) => {
+          if (i === currentIndex) slide.removeAttribute('inert');
+          else slide.setAttribute('inert', '');
+        });
+      }
+      if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+      if (carousel) {
+        carousel.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(currentIndex - 1); }
+          else if (e.key === 'ArrowRight') { e.preventDefault(); goToSlide(currentIndex + 1); }
+        });
+      }
+      let startX = 0, startY = 0;
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+      }, { passive: true });
+      track.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || !e.changedTouches[0]) return;
+        const diffX = e.changedTouches[0].clientX - startX;
+        const diffY = e.changedTouches[0].clientY - startY;
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          goToSlide(diffX > 0 ? currentIndex - 1 : currentIndex + 1);
+        }
+      }, { passive: true });
+      goToSlide(0);
+    })();
+  </script>
 </body>
 </html>
