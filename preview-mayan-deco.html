@@ -136,12 +136,22 @@
 
     /* Hero */
     .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--border-stone); }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; align-items: center; }
+    .hero-content { min-width: 0; }
     .hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.18em; color: var(--border-gold); margin-bottom: 1.25rem; text-transform: uppercase; }
     .hero-h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; font-weight: 900; margin-bottom: 1rem; text-transform: uppercase; }
     .hero-subtitle { font-size: clamp(0.85rem, 1.8vw, 1.1rem); color: var(--border-gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
     .hero-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
-    .hero-text { max-width: 680px; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.25rem; }
+    .hero-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2.25rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    /* Art Figures & Thumbnails */
+    .art-figure { margin: 0; border: 1px solid var(--border-stone); padding: 0.5rem; background: var(--bg-surface); }
+    .art-figure img { width: 100%; display: block; border: 1px solid var(--border-gold); object-fit: cover; max-height: 380px; }
+    .art-caption { margin-top: 0.5rem; font-size: 0.68rem; color: var(--border-gold); letter-spacing: 0.08em; text-align: center; text-transform: uppercase; }
+    .art-thumb { margin: -1.5rem -1.5rem 1rem -1.5rem; overflow: hidden; border-bottom: 1px solid var(--border-gold); }
+    .art-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .bracket-card:hover .art-thumb img { transform: scale(1.03); }
 
     /* Stats Ledger */
     .stats-ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border-stone); border: 1px solid var(--border-stone); margin: 3rem 0; }
@@ -184,6 +194,7 @@
     @media (max-width: 768px) {
       .site-nav { display: none; }
       .hero { padding: 3rem 0 2rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .project-footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
     }
   </style>
@@ -209,21 +220,29 @@
   <main class="container">
     <!-- 02. HERO SECTION -->
     <section id="hero" class="hero">
-      <div class="hero-kicker">[ ❖ ] REF: DATA ENGINEERING · DEVOPS · MESOAMERICAN ARCHITECTURE</div>
-      <h1 class="hero-h1">ELIO EDUARDO UCÁN ZAPATA</h1>
-      <div class="hero-subtitle">BUILDING SCALABLE DATA PLATFORMS &amp; CLOUD INFRASTRUCTURE</div>
-      <div class="hero-badges">
-        <span class="pill pill-gold">STATUS // AVAILABLE FOR HIRE</span>
-        <span class="pill">LOCATION // MÉRIDA, YUCATÁN</span>
-        <span class="pill">STACK // PYTHON · TERRAFORM · AWS</span>
-      </div>
-      <p class="hero-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-solid">EXPLORE WORK [01-02]</a>
-        <a href="#about" class="btn">READ THESIS</a>
-        <a href="#contact" class="btn">GET IN TOUCH</a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-kicker">[ ❖ ] REF: DATA ENGINEERING · DEVOPS · MESOAMERICAN ARCHITECTURE</div>
+          <h1 class="hero-h1">ELIO EDUARDO UCÁN ZAPATA</h1>
+          <div class="hero-subtitle">BUILDING SCALABLE DATA PLATFORMS &amp; CLOUD INFRASTRUCTURE</div>
+          <div class="hero-badges">
+            <span class="pill pill-gold">STATUS // AVAILABLE FOR HIRE</span>
+            <span class="pill">LOCATION // MÉRIDA, YUCATÁN</span>
+            <span class="pill">STACK // PYTHON · TERRAFORM · AWS</span>
+          </div>
+          <p class="hero-text">
+            Ingeniero de datos especializado en pipelines ETL resilientes, infraestructura en la nube con Terraform y sistemas de inteligencia artificial de alta precisión.
+          </p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-solid">EXPLORE WORK [01-02]</a>
+            <a href="#about" class="btn">READ THESIS</a>
+            <a href="#contact" class="btn">GET IN TOUCH</a>
+          </div>
+        </div>
+        <figure class="art-figure">
+          <img src="reference-art/mural-monumental.jpg" alt="Mural monumental neomesoamericano" loading="eager" fetchpriority="high">
+          <figcaption class="art-caption">[ FIG. 01 — MONUMENTO NEOMESOAMERICANO // TALUD-TABLERO ]</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -253,14 +272,18 @@
       <article class="bracket-card">
         <h2 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--border-gold);">ENGINEERING PHILOSOPHY</h2>
         <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+          La disciplina arquitectónica del corte en piedra mesoamericano inspira la construcción de sistemas de datos: estructuras inmutables, transacciones idempotentes y aislamiento riguroso de fallos.
         </p>
         <p style="color: var(--text-muted); font-size: 0.85rem;">
-          Fusce lacinia, tellus non mollis pharetra, diam lacus accumsan turpis, eu condimentum lectus elit ac lorem. Vivamus tincidunt ex a metus sodales, eu facilisis turpis convallis.
+          Cada componente se construye bajo principios de cero deriva de infraestructura, validación estricta de esquemas y observabilidad de extremo a extremo.
         </p>
       </article>
       <aside class="bracket-card">
-        <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--border-gold);">SYSTEM LEDGER</h3>
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--border-gold);">SYSTEM LEDGER</h3>
+        <figure class="art-figure" style="margin-bottom: 0.75rem;">
+          <img src="reference-art/mayan-portal-chicanna.jpg" alt="Fachada zoomorfa maya de Chicanná" loading="lazy" decoding="async">
+          <figcaption class="art-caption">[ FIG. 02 — FACHADA ZOOMORFA CHICANNÁ // MONOLITO ]</figcaption>
+        </figure>
         <table class="spec-table">
           <tr><td>CORE ENGINE</td><td>Python 3.12 (uv package manager)</td></tr>
           <tr><td>CLOUD RUNTIME</td><td>AWS (EC2, S3, RDS, IAM Declarative)</td></tr>
@@ -296,6 +319,9 @@
     <div class="divider-talud" id="work">[ ❖ ] SECTION 03 // INDEXED WORK CATALOG</div>
     <section class="grid-projects">
       <article class="bracket-card">
+        <figure class="art-thumb">
+          <img src="reference-art/teotihuacan-relief.jpg" alt="Relieve talud-tablero de Teotihuacán" loading="lazy" decoding="async">
+        </figure>
         <div class="project-header">
           <span class="project-num">[01] PRODUCTION SYSTEM</span>
           <span class="pill pill-gold">ACTIVE SLA 99.98%</span>
@@ -308,7 +334,7 @@
           <span class="pill">PYTHON</span>
         </div>
         <p class="project-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Idempotent incremental batch ingestion pipeline processing external financial feeds with automated schema validation.
+          Pipeline incremental idempotente para ingesta de datos financieros en lotes con validación de esquemas y métricas en vivo.
         </p>
         <div class="project-footer">
           <span class="pill pill-gold">10M+ ROWS/DAY</span>
@@ -320,6 +346,9 @@
       </article>
 
       <article class="bracket-card">
+        <figure class="art-thumb">
+          <img src="reference-art/battersea-doors.jpg" alt="Puertas de bronce Art Déco de Battersea" loading="lazy" decoding="async">
+        </figure>
         <div class="project-header">
           <span class="project-num">[02] CLOUD INFRASTRUCTURE</span>
           <span class="pill pill-gold">PRODUCTION READY</span>
@@ -332,7 +361,7 @@
           <span class="pill">TERRAFORM</span>
         </div>
         <p class="project-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Declarative infrastructure deployment with zero-drift state lock, automated alerting, and multi-node worker pools.
+          Infraestructura declarativa en AWS con bloqueo de estado sin desviaciones, alertas automáticas y workers distribuidos.
         </p>
         <div class="project-footer">
           <span class="pill pill-gold">P99 LATENCY &lt; 42MS</span>
