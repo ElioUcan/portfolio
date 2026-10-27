@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Madou Futo Maru Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/MadouFutoMaruGothic.woff') format('woff'),
+       url('https://fonts.cdnfonts.com/s/78854/MadouFutoMaruGothic-d9Xo7.woff') format('woff');
+  font-display: swap;
+}
 :root {
-  --font-display: 'Cinzel', serif;
+  --font-display: 'Madou Futo Maru Gothic', 'Cinzel', serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Martian Mono', monospace;
   --bg-canvas: #F4F0E8;
@@ -15,6 +23,7 @@
   --accent-ochre: #B9A98A;
   --max-width: 1180px;
 }
+[data-font="madou"] { --font-display: 'Madou Futo Maru Gothic', sans-serif; }
 [data-font="cinzel"] { --font-display: 'Cinzel', serif; }
 [data-font="syne"] { --font-display: 'Syne', sans-serif; }
 [data-font="staatliches"] { --font-display: 'Staatliches', sans-serif; }
@@ -246,6 +255,86 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 .footer-sub { color: var(--ink-secondary); font-size: 0.85rem; max-width: 580px; margin: 0 auto 1.75rem; }
 .footer-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 0; flex-wrap: wrap; }
 
+/* Maya Mascot Companion (Scroll Companion) */
+.maya-companion {
+  position: fixed;
+  right: 1.5rem;
+  top: 90px;
+  bottom: 40px;
+  width: 60px;
+  z-index: 90;
+  pointer-events: none;
+}
+.maya-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.maya-rail-line {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  border-left: 2px dashed var(--accent-stone);
+  opacity: 0.35;
+  transform: translateX(-50%);
+}
+.maya-mascot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 10px rgba(18, 19, 22, 0.15));
+  transition: transform 0.12s ease-out, filter 0.2s ease;
+  user-select: none;
+}
+.maya-mascot:hover {
+  filter: drop-shadow(0 6px 14px rgba(201, 56, 43, 0.35));
+}
+.maya-bubble {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  padding: 0.12rem 0.45rem;
+  border-radius: 9999px;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--accent-crimson);
+  transition: all 0.2s ease;
+}
+.maya-mascot:hover .maya-bubble {
+  background: var(--accent-crimson);
+  color: #FFF;
+  border-color: var(--accent-crimson);
+}
+.maya-avatar {
+  display: block;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.maya-mascot:hover .maya-avatar {
+  transform: scale(1.1) rotate(6deg);
+}
+
+@media (max-width: 1200px) {
+  .maya-companion {
+    right: 0.5rem;
+    width: 48px;
+  }
+  .maya-avatar {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .carousel-track { transition: none; }
@@ -261,6 +350,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 
 @media (max-width: 768px) {
   .site-nav { display: none; }
+  .maya-companion {
+    top: auto;
+    bottom: 1rem;
+    right: 0.75rem;
+    height: 60px;
+    width: 48px;
+  }
+  .maya-rail-line { display: none; }
+  .maya-mascot {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+  }
+  .maya-avatar {
+    width: 42px;
+    height: 42px;
+  }
   .hero { padding: 3rem 0 2rem; }
   .hero-layout { flex-direction: column-reverse; align-items: center; }
   .art-hero-circle { width: 140px; }

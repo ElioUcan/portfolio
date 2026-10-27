@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-font="cinzel">
+<html lang="es" data-font="madou">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Martian+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=Staatliches&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/madou-futo-maru-gothic" rel="stylesheet">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style-bauhaus.css">
 </head>
@@ -20,11 +21,12 @@
         <a href="#hero" class="brand-title">ELIO UCÁN</a>
         <span class="brand-sub"> // BAUHAUS CIRCULAR</span>
       </div>
-      <div class="font-switcher" role="group" aria-label="Selector de tipografía Neoazteca">
+      <div class="font-switcher" role="group" aria-label="Selector de tipografía">
         <span class="font-switcher-label">FONT:</span>
-        <button type="button" class="font-pill is-active" data-font="cinzel" aria-pressed="true">CINZEL · PIEDRA</button>
+        <button type="button" class="font-pill is-active" data-font="madou" aria-pressed="true">MADOU · RETRO</button>
+        <button type="button" class="font-pill" data-font="cinzel" aria-pressed="false">CINZEL · PIEDRA</button>
         <button type="button" class="font-pill" data-font="syne" aria-pressed="false">SYNE · ESCULTURA</button>
-        <button type="button" class="font-pill" data-font="staatliches" aria-pressed="false">STAATLICHES · MONUMENTO</button>
+        <button type="button" class="font-pill" data-font="staatliches" aria-pressed="false">STAATLICHES</button>
       </div>
       <nav class="site-nav" aria-label="Navegación principal">
         <a href="#work" class="nav-link">Work</a>
@@ -454,6 +456,48 @@
       </div>
     </div>
   </footer>
+
+  <!-- MAYA MASCOT SCROLL COMPANION (ESTILO CLAUDE CODE) -->
+  <aside class="maya-companion" id="mayaCompanion" aria-label="Mascota guía maya">
+    <div class="maya-track">
+      <div class="maya-rail-line"></div>
+      <div class="maya-mascot" id="mayaMascot" title="Volver al inicio">
+        <div class="maya-bubble" id="mayaBubble">0%</div>
+        <svg class="maya-avatar" viewBox="0 0 80 80" width="56" height="56" aria-hidden="true">
+          <!-- Plumas de Quetzal (Jade & Carmesí) -->
+          <path d="M40 8 C40 2, 30 0, 22 7 C18 12, 22 19, 32 18 Z" fill="#059669" stroke="#121316" stroke-width="2"/>
+          <path d="M40 8 C40 2, 50 0, 58 7 C62 12, 58 19, 48 18 Z" fill="#059669" stroke="#121316" stroke-width="2"/>
+          <path d="M36 12 C36 4, 40 2, 44 4 C44 11, 42 15, 36 14 Z" fill="#C9382B" stroke="#121316" stroke-width="2"/>
+          <!-- Corona / Diadema de jade y oro -->
+          <rect x="22" y="14" width="36" height="10" rx="3" fill="#D4AF37" stroke="#121316" stroke-width="2"/>
+          <rect x="34" y="9" width="12" height="7" rx="2" fill="#D4AF37" stroke="#121316" stroke-width="2"/>
+          <!-- Emblema de Jade Central -->
+          <circle cx="40" cy="19" r="3.5" fill="#10B981" stroke="#121316" stroke-width="1.5"/>
+          <!-- Rostro terracota estilo Claude Code -->
+          <rect x="20" y="23" width="40" height="38" rx="16" fill="#F4A261" stroke="#121316" stroke-width="2.5"/>
+          <!-- Ojos grandes y amigables estilo Claude Code -->
+          <rect x="27" y="32" width="7" height="9" rx="3.5" fill="#121316"/>
+          <circle cx="29" cy="34.5" r="1.8" fill="#FFFFFF"/>
+          <rect x="46" y="32" width="7" height="9" rx="3.5" fill="#121316"/>
+          <circle cx="48" cy="34.5" r="1.8" fill="#FFFFFF"/>
+          <!-- Mejillas y sonrisa -->
+          <ellipse cx="25" cy="43" rx="3.5" ry="2" fill="#E76F51" opacity="0.75"/>
+          <ellipse cx="55" cy="43" rx="3.5" ry="2" fill="#E76F51" opacity="0.75"/>
+          <path d="M36 45 C38 48, 42 48, 44 45" stroke="#121316" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Orejeras circulares de jade (Bauhaus) -->
+          <circle cx="15" cy="38" r="6" fill="#10B981" stroke="#121316" stroke-width="2"/>
+          <circle cx="15" cy="38" r="2.5" fill="#047857"/>
+          <circle cx="65" cy="38" r="6" fill="#10B981" stroke="#121316" stroke-width="2"/>
+          <circle cx="65" cy="38" r="2.5" fill="#047857"/>
+          <!-- Collar de cuentas de jade -->
+          <circle cx="28" cy="62" r="3.5" fill="#10B981" stroke="#121316" stroke-width="1.5"/>
+          <circle cx="36" cy="63.5" r="4" fill="#D4AF37" stroke="#121316" stroke-width="1.5"/>
+          <circle cx="44" cy="63.5" r="4" fill="#D4AF37" stroke="#121316" stroke-width="1.5"/>
+          <circle cx="52" cy="62" r="3.5" fill="#10B981" stroke="#121316" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </aside>
 
   <script src="bauhaus.js" defer></script>
 </body>

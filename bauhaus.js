@@ -86,6 +86,56 @@
     } catch {}
   }
 
+  // Mascota Maya Interactiva (Scroll Companion)
+  const mayaMascot = document.getElementById('mayaMascot');
+  const mayaBubble = document.getElementById('mayaBubble');
+  const mayaTrack = document.querySelector('.maya-track');
+
+  if (mayaMascot && mayaTrack) {
+    const sections = [
+      { id: 'hero', label: 'INICIO' },
+      { id: 'about', label: 'TESIS' },
+      { id: 'focus', label: 'NOW' },
+      { id: 'work', label: 'PROYECTOS' },
+      { id: 'experience', label: 'EXP' },
+      { id: 'skills', label: 'SKILLS' },
+      { id: 'certs', label: 'CERTS' },
+      { id: 'education', label: 'ACADEMIA' },
+      { id: 'contact', label: 'FIN ✦' }
+    ];
+
+    const updateMascotPosition = () => {
+      if (window.innerWidth <= 768) return;
+      const scrollY = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = maxScroll > 0 ? Math.min(Math.max(scrollY / maxScroll, 0), 1) : 0;
+
+      const trackHeight = mayaTrack.clientHeight - mayaMascot.clientHeight;
+      const translateY = progress * trackHeight;
+      mayaMascot.style.transform = `translate(-50%, ${translateY}px)`;
+
+      let currentLabel = `${Math.round(progress * 100)}%`;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sections[i].id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.45) {
+          currentLabel = sections[i].label;
+          break;
+        }
+      }
+      if (mayaBubble) {
+        mayaBubble.textContent = currentLabel;
+      }
+    };
+
+    window.addEventListener('scroll', updateMascotPosition, { passive: true });
+    window.addEventListener('resize', updateMascotPosition);
+    updateMascotPosition();
+
+    mayaMascot.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // Copiado de Correo Directo
   document.querySelectorAll('.btn-copy-email').forEach((btn) => {
     let copyTimeout = null;
