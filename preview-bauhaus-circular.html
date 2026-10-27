@@ -3,159 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview: Bauhaus Neomexicano Circular — Elio Ucán</title>
+  <title>Elio Eduardo Ucán Zapata — Bauhaus Circular</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:,">
-  <style>
-    :root {
-      --bg-canvas: #F4F0E8;
-      --bg-surface: #ECE6DA;
-      --border-hairline: #121316;
-      --border-subtle: #D8D2C4;
-      --ink-primary: #121316;
-      --ink-secondary: #575752;
-      --accent-crimson: #C9382B;
-      --accent-stone: #A3A199;
-      --max-width: 1180px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg-canvas); color: var(--ink-primary); font-family: 'Martian Mono', monospace; font-size: 0.88rem; line-height: 1.6; max-width: 100%; overflow-x: hidden; opacity: 1; }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-crimson); outline-offset: 3px; }
-    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--ink-primary); letter-spacing: -0.02em; }
-
-    /* Bauhaus Circular Composition & Dividers */
-    .section-banner { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-hairline); border-bottom: 1px solid var(--border-hairline); background: var(--bg-surface); padding: 0.75rem 1rem; margin: 3.5rem 0 2rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; }
-    .circle-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border-hairline); background: var(--bg-canvas); font-size: 0.7rem; font-weight: 700; }
-    .circle-badge.crimson { background: var(--accent-crimson); color: #FFF; border-color: var(--accent-crimson); }
-
-    /* Constructivist Color Legend */
-    .constructivist-legend { display: inline-flex; align-items: center; gap: 0.8rem; font-size: 0.7rem; }
-    .chip-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-    .chip-red { background: var(--accent-crimson); }
-    .chip-stone { background: var(--accent-stone); }
-    .chip-dark { background: var(--ink-primary); }
-
-    /* Art Hero Circle, Figures & Thumbnails */
-    .art-hero-circle { margin: 0; width: clamp(140px, 24vw, 220px); aspect-ratio: 1/1; border-radius: 50%; overflow: hidden; border: 3px solid var(--ink-primary); box-shadow: 6px 6px 0 var(--accent-crimson); flex-shrink: 0; }
-    .art-hero-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .art-figure { margin: 0 0 1rem; border: 1px solid var(--border-hairline); background: var(--bg-canvas); padding: 0.4rem; }
-    .art-figure img { width: 100%; max-height: 200px; object-fit: cover; display: block; }
-    .art-caption { margin-top: 0.4rem; font-size: 0.68rem; text-align: center; }
-    .art-thumb { margin: -1.5rem -1.5rem 1rem -1.5rem; border-bottom: 1px solid var(--border-hairline); overflow: hidden; }
-    .art-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; transition: transform 0.3s ease; }
-    .bauhaus-card:hover .art-thumb img { transform: scale(1.03); }
-
-    /* Bauhaus Grid Cards */
-    .bauhaus-card { background: var(--bg-surface); border: 1px solid var(--border-hairline); padding: 1.5rem; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .bauhaus-card:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--border-hairline); }
-
-    /* Buttons */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.65rem 1.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--border-hairline); background: transparent; color: var(--ink-primary); border-radius: 9999px; transition: all 0.2s ease; cursor: pointer; }
-    .btn:hover { background: var(--ink-primary); color: var(--bg-canvas); }
-    .btn-crimson { background: var(--accent-crimson); color: #FFF; border-color: var(--accent-crimson); }
-    .btn-crimson:hover { background: #ab281c; color: #FFF; }
-    .btn-sm { padding: 0.4rem 0.85rem; font-size: 0.7rem; }
-
-    /* Pills & Chips */
-    .pill { display: inline-block; padding: 0.25rem 0.65rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-radius: 9999px; border: 1px solid var(--border-hairline); background: var(--bg-canvas); color: var(--ink-primary); }
-    .pill-crimson { background: rgba(201, 56, 43, 0.1); border-color: var(--accent-crimson); color: var(--accent-crimson); }
-
-    /* Header & Navigation */
-    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(244, 240, 232, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-hairline); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
-    .brand-sub { color: var(--accent-crimson); font-size: 0.72rem; font-family: 'Martian Mono', monospace; font-weight: 600; }
-    .site-nav { display: flex; align-items: center; gap: 1.5rem; }
-    .nav-link { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-secondary); transition: color 0.2s; }
-    .nav-link:hover { color: var(--accent-crimson); }
-
-    /* Hero */
-    .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--border-hairline); }
-    .hero-layout { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
-    .hero-content { flex: 1; min-width: 300px; }
-    .hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent-crimson); margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; }
-    .hero-h1 { font-size: clamp(2.2rem, 5.2vw, 3.8rem); line-height: 1.08; margin-bottom: 1rem; text-transform: uppercase; }
-    .hero-subtitle { font-size: clamp(0.85rem, 1.8vw, 1.15rem); color: var(--ink-secondary); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.75rem; }
-    .hero-text { max-width: 680px; color: var(--ink-secondary); font-size: 0.9rem; margin-bottom: 2rem; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-
-    /* Stats Ledger */
-    .stats-ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border-hairline); border: 1px solid var(--border-hairline); margin: 3rem 0; }
-    .stat-item { background: var(--bg-canvas); padding: 1.5rem; text-align: center; }
-    .stat-val { font-family: 'Space Grotesk', sans-serif; font-size: 2.3rem; font-weight: 700; color: var(--ink-primary); margin-bottom: 0.25rem; }
-    .stat-val.crimson { color: var(--accent-crimson); }
-    .stat-label { font-size: 0.7rem; letter-spacing: 0.08em; color: var(--ink-secondary); text-transform: uppercase; }
-
-    /* Grid Layouts & Cards */
-    .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    /* Bauhaus Slideshow / Carousel */
-    .carousel-section { position: relative; outline: none; }
-    .carousel-section:focus-visible { outline: 2px solid var(--accent-crimson); outline-offset: 4px; }
-    .carousel-controls { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
-    .carousel-meta { display: flex; align-items: center; gap: 1rem; }
-    .carousel-dots { display: inline-flex; align-items: center; gap: 0.25rem; }
-    .dot-btn { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; padding: 0; }
-    .dot-btn .dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--border-hairline); background: var(--bg-canvas); transition: all 0.2s ease; }
-    .dot-btn.is-active .dot { background: var(--accent-crimson); border-color: var(--accent-crimson); transform: scale(1.2); }
-    .carousel-counter { font-family: 'Martian Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; }
-    .carousel-nav { display: inline-flex; gap: 0.5rem; }
-    .circle-btn { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border-hairline); background: var(--bg-canvas); color: var(--ink-primary); display: inline-flex; align-items: center; justify-content: center; font-family: 'Martian Mono', monospace; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
-    .circle-btn:hover { background: var(--accent-crimson); color: #FFF; border-color: var(--accent-crimson); }
-    .carousel-viewport { overflow: hidden; touch-action: pan-y; border: 1px solid var(--border-hairline); background: var(--bg-surface); }
-    .carousel-track { display: flex; width: 100%; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .carousel-slide { min-width: 100%; box-sizing: border-box; padding: 1.5rem; background: var(--bg-surface); }
-    .slide-layout { display: flex; gap: 1.5rem; align-items: stretch; }
-    .slide-media { flex: 0 0 45%; max-width: 45%; border: 1px solid var(--border-hairline); overflow: hidden; background: #EEE4D0; }
-    .slide-cover { width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
-    .slide-body { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; }
-    .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
-    .project-title { font-size: 1.25rem; margin-bottom: 0.75rem; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-    .project-desc { color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1.25rem; }
-    .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-hairline); padding-top: 1rem; margin-top: 1rem; }
-    @media (prefers-reduced-motion: reduce) { .carousel-track { transition: none; } }
-
-    /* Experience */
-    .exp-item { display: flex; flex-direction: column; gap: 0.75rem; }
-    .exp-meta { display: flex; justify-content: space-between; font-size: 0.75rem; border-bottom: 1px solid var(--border-hairline); padding-bottom: 0.5rem; font-weight: 600; }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .exp-bullets li { position: relative; padding-left: 1.2rem; color: var(--ink-secondary); font-size: 0.82rem; }
-    .exp-bullets li::before { content: "●"; position: absolute; left: 0; color: var(--accent-crimson); font-size: 0.65rem; }
-
-    /* Skills & Specs */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
-    .skill-cat-title { font-size: 0.88rem; margin-bottom: 1rem; letter-spacing: 0.06em; border-bottom: 1px solid var(--border-hairline); padding-bottom: 0.4rem; }
-    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .spec-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
-    .spec-table td { padding: 0.45rem 0; border-bottom: 1px solid var(--border-subtle); }
-    .spec-table td:first-child { color: var(--ink-primary); font-weight: 600; width: 45%; }
-    .spec-table td:last-child { color: var(--ink-secondary); }
-
-    /* Footer */
-    .site-footer { border-top: 2px solid var(--border-hairline); background: var(--bg-surface); padding: 3.5rem 0 2.5rem; margin-top: 5rem; }
-    .footer-cta { text-align: center; margin-bottom: 2.5rem; }
-    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
-    .colophon { text-align: center; font-size: 0.7rem; color: var(--ink-secondary); border-top: 1px solid var(--border-hairline); padding-top: 1.5rem; }
-
-    @media (max-width: 768px) {
-      .site-nav { display: none; }
-      .hero { padding: 3rem 0 2rem; }
-      .hero-layout { flex-direction: column-reverse; align-items: center; }
-      .art-hero-circle { width: 140px; }
-      .project-footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
-      .slide-layout { flex-direction: column; }
-      .slide-media { flex: 0 0 auto; max-width: 100%; width: 100%; }
-      .slide-cover { aspect-ratio: 16 / 9; height: auto; }
-    }
-  </style>
+  <link rel="stylesheet" href="style-bauhaus.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
   <!-- 01. HEADER / NAVIGATION -->
   <header class="site-header">
     <div class="container header-inner">
@@ -167,28 +24,35 @@
         <a href="#work" class="nav-link">Work</a>
         <a href="#focus" class="nav-link">Focus</a>
         <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certs" class="nav-link">Credentials</a>
+        <a href="#education" class="nav-link">Education</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="#contact" class="btn btn-sm btn-crimson">DOWNLOAD CV [PDF]</a>
+        <a href="assets/Elio_Resume.pdf" download class="btn btn-sm btn-crimson">DOWNLOAD CV [PDF]</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main id="main-content" class="container">
     <!-- 02. HERO SECTION -->
     <section id="hero" class="hero">
       <div class="hero-layout">
         <div class="hero-content">
-          <div class="hero-kicker">● REF: DATA SYSTEMS · NEOMEXICAN CONSTRUCTIVISM · CIRCLES</div>
+          <div class="hero-kicker">● REF: DATA ENGINEERING · DEVOPS · AI SYSTEMS | LOC: MÉRIDA, MX · UTC-6</div>
           <h1 class="hero-h1">ELIO EDUARDO UCÁN ZAPATA</h1>
-          <div class="hero-subtitle">DATA PLATFORMS · CLOUD RUNTIMES · MACHINE INTELLIGENCE</div>
+          <div class="hero-subtitle">BUILDING DATA PIPELINES &amp; AI</div>
           <div class="hero-badges">
-            <span class="pill pill-crimson">STATUS // OPEN TO NEW ROLES</span> <span class="pill">BASE // MÉRIDA, YUCATÁN (UTC-6)</span> <span class="pill">CORE // PYTHON · POSTGRESQL · TERRAFORM</span>
+            <span class="pill pill-crimson">STATUS // OPEN TO NEW ROLES</span>
+            <span class="pill">BASE // MÉRIDA, YUCATÁN (UTC-6)</span>
+            <span class="pill">CORE // PYTHON · POSTGRESQL · TERRAFORM</span>
           </div>
           <p class="hero-text">
-            Ingeniero de datos especializado en pipelines distribuidos, infraestructura en la nube con Terraform y sistemas RAG de alta fidelidad, uniendo rigor técnico y disciplina constructivista.
+            Data Engineering &amp; AI student at UPY specializing in DevOps at Holberton School, currently conducting AI Research at The Palace Company. Focused on architecting reproducible ETL workflows, automated cloud infrastructure on AWS, and production-ready AI agent APIs.
           </p>
           <div class="hero-actions">
-            <a href="#work" class="btn btn-crimson">CATALOG WORK [01-02]</a> <a href="#about" class="btn">READ THESIS</a> <a href="#contact" class="btn">INITIATE CONTACT</a>
+            <a href="assets/Elio_Resume.pdf" download class="btn btn-crimson">DOWNLOAD CV [PDF]</a>
+            <a href="https://github.com/ElioUcan" target="_blank" rel="noopener noreferrer" class="btn">GITHUB ↗</a>
+            <a href="https://linkedin.com/in/elio-ucan-87a077352" target="_blank" rel="noopener noreferrer" class="btn">LINKEDIN ↗</a>
+            <button type="button" class="btn btn-copy-email" data-email="elioeduardo06@gmail.com">EMAIL DIRECT ↗</button>
           </div>
         </div>
         <figure class="art-hero-circle">
@@ -198,11 +62,11 @@
     </section>
 
     <!-- 03. STATS LEDGER -->
-    <section class="stats-ledger" aria-label="Métricas de ingeniería">
-      <div class="stat-item"><div class="stat-val crimson">05+</div><div class="stat-label">Shipped Data Pipelines</div></div>
-      <div class="stat-item"><div class="stat-val">99.98%</div><div class="stat-label">High Availability SLA</div></div>
-      <div class="stat-item"><div class="stat-val crimson">C1</div><div class="stat-label">iTEP English Proficiency</div></div>
-      <div class="stat-item"><div class="stat-val">AWS</div><div class="stat-label">Certified Data Engineer</div></div>
+    <section class="stats-ledger" aria-label="Key technical metrics">
+      <div class="stat-item"><div class="stat-val crimson">05</div><div class="stat-label">Projects Shipped</div><div class="stat-sub">Production &amp; Open Source</div></div>
+      <div class="stat-item"><div class="stat-val">06</div><div class="stat-label">Certifications</div><div class="stat-sub">AWS &amp; DataCamp Verified</div></div>
+      <div class="stat-item"><div class="stat-val crimson">AWS</div><div class="stat-label">Certified Engineer</div><div class="stat-sub">Data &amp; Cloud Foundations</div></div>
+      <div class="stat-item"><div class="stat-val">C1</div><div class="stat-label">English · iTEP 4.7</div><div class="stat-sub">Professional Working Fluency</div></div>
     </section>
 
     <!-- 04. ABOUT / THESIS -->
@@ -214,10 +78,10 @@
       <article class="bauhaus-card">
         <h2 style="font-size: 1.35rem; margin-bottom: 1rem;">SYSTEMS THESIS</h2>
         <p style="color: var(--ink-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
-          Geometría pura y funcionalidad estructural aplicadas a la ingeniería de datos: pipelines reproducibles, validaciones de esquema estrictas y cero tolerancias al fallo silencioso.
+          I build the foundational data infrastructure layer: ingestion pipelines, cloud environments, and the APIs that bind them into reliable systems. Based in Mérida, México, studying data engineering full-time while designing and shipping production-grade architectures.
         </p>
         <p style="color: var(--ink-secondary); font-size: 0.85rem;">
-          Inspirado en la síntesis constructivista mexicana, cada servicio en la nube se modela como un módulo atómico con presupuesto estricto de memoria y recursos.
+          My focus is deterministic pipelines, strict schema enforcement, and cost-effective cloud deployments with Infrastructure as Code. Every project reflects rigorous engineering craft, zero unnecessary bloat, and complete reproducibility.
         </p>
       </article>
       <aside class="bauhaus-card">
@@ -225,11 +89,7 @@
         <figure class="art-figure">
           <img src="reference-art/coatlicue-bauhaus.jpg" alt="Coatlicue en geometría Bauhaus por Gabriel Orozco" loading="lazy" decoding="async">
           <figcaption class="art-caption">
-            <span class="constructivist-legend">
-              <span class="chip-dot chip-red"></span> 68% Crimson
-              <span class="chip-dot chip-stone"></span> 22% Stone
-              <span class="chip-dot chip-dark"></span> 10% Carbon
-            </span>
+            <span class="constructivist-legend"><span class="chip-dot chip-red"></span> 68% Crimson <span class="chip-dot chip-stone"></span> 22% Stone <span class="chip-dot chip-dark"></span> 10% Carbon</span>
           </figcaption>
         </figure>
         <table class="spec-table">
@@ -247,28 +107,30 @@
       <span>SECTION 02 // NOW · ACTIVE RESEARCH VECTOR</span>
       <span class="circle-badge crimson">●</span>
     </div>
-    <section class="grid-2col">
+    <section class="grid-2col" aria-label="Current technical focus">
       <div class="bauhaus-card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-          <span class="circle-badge">01</span>
-          <span class="pill pill-crimson">ACTIVE</span>
-        </div>
-        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Two-Stage RAG &amp; Reranking Lab</h3>
-        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cross-encoder rerankers and contextual token optimization reducing LLM input context by 65%.
-        </p>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span class="circle-badge">01</span><span class="pill pill-crimson">RESEARCH</span></div>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">RAG &amp; Reranking Optimization</h3>
+        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">Investigating reranking algorithms and context-window token economics to maximize retrieval precision in agentic AI architectures.</p>
         <span class="pill">TOP-25 VECTOR TO TOP-5 RERANK</span>
       </div>
       <div class="bauhaus-card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-          <span class="circle-badge">02</span>
-          <span class="pill pill-crimson">ACTIVE</span>
-        </div>
-        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Headless Debian 4GB Memory Budget</h3>
-        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Streaming iterators and generator-based ETL chunking inside strict 4GB RAM environment.
-        </p>
-        <span class="pill">DOCKER MEM_LIMIT 512M GUARD</span>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span class="circle-badge">02</span><span class="pill pill-crimson">INFRA</span></div>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Self-Hosted Server Automation</h3>
+        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">Running continuous workflows on a headless Debian server with n8n and containerized AI tasks under strict 4 GB RAM constraints.</p>
+        <span class="pill">DEBIAN 4GB RAM + N8N</span>
+      </div>
+      <div class="bauhaus-card">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span class="circle-badge">03</span><span class="pill pill-crimson">CLOUD</span></div>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Cloud Data Engineering on AWS</h3>
+        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">Deepening hands-on data architectures on AWS (S3, Glue, Athena, Redshift) driven by reproducible Infrastructure as Code and automation.</p>
+        <span class="pill">AWS S3 · GLUE · ATHENA · REDSHIFT</span>
+      </div>
+      <div class="bauhaus-card">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span class="circle-badge">04</span><span class="pill pill-crimson">WRITING</span></div>
+        <h3 style="font-size: 1.15rem; margin: 0.5rem 0;">Internship Technical Thesis</h3>
+        <p style="color: var(--ink-secondary); font-size: 0.82rem; margin-bottom: 1rem;">Authoring a comprehensive 40-page research and systems report in LaTeX detailing production AI architectures and pipeline benchmarks.</p>
+        <span class="pill">40-PAGE LATEX THESIS</span>
       </div>
     </section>
 
@@ -281,10 +143,13 @@
       <div class="carousel-controls">
         <div class="carousel-meta">
           <div class="carousel-dots" role="tablist" aria-label="Diapositivas de proyectos">
-            <button type="button" class="dot-btn is-active" role="tab" aria-selected="true" aria-controls="slide-01" aria-label="Diapositiva 1: DC Real-Time Metrics &amp; ETL Pipeline"><span class="dot"></span></button>
-            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-02" aria-label="Diapositiva 2: RAG Retrieval &amp; Cross-Encoder Reranker"><span class="dot"></span></button>
+            <button type="button" class="dot-btn is-active" role="tab" aria-selected="true" aria-controls="slide-01" aria-label="Diapositiva 1: DC Operations Dashboard"><span class="dot"></span></button>
+            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-02" aria-label="Diapositiva 2: ETL Pipeline"><span class="dot"></span></button>
+            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-03" aria-label="Diapositiva 3: Infrastructure as Code"><span class="dot"></span></button>
+            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-04" aria-label="Diapositiva 4: AI Agent"><span class="dot"></span></button>
+            <button type="button" class="dot-btn" role="tab" aria-selected="false" aria-controls="slide-05" aria-label="Diapositiva 5: better-readmes"><span class="dot"></span></button>
           </div>
-          <span class="carousel-counter" id="carousel-counter" aria-live="polite">[ 01 / 02 ]</span>
+          <span class="carousel-counter" id="carousel-counter" aria-live="polite">[ 01 / 05 ]</span>
         </div>
         <div class="carousel-nav">
           <button type="button" class="circle-btn" id="prev-slide" aria-label="Diapositiva anterior">←</button>
@@ -293,55 +158,111 @@
       </div>
       <div class="carousel-viewport">
         <div class="carousel-track">
-          <!-- Slide 01 -->
-          <article class="carousel-slide" id="slide-01" role="tabpanel" aria-label="Proyecto 1: DC Real-Time Metrics &amp; ETL Pipeline">
+          <!-- Slide 01: DC Operations Dashboard -->
+          <article class="carousel-slide" id="slide-01" role="tabpanel" aria-label="Proyecto 1: DC Operations Dashboard">
             <div class="slide-layout">
-              <div class="slide-media">
-                <img src="reference-art/portada-etl.svg" alt="Portada Bauhaus del pipeline ETL con métricas y arquitectura de datos" class="slide-cover" loading="eager" width="1600" height="900">
-              </div>
+              <div class="slide-media"><img src="reference-art/portada-dc.svg" alt="Portada Bauhaus del DC Operations Dashboard" class="slide-cover" loading="eager" width="1600" height="900"></div>
               <div class="slide-body">
-                <div class="project-header">
-                  <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="circle-badge crimson">01</span>
-                    <span style="font-size: 0.72rem; font-weight: 700;">PRODUCTION // 99.98% SLA</span>
+                <div>
+                  <div class="project-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span class="circle-badge crimson">01</span><span style="font-size: 0.72rem; font-weight: 700;">PRODUCTION // 99.982% SLA</span></div>
+                    <span class="pill pill-crimson">100 MW MONITORING</span>
                   </div>
-                  <span class="pill pill-crimson">10M+ ROWS/DAY</span>
+                  <h3 class="project-title">DC Operations Dashboard</h3>
+                  <div class="project-tags"><span class="pill">PYTHON</span> <span class="pill">STREAMLIT</span> <span class="pill">PLOTLY</span> <span class="pill">DOCKER</span> <span class="pill">TERRAFORM</span> <span class="pill">AWS</span></div>
+                  <p class="project-desc">Multi-page operational dashboard for a 100 MW data center — uptime SLA (99.982%), PUE trends, and TIA-942 / ISO 27001 compliance across 5 views. Deployed on AWS with Terraform IaC and GitHub Actions CI/CD.</p>
                 </div>
-                <h3 class="project-title">DC Real-Time Metrics &amp; ETL Pipeline</h3>
-                <div class="project-tags">
-                  <span class="pill">AIRFLOW</span> <span class="pill">DOCKER</span> <span class="pill">POSTGRESQL</span> <span class="pill">PANDAS</span>
-                </div>
-                <p class="project-desc">Pipeline incremental idempotente para ingesta de datos financieros en lotes con validación de esquemas y métricas en vivo.</p>
                 <div class="project-footer">
-                  <span class="pill pill-crimson">LATENCY &lt; 250MS</span>
-                  <div style="display: flex; gap: 0.5rem;"><a href="#contact" class="btn btn-sm">SOURCE CODE</a><a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a></div>
+                  <span class="pill pill-crimson">99.982% SLA · Terraform IaC Automated</span>
+                  <a href="https://github.com/ElioUcan/dc-dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crimson">CODE &amp; DEMO ↗</a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Slide 02 -->
-          <article class="carousel-slide" id="slide-02" role="tabpanel" aria-label="Proyecto 2: RAG Retrieval &amp; Cross-Encoder Reranker">
+          <!-- Slide 02: ETL Pipeline -->
+          <article class="carousel-slide" id="slide-02" role="tabpanel" aria-label="Proyecto 2: ETL Pipeline" inert>
             <div class="slide-layout">
-              <div class="slide-media">
-                <img src="reference-art/portada-rag.svg" alt="Portada Bauhaus del sistema RAG con reranking y recuperación semántica" class="slide-cover" loading="lazy" width="1600" height="900">
-              </div>
+              <div class="slide-media"><img src="reference-art/portada-etl.svg" alt="Portada Bauhaus del pipeline ETL con métricas y arquitectura de datos" class="slide-cover" loading="lazy" width="1600" height="900"></div>
               <div class="slide-body">
-                <div class="project-header">
-                  <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="circle-badge crimson">02</span>
-                    <span style="font-size: 0.72rem; font-weight: 700;">RESEARCH // -60% TOKENS</span>
+                <div>
+                  <div class="project-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span class="circle-badge crimson">02</span><span style="font-size: 0.72rem; font-weight: 700;">DATA PIPELINE // &lt;1% FAILURE RATE</span></div>
+                    <span class="pill pill-crimson">DAILY AUTOMATED</span>
                   </div>
-                  <span class="pill pill-crimson">TOP-25 TO TOP-5</span>
+                  <h3 class="project-title">ETL Pipeline — Airflow + Docker + PostgreSQL</h3>
+                  <div class="project-tags"><span class="pill">PYTHON</span> <span class="pill">AIRFLOW</span> <span class="pill">DOCKER</span> <span class="pill">POSTGRESQL</span> <span class="pill">PANDAS</span></div>
+                  <p class="project-desc">Production-grade daily ingestion pipeline consuming the CoinGecko REST API with under 1% failure rate via Airflow retry logic. Zero-config deployment with Docker Compose.</p>
                 </div>
-                <h3 class="project-title">RAG Retrieval &amp; Cross-Encoder Reranker</h3>
-                <div class="project-tags">
-                  <span class="pill">PYTHON</span> <span class="pill">FASTAPI</span> <span class="pill">CHROMADB</span> <span class="pill">CROSS-ENCODER</span>
-                </div>
-                <p class="project-desc">Pipeline de dos etapas combinando búsqueda vectorial aproximada con reranking contextual para reducción estricta de costos y tokens de contexto.</p>
                 <div class="project-footer">
-                  <span class="pill pill-crimson">P99 &lt; 42MS</span>
-                  <div style="display: flex; gap: 0.5rem;"><a href="#contact" class="btn btn-sm">SOURCE CODE</a><a href="#contact" class="btn btn-sm btn-crimson">LIVE DEMO</a></div>
+                  <span class="pill pill-crimson">&lt;1% Failure Rate · Daily Automated Ingestion</span>
+                  <a href="https://github.com/ElioUcan/airflow-etl" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crimson">SOURCE CODE ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 03: Infrastructure as Code -->
+          <article class="carousel-slide" id="slide-03" role="tabpanel" aria-label="Proyecto 3: Infrastructure as Code" inert>
+            <div class="slide-layout">
+              <div class="slide-media"><img src="reference-art/portada-iac.svg" alt="Portada Bauhaus de Infrastructure as Code en AWS" class="slide-cover" loading="lazy" width="1600" height="900"></div>
+              <div class="slide-body">
+                <div>
+                  <div class="project-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span class="circle-badge crimson">03</span><span style="font-size: 0.72rem; font-weight: 700;">CLOUD IAC // -90% PROVISIONING</span></div>
+                    <span class="pill pill-crimson">MODULAR REMOTE STATE</span>
+                  </div>
+                  <h3 class="project-title">Infrastructure as Code — Terraform on AWS</h3>
+                  <div class="project-tags"><span class="pill">TERRAFORM</span> <span class="pill">AWS EC2</span> <span class="pill">S3</span> <span class="pill">IAM</span></div>
+                  <p class="project-desc">Reproducible AWS environments (EC2 + S3) using modular Terraform with remote state. Reduced provisioning time by ~90% — from hours to under 10 minutes.</p>
+                </div>
+                <div class="project-footer">
+                  <span class="pill pill-crimson">-90% Provisioning Time · Modular Remote State</span>
+                  <a href="https://github.com/ElioUcan/terraform-aws-infra" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crimson">SOURCE CODE ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 04: AI Agent -->
+          <article class="carousel-slide" id="slide-04" role="tabpanel" aria-label="Proyecto 4: AI Agent" inert>
+            <div class="slide-layout">
+              <div class="slide-media"><img src="reference-art/portada-rag.svg" alt="Portada Bauhaus del agente de IA con herramientas y memoria persistente" class="slide-cover" loading="lazy" width="1600" height="900"></div>
+              <div class="slide-body">
+                <div>
+                  <div class="project-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span class="circle-badge crimson">04</span><span style="font-size: 0.72rem; font-weight: 700;">AI SYSTEMS // LIVE TOOL USE</span></div>
+                    <span class="pill pill-crimson">POSTGRESQL MEMORY</span>
+                  </div>
+                  <h3 class="project-title">AI Agent — Anthropic API + FastAPI</h3>
+                  <div class="project-tags"><span class="pill">PYTHON</span> <span class="pill">FASTAPI</span> <span class="pill">DOCKER</span> <span class="pill">ANTHROPIC SDK</span> <span class="pill">AWS EC2</span></div>
+                  <p class="project-desc">Conversational agent with live tool use (CSV reader + PostgreSQL queries) and persistent memory, served as a production REST API. Deployed to AWS EC2 with Docker Compose.</p>
+                </div>
+                <div class="project-footer">
+                  <span class="pill pill-crimson">Live Tool Use · Persistent PostgreSQL Memory</span>
+                  <a href="https://github.com/ElioUcan/ai-agent" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crimson">SOURCE CODE ↗</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 05: better-readmes -->
+          <article class="carousel-slide" id="slide-05" role="tabpanel" aria-label="Proyecto 5: better-readmes" inert>
+            <div class="slide-layout">
+              <div class="slide-media"><img src="reference-art/portada-readme.svg" alt="Portada Bauhaus de la herramienta CLI better-readmes" class="slide-cover" loading="lazy" width="1600" height="900"></div>
+              <div class="slide-body">
+                <div>
+                  <div class="project-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span class="circle-badge crimson">05</span><span style="font-size: 0.72rem; font-weight: 700;">OPEN SOURCE // GLOBAL NPM/NPX</span></div>
+                    <span class="pill pill-crimson">CLAUDE CODE SKILL</span>
+                  </div>
+                  <h3 class="project-title">better-readmes</h3>
+                  <div class="project-tags"><span class="pill">ANTHROPIC SDK</span> <span class="pill">CLAUDE CODE</span> <span class="pill">NPM/NPX</span> <span class="pill">TYPESCRIPT</span></div>
+                  <p class="project-desc">Published open-source Claude Code skill that auto-generates READMEs and fills GitHub repository metadata. Distributed via npm/npx — usable by any Claude Code user globally.</p>
+                </div>
+                <div class="project-footer">
+                  <span class="pill pill-crimson">Global npm/npx Distribution · Claude Code Skill</span>
+                  <a href="https://github.com/ElioUcan/better-readmes" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crimson">SOURCE CODE ↗</a>
                 </div>
               </div>
             </div>
@@ -357,15 +278,28 @@
     </div>
     <section class="bauhaus-card exp-item">
       <div class="exp-meta">
-        <span style="color: var(--ink-primary);">THE PALACE COMPANY // AI RESEARCH FELLOW</span>
-        <span style="color: var(--accent-crimson);">2024 — PRESENT · CANCÚN / MÉRIDA</span>
+        <span style="color: var(--ink-primary);">THE PALACE COMPANY // AI RESEARCH INTERN</span>
+        <span style="color: var(--accent-crimson);">SEP 2026 – DEC 2026 · MÉRIDA, MÉXICO · ON-SITE</span>
       </div>
-      <p style="color: var(--ink-secondary); font-size: 0.85rem;">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Architecting and validating enterprise artificial intelligence solutions across distributed hospitality workflows.
-      </p>
+      <div class="project-tags"><span class="pill">AI PARTNER RESEARCH</span> <span class="pill">TECHNICAL NEGOTIATION</span> <span class="pill">RAG &amp; EMBEDDINGS</span> <span class="pill">PYTHON</span> <span class="pill">ANTHROPIC API</span> <span class="pill">DOCKER</span></div>
       <ul class="exp-bullets">
-        <li>Lorem ipsum dolor sit amet, evaluando modelos RAG y reduciendo costos de inferencia en un 38% mediante token economics.</li>
-        <li>Consectetur adipiscing elit, implementando validaciones de consistencia de esquemas sobre PostgreSQL transaccional.</li>
+        <li>Leading technical research and comprehensive benchmark evaluations of diverse AI partners and vendors to drive multi-area enterprise AI integrations.</li>
+        <li>Liaising between cross-functional business stakeholders and technology providers, participating directly in technical negotiations and solution selection.</li>
+        <li>Researching and prototyping Retrieval-Augmented Generation (RAG) architectures with semantic embeddings, reranking, and token-cost optimization.</li>
+        <li>Designing automated AI workflows and internal APIs to accelerate intelligence across diverse operational departments.</li>
+      </ul>
+    </section>
+
+    <section class="bauhaus-card exp-item">
+      <div class="exp-meta">
+        <span style="color: var(--ink-primary);">HOLBERTON SCHOOL MÉRIDA // DEVOPS ENGINEERING FELLOW</span>
+        <span style="color: var(--accent-crimson);">JAN 2025 – PRESENT · MÉRIDA, MÉXICO</span>
+      </div>
+      <div class="project-tags"><span class="pill">C</span> <span class="pill">BASH</span> <span class="pill">LINUX</span> <span class="pill">DOCKER</span> <span class="pill">GIT</span> <span class="pill">CI/CD</span> <span class="pill">AWS</span></div>
+      <ul class="exp-bullets">
+        <li>Mastered low-level systems programming fundamentals in C, POSIX system calls, memory management, and Unix system administration with Bash.</li>
+        <li>Engineered automated CI/CD pipelines, containerized microservices with Docker, and provisioned modular cloud infrastructure on AWS.</li>
+        <li>Awarded a 50% merit scholarship after securing 3rd place in the Holberton Programming Olympics 2025.</li>
       </ul>
     </section>
 
@@ -376,72 +310,126 @@
     </div>
     <section class="skills-grid">
       <div class="bauhaus-card">
-        <h3 class="skill-cat-title">01. CLOUD &amp; DEVOPS</h3>
-        <div class="skill-pills">
-          <span class="pill">AWS S3 / EC2</span> <span class="pill">TERRAFORM IAC</span> <span class="pill">DOCKER COMPOSE</span> <span class="pill">GITHUB ACTIONS CI/CD</span>
-        </div>
+        <h3 class="skill-cat-title">01. LANGUAGES</h3>
+        <div class="skill-pills"><span class="pill">PYTHON</span> <span class="pill">SQL</span> <span class="pill">C</span> <span class="pill">BASH</span></div>
       </div>
       <div class="bauhaus-card">
-        <h3 class="skill-cat-title">02. DATA &amp; PIPELINES</h3>
-        <div class="skill-pills">
-          <span class="pill">POSTGRESQL STRICT</span> <span class="pill">APACHE AIRFLOW</span> <span class="pill">PYTHON (UV RUNTIME)</span> <span class="pill">ETL GENERATORS</span>
-        </div>
+        <h3 class="skill-cat-title">02. ETL &amp; PIPELINE</h3>
+        <div class="skill-pills"><span class="pill">AIRFLOW</span> <span class="pill">DOCKER</span> <span class="pill">FASTAPI</span> <span class="pill">PANDAS</span> <span class="pill">REST APIS</span></div>
       </div>
       <div class="bauhaus-card">
-        <h3 class="skill-cat-title">03. AI &amp; RUNTIME</h3>
-        <div class="skill-pills">
-          <span class="pill">RAG &amp; VECTOR RETRIEVAL</span> <span class="pill">RERANKING MODELS</span> <span class="pill">FASTAPI REST</span> <span class="pill">TOKEN OPTIMIZATION</span>
-        </div>
+        <h3 class="skill-cat-title">03. CLOUD</h3>
+        <div class="skill-pills"><span class="pill">AWS</span> <span class="pill">LINUX</span></div>
+      </div>
+      <div class="bauhaus-card">
+        <h3 class="skill-cat-title">04. DATA</h3>
+        <div class="skill-pills"><span class="pill">SNOWFLAKE</span> <span class="pill">POSTGRESQL</span> <span class="pill">POWER BI</span></div>
+      </div>
+      <div class="bauhaus-card">
+        <h3 class="skill-cat-title">05. AI</h3>
+        <div class="skill-pills"><span class="pill">ANTHROPIC SDK</span> <span class="pill">OPENAI API</span> <span class="pill">HUGGING FACE</span> <span class="pill">CLAUDE CODE</span></div>
+      </div>
+      <div class="bauhaus-card">
+        <h3 class="skill-cat-title">06. DEV TOOLS</h3>
+        <div class="skill-pills"><span class="pill">GIT</span> <span class="pill">GITHUB ACTIONS</span></div>
       </div>
     </section>
 
     <!-- 09. CREDENTIALS AND AWARDS -->
-    <div class="section-banner">
+    <div class="section-banner" id="certs">
       <span>SECTION 06 // CREDENTIALS &amp; DISTINCTIONS</span>
       <span class="circle-badge">06</span>
     </div>
     <section class="grid-2col">
       <div class="bauhaus-card">
         <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">VERIFIED CERTIFICATIONS</h3>
-        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-          <div style="border-left: 2px solid var(--accent-crimson); padding-left: 0.8rem;">
-            <div style="font-weight: 600; font-size: 0.85rem;">AWS Academy Graduate — Data Engineering</div>
-            <div style="font-size: 0.72rem; color: var(--ink-secondary);">Amazon Web Services · Issued 2024 · Verified Credly</div>
-          </div>
-          <div style="border-left: 2px solid var(--accent-crimson); padding-left: 0.8rem;">
-            <div style="font-weight: 600; font-size: 0.85rem;">DataCamp Certified Associate Data Engineer</div>
-            <div style="font-size: 0.72rem; color: var(--ink-secondary);">SQL, Python &amp; Data Pipeline Architecture · 2024</div>
-          </div>
-        </div>
+        <ul class="cert-ledger">
+          <li>
+            <a class="cert-row" href="https://www.credly.com/badges/f5315b8d-38ce-45dc-8e81-c56c49070194/public_url" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/aws-data-engineer.png" alt="AWS Academy Data Engineer badge">
+              <div class="cert-body"><div class="cert-name">AWS Academy Data Engineer</div><div class="cert-org">Amazon Web Services · Credly verified</div></div>
+              <span class="cert-year">2025</span>
+            </a>
+          </li>
+          <li>
+            <a class="cert-row" href="https://www.credly.com/badges/c78530a7-ad85-4f06-915c-28ce07fa56a7/public_url" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/aws-cloud-foundations.png" alt="AWS Academy Cloud Foundations badge">
+              <div class="cert-body"><div class="cert-name">AWS Academy Cloud Foundations</div><div class="cert-org">Amazon Web Services · Credly verified</div></div>
+              <span class="cert-year">2025</span>
+            </a>
+          </li>
+          <li>
+            <a class="cert-row" href="https://www.datacamp.com/certificate/DEA0018844546600" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/DEAssociatebadge.png" alt="DataCamp Associate Data Engineer badge">
+              <div class="cert-body"><div class="cert-name">Associate Data Engineer</div><div class="cert-org">DataCamp · Certified</div></div>
+              <span class="cert-year">2026</span>
+            </a>
+          </li>
+          <li>
+            <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/a2b0620a66aea4a6063a3809b8eced5f82c5bac6" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/dataanalyst.png" alt="DataCamp Data Analyst in Power BI badge">
+              <div class="cert-body"><div class="cert-name">Data Analyst in Power BI</div><div class="cert-org">DataCamp · 50 hrs</div></div>
+              <span class="cert-year">2026</span>
+            </a>
+          </li>
+          <li>
+            <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/6c44648a07e760b97f5a0caabdc6f372b0148d4f" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/dbdesign.png" alt="DataCamp Database Design badge">
+              <div class="cert-body"><div class="cert-name">Database Design</div><div class="cert-org">DataCamp · Accomplishment</div></div>
+              <span class="cert-year">2026</span>
+            </a>
+          </li>
+          <li>
+            <a class="cert-row" href="https://www.datacamp.com/completed/statement-of-accomplishment/course/a183e20afedd51baf7bb7007780294559420817f" target="_blank" rel="noopener noreferrer">
+              <img class="cert-badge" loading="lazy" src="images/snowflakedatacamp.png" alt="DataCamp Snowflake SQL badge">
+              <div class="cert-body"><div class="cert-name">Introduction to Snowflake SQL</div><div class="cert-org">DataCamp · Accomplishment</div></div>
+              <span class="cert-year">2026</span>
+            </a>
+          </li>
+        </ul>
       </div>
+
       <div class="bauhaus-card">
-        <h3 style="font-size: 1.15rem; margin-bottom: 1rem;">HONORS &amp; AWARDS</h3>
-        <div style="border-left: 2px solid var(--accent-crimson); padding-left: 0.8rem;">
-          <div style="font-weight: 600; font-size: 0.85rem; color: var(--accent-crimson);">1st Place — Datathon UPY 2025</div>
-          <div style="font-size: 0.72rem; color: var(--ink-secondary); margin-bottom: 0.4rem;">Universidad Politécnica de Yucatán</div>
-          <p style="font-size: 0.78rem; color: var(--ink-secondary);">
-            Lorem ipsum dolor sit amet: primer lugar en modelado predictivo y construcción de pipeline de datos en tiempo real.
-          </p>
-        </div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 1.25rem;">HONORS &amp; AWARDS</h3>
+        <aside class="award-item">
+          <div class="award-header"><span class="award-rank">03</span><span class="award-year">AWARD · 2025</span></div>
+          <h4 class="award-title">UPY Datathon 2025</h4>
+          <p class="award-org">Universidad Politécnica de Yucatán</p>
+          <span class="pill">PREDICTIVE MODELING &amp; REAL-TIME DATA PIPELINES</span>
+        </aside>
+
+        <aside class="award-item">
+          <div class="award-header"><span class="award-rank">03</span><span class="award-year">AWARD · 2025</span></div>
+          <h4 class="award-title">Holberton Programming Olympics 2025</h4>
+          <p class="award-org">Holberton School Mérida</p>
+          <span class="pill pill-crimson">50% SCHOLARSHIP AWARDED</span>
+        </aside>
       </div>
     </section>
 
     <!-- 10. ACADEMIC BACKGROUND -->
-    <div class="section-banner">
+    <div class="section-banner" id="education">
       <span>SECTION 07 // ACADEMIC RECORD</span>
       <span class="circle-badge">07</span>
     </div>
-    <section class="bauhaus-card">
-      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
-        <h3 style="font-size: 1.15rem;">UNIVERSIDAD POLITÉCNICA DE YUCATÁN (UPY)</h3>
-        <span class="pill pill-crimson">2022 — 2026 (FINAL YEAR)</span>
+    <section>
+      <div class="edu-card">
+        <img class="edu-logo" loading="lazy" src="images/upy.jpg" alt="Universidad Politécnica de Yucatán logo">
+        <div class="edu-body">
+          <h3 class="edu-inst">Universidad Politécnica de Yucatán</h3>
+          <p class="edu-prog">B.S. Data Engineering &amp; AI · Government polytechnic · Mérida, México</p>
+        </div>
+        <span class="edu-time">EXPECTED 2027</span>
       </div>
-      <div style="font-size: 0.82rem; font-weight: 600; margin-bottom: 0.5rem;">
-        B.S. in Data Engineering &amp; Artificial Intelligence (Ingeniería de Datos e IA)
+
+      <div class="edu-card">
+        <img class="edu-logo" loading="lazy" src="images/holberton.png" alt="Holberton School Mérida logo">
+        <div class="edu-body">
+          <h3 class="edu-inst">Holberton School Mérida</h3>
+          <p class="edu-prog">DevOps Engineering Certification · Project-based program · CI/CD · Cloud · IaC</p>
+        </div>
+        <span class="edu-time">EXPECTED JUL 2027</span>
       </div>
-      <p style="font-size: 0.8rem; color: var(--ink-secondary);">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Especialidad en pipelines de datos distribuidos, infraestructura en la nube y optimización de algoritmos de inteligencia artificial.
-      </p>
     </section>
   </main>
 
@@ -449,21 +437,21 @@
   <footer id="contact" class="site-footer">
     <div class="container">
       <div class="footer-cta">
-        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">BUILD RELIABLE ARCHITECTURES</h2>
-        <p style="color: var(--ink-secondary); font-size: 0.85rem; max-width: 520px; margin: 0 auto 1.5rem;">
-          Lorem ipsum dolor sit amet, open for data engineering, cloud infrastructure, and AI research opportunities.
-        </p>
+        <h2 class="footer-title">LET'S BUILD RELIABLE SYSTEMS.</h2>
+        <p class="footer-sub">Open to engineering collaborations, technical discussions, and new challenges. Reach out to discuss data pipelines, cloud infrastructure, or AI systems.</p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="mailto:contact@elioucan.dev" class="btn btn-crimson">TRANSMIT INQUIRY</a>
+          <button type="button" class="btn btn-crimson btn-copy-email" data-email="elioeduardo06@gmail.com">TRANSMIT INQUIRY [EMAIL] ↗</button>
           <a href="#hero" class="btn">RETURN TO TOP [▲]</a>
         </div>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/eliotito" class="nav-link" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a href="https://github.com/ElioUcan" class="nav-link" target="_blank" rel="noopener noreferrer">GITHUB</a>
         <span style="color: var(--accent-stone);">·</span>
-        <a href="https://linkedin.com/in/elioucan" class="nav-link" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <a href="https://linkedin.com/in/elio-ucan-87a077352" class="nav-link" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
         <span style="color: var(--accent-stone);">·</span>
-        <a href="mailto:contact@elioucan.dev" class="nav-link">EMAIL</a>
+        <button type="button" class="nav-link btn-copy-email" data-email="elioeduardo06@gmail.com" style="background: none; border: none; cursor: pointer; font-family: inherit;">EMAIL</button>
+        <span style="color: var(--accent-stone);">·</span>
+        <a href="assets/Elio_Resume.pdf" download class="nav-link">CV [PDF]</a>
       </div>
       <div class="colophon">
         COLOPHON // DESIGNED IN MÉRIDA, YUCATÁN · UTC-6<br>
@@ -471,55 +459,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    (function () {
-      const track = document.querySelector('.carousel-track');
-      const slides = document.querySelectorAll('.carousel-slide');
-      const dots = document.querySelectorAll('.dot-btn');
-      const counter = document.getElementById('carousel-counter');
-      const prevBtn = document.getElementById('prev-slide');
-      const nextBtn = document.getElementById('next-slide');
-      const carousel = document.getElementById('projects-carousel');
-      if (!track || slides.length === 0) return;
-      let currentIndex = 0;
-      const total = slides.length;
-      function goToSlide(index) {
-        currentIndex = (index + total) % total;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        if (counter) counter.textContent = `[ 0${currentIndex + 1} / 0${total} ]`;
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('is-active', i === currentIndex);
-          dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
-        });
-        slides.forEach((slide, i) => {
-          if (i === currentIndex) slide.removeAttribute('inert');
-          else slide.setAttribute('inert', '');
-        });
-      }
-      if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-      if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-      dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
-      if (carousel) {
-        carousel.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') { e.preventDefault(); goToSlide(currentIndex - 1); }
-          else if (e.key === 'ArrowRight') { e.preventDefault(); goToSlide(currentIndex + 1); }
-        });
-      }
-      let startX = 0, startY = 0;
-      track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-      }, { passive: true });
-      track.addEventListener('touchend', (e) => {
-        if (!e.changedTouches || !e.changedTouches[0]) return;
-        const diffX = e.changedTouches[0].clientX - startX;
-        const diffY = e.changedTouches[0].clientY - startY;
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-          goToSlide(diffX > 0 ? currentIndex - 1 : currentIndex + 1);
-        }
-      }, { passive: true });
-      goToSlide(0);
-    })();
-  </script>
+
+  <script src="bauhaus.js" defer></script>
 </body>
 </html>
