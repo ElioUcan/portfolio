@@ -60,6 +60,32 @@
     goToSlide(0);
   }
 
+  // Selector Dinámico de Tipografía Neoazteca
+  const fontPills = document.querySelectorAll('.font-pill');
+  if (fontPills.length > 0) {
+    const applyFont = (font) => {
+      document.documentElement.setAttribute('data-font', font);
+      fontPills.forEach((p) => {
+        const isActive = p.getAttribute('data-font') === font;
+        p.classList.toggle('is-active', isActive);
+        p.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+      try { localStorage.setItem('portfolio-font', font); } catch {}
+    };
+
+    fontPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const font = pill.getAttribute('data-font');
+        if (font) applyFont(font);
+      });
+    });
+
+    try {
+      const saved = localStorage.getItem('portfolio-font');
+      if (saved) applyFont(saved);
+    } catch {}
+  }
+
   // Copiado de Correo Directo
   document.querySelectorAll('.btn-copy-email').forEach((btn) => {
     let copyTimeout = null;

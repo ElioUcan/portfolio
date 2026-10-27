@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-font="cinzel">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elio Eduardo Ucán Zapata — Bauhaus Circular</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Martian+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Martian+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=Staatliches&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style-bauhaus.css">
 </head>
@@ -16,9 +16,15 @@
   <!-- 01. HEADER / NAVIGATION -->
   <header class="site-header">
     <div class="container header-inner">
-      <div>
+      <div class="header-brand-group">
         <a href="#hero" class="brand-title">ELIO UCÁN</a>
         <span class="brand-sub"> // BAUHAUS CIRCULAR</span>
+      </div>
+      <div class="font-switcher" role="group" aria-label="Selector de tipografía Neoazteca">
+        <span class="font-switcher-label">FONT:</span>
+        <button type="button" class="font-pill is-active" data-font="cinzel" aria-pressed="true">CINZEL · PIEDRA</button>
+        <button type="button" class="font-pill" data-font="syne" aria-pressed="false">SYNE · ESCULTURA</button>
+        <button type="button" class="font-pill" data-font="staatliches" aria-pressed="false">STAATLICHES · MONUMENTO</button>
       </div>
       <nav class="site-nav" aria-label="Navegación principal">
         <a href="#work" class="nav-link">Work</a>
