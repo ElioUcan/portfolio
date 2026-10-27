@@ -86,52 +86,66 @@
     } catch {}
   }
 
-  // Mascota Maya Interactiva (Scroll Companion)
-  const mayaMascot = document.getElementById('mayaMascot');
-  const mayaBubble = document.getElementById('mayaBubble');
-  const mayaTrack = document.querySelector('.maya-track');
-
-  if (mayaMascot && mayaTrack) {
-    const sections = [
-      { id: 'hero', label: 'INICIO' },
-      { id: 'about', label: 'TESIS' },
-      { id: 'focus', label: 'NOW' },
-      { id: 'work', label: 'PROYECTOS' },
-      { id: 'experience', label: 'EXP' },
-      { id: 'skills', label: 'SKILLS' },
-      { id: 'certs', label: 'CERTS' },
-      { id: 'education', label: 'ACADEMIA' },
-      { id: 'contact', label: 'FIN ✦' }
+  // Mascota Maya Pixel que Brinca entre Secciones
+  const pixelMascot = document.getElementById('pixelMayaCompanion');
+  const pixelTag = document.getElementById('pixelNameTag');
+  if (pixelMascot) {
+    const sectionList = [
+      { id: 'hero', name: "K'UUK'" },
+      { id: 'about', name: 'TESIS' },
+      { id: 'focus', name: 'NOW' },
+      { id: 'work', name: 'PROYECTOS' },
+      { id: 'experience', name: 'EXP' },
+      { id: 'skills', name: 'SKILLS' },
+      { id: 'certs', name: 'CERTS' },
+      { id: 'education', name: 'ACADEMIA' },
+      { id: 'contact', name: 'CONTACTO' }
     ];
 
-    const updateMascotPosition = () => {
-      if (window.innerWidth <= 768) return;
-      const scrollY = window.scrollY;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = maxScroll > 0 ? Math.min(Math.max(scrollY / maxScroll, 0), 1) : 0;
+    let currentActiveIndex = 0;
+    let jumpTimeout = null;
 
-      const trackHeight = mayaTrack.clientHeight - mayaMascot.clientHeight;
-      const translateY = progress * trackHeight;
-      mayaMascot.style.transform = `translate(-50%, ${translateY}px)`;
-
-      let currentLabel = `${Math.round(progress * 100)}%`;
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i].id);
-        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.45) {
-          currentLabel = sections[i].label;
+    const updateHop = () => {
+      let activeIndex = 0;
+      for (let i = sectionList.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionList[i].id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.42) {
+          activeIndex = i;
           break;
         }
       }
-      if (mayaBubble) {
-        mayaBubble.textContent = currentLabel;
+
+      if (window.innerWidth > 768) {
+        const activeEl = document.getElementById(sectionList[activeIndex].id);
+        if (activeEl) {
+          const banner = activeEl.querySelector('.section-banner') || activeEl;
+          const rect = banner.getBoundingClientRect();
+          const targetY = Math.max(90, Math.min(window.innerHeight - 110, rect.top + 6));
+          pixelMascot.style.top = `${targetY}px`;
+        }
+      }
+
+      if (activeIndex !== currentActiveIndex) {
+        currentActiveIndex = activeIndex;
+        pixelMascot.classList.remove('is-jumping', 'is-landing');
+        void pixelMascot.offsetWidth;
+        pixelMascot.classList.add('is-jumping');
+        if (pixelTag) pixelTag.textContent = sectionList[activeIndex].name;
+
+        if (jumpTimeout) clearTimeout(jumpTimeout);
+        jumpTimeout = setTimeout(() => {
+          pixelMascot.classList.remove('is-jumping');
+          pixelMascot.classList.add('is-landing');
+        }, 500);
       }
     };
 
-    window.addEventListener('scroll', updateMascotPosition, { passive: true });
-    window.addEventListener('resize', updateMascotPosition);
-    updateMascotPosition();
+    window.addEventListener('scroll', updateHop, { passive: true });
+    window.addEventListener('resize', updateHop);
+    updateHop();
 
-    mayaMascot.addEventListener('click', () => {
+    pixelMascot.addEventListener('click', () => {
+      pixelMascot.classList.add('is-jumping');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
