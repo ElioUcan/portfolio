@@ -1,4 +1,7 @@
 :root {
+  --font-display: 'Josefin Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Martian Mono', monospace;
   --bg-canvas: #F4F0E8;
   --bg-surface: #ECE6DA;
   --bg-white: #FFFFFF;
@@ -17,9 +20,9 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg-canvas);
   color: var(--ink-primary);
-  font-family: 'Martian Mono', monospace, monospace;
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.65;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -32,7 +35,7 @@ body {
 a { color: inherit; text-decoration: none; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-crimson); outline-offset: 3px; }
 .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--ink-primary); letter-spacing: -0.02em; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(--ink-primary); letter-spacing: 0.04em; text-transform: uppercase; }
 
 /* Banners de sección con estética Bauhaus Neomexicana */
 .section-banner {
@@ -75,7 +78,7 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; col
 /* Botones */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
-  padding: 0.65rem 1.25rem; font-family: inherit; font-size: 0.75rem; font-weight: 600;
+  padding: 0.65rem 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
   letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--border-hairline);
   background: transparent; color: var(--ink-primary); border-radius: 9999px;
   transition: all 0.2s ease; cursor: pointer;
@@ -88,7 +91,7 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; col
 
 /* Etiquetas y chips */
 .pill {
-  display: inline-block; padding: 0.25rem 0.65rem; font-size: 0.65rem; font-weight: 600;
+  display: inline-block; padding: 0.25rem 0.65rem; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600;
   letter-spacing: 0.05em; text-transform: uppercase; border-radius: 9999px;
   border: 1px solid var(--border-hairline); background: var(--bg-canvas); color: var(--ink-primary);
 }
@@ -101,21 +104,21 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; col
   border-bottom: 1px solid var(--border-hairline);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.brand-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
+.brand-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.06em; text-transform: uppercase; }
 .brand-sub { color: var(--accent-crimson); font-size: 0.72rem; font-weight: 600; }
 .site-nav { display: flex; align-items: center; gap: 1.25rem; }
-.nav-link { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-secondary); transition: color 0.2s; }
+.nav-link { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-secondary); transition: color 0.2s; }
 .nav-link:hover { color: var(--accent-crimson); }
 
 /* Hero Section */
 .hero { padding: 4.5rem 0 3.5rem; border-bottom: 1px solid var(--border-hairline); }
 .hero-layout { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
 .hero-content { flex: 1; min-width: 300px; }
-.hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.15em; color: var(--accent-crimson); margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; }
-.hero-h1 { font-size: clamp(2rem, 4.8vw, 3.6rem); line-height: 1.08; margin-bottom: 1rem; text-transform: uppercase; }
-.hero-subtitle { font-size: clamp(0.85rem, 1.8vw, 1.15rem); color: var(--ink-secondary); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
+.hero-kicker { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--accent-crimson); margin-bottom: 1rem; text-transform: uppercase; font-weight: 600; }
+.hero-h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 5vw, 3.8rem); line-height: 1.05; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.hero-subtitle { font-family: var(--font-display); font-size: clamp(0.95rem, 2vw, 1.25rem); color: var(--ink-secondary); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.75rem; }
-.hero-text { max-width: 680px; color: var(--ink-secondary); font-size: 0.9rem; margin-bottom: 2rem; }
+.hero-text { max-width: 680px; color: var(--ink-secondary); font-size: 0.94rem; line-height: 1.68; margin-bottom: 2rem; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 
 /* Stats Ledger */
@@ -124,10 +127,10 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; col
   gap: 1px; background: var(--border-hairline); border: 1px solid var(--border-hairline); margin: 3rem 0;
 }
 .stat-item { background: var(--bg-canvas); padding: 1.5rem; text-align: center; }
-.stat-val { font-family: 'Space Grotesk', sans-serif; font-size: 2.3rem; font-weight: 700; color: var(--ink-primary); margin-bottom: 0.25rem; }
+.stat-val { font-family: var(--font-display); font-size: 2.3rem; font-weight: 700; color: var(--ink-primary); margin-bottom: 0.25rem; letter-spacing: 0.02em; }
 .stat-val.crimson { color: var(--accent-crimson); }
-.stat-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; color: var(--ink-primary); text-transform: uppercase; margin-bottom: 0.2rem; }
-.stat-sub { font-size: 0.68rem; color: var(--ink-secondary); }
+.stat-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; color: var(--ink-primary); text-transform: uppercase; margin-bottom: 0.2rem; }
+.stat-sub { font-size: 0.72rem; color: var(--ink-secondary); }
 
 /* Grids & Cards */
 .grid-2col { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
@@ -198,7 +201,7 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; col
 .cert-year { font-size: 0.72rem; font-weight: 700; color: var(--accent-crimson); }
 .award-item { border-left: 3px solid var(--accent-crimson); padding-left: 1rem; margin-bottom: 1.25rem; }
 .award-header { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.25rem; }
-.award-rank { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--accent-crimson); }
+.award-rank { font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; color: var(--accent-crimson); letter-spacing: 0.04em; }
 .award-year { font-size: 0.7rem; color: var(--ink-secondary); text-transform: uppercase; }
 .award-title { font-size: 0.95rem; margin-bottom: 0.2rem; }
 .award-org { font-size: 0.75rem; color: var(--ink-secondary); margin-bottom: 0.4rem; }
