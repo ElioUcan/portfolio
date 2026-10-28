@@ -70,7 +70,7 @@
     </section>
 
     <!-- 03. STATS LEDGER -->
-    <section class="stats-ledger" aria-label="Key technical metrics">
+    <section class="stats-ledger" id="stats-ledger" aria-label="Key technical metrics">
       <div class="stat-item"><div class="stat-val crimson">05</div><div class="stat-label">Projects Shipped</div><div class="stat-sub">Production &amp; Open Source</div></div>
       <div class="stat-item"><div class="stat-val">06</div><div class="stat-label">Certifications</div><div class="stat-sub">AWS &amp; DataCamp Verified</div></div>
       <div class="stat-item"><div class="stat-val crimson">AWS</div><div class="stat-label">Certified Engineer</div><div class="stat-sub">Data &amp; Cloud Foundations</div></div>
@@ -78,7 +78,7 @@
     </section>
 
     <!-- 04. ABOUT / THESIS -->
-    <div class="section-banner">
+    <div class="section-banner" id="banner-about">
       <span>SECTION 01 // ARCHITECTURAL CONSTRUCTIVISM</span>
       <div class="constructivist-legend"><span class="chip-dot chip-red"></span> CR-01 <span class="chip-dot chip-stone"></span> ST-02 <span class="chip-dot chip-dark"></span> BK-03</div>
     </div>
@@ -274,7 +274,7 @@
     </section>
 
     <!-- 07. PROFESSIONAL EXPERIENCE -->
-    <div class="section-banner">
+    <div class="section-banner" id="banner-exp">
       <span>SECTION 04 // PROFESSIONAL LEDGER</span>
       <span class="circle-badge">04</span>
     </div>
@@ -457,72 +457,84 @@
     </div>
   </footer>
 
-  <!-- MASCOTA MAYA PIXEL QUE BRINCA ENTRE SECCIONES (ESTILO CLAUDE CODE) -->
-  <aside class="pixel-maya-companion" id="pixelMayaCompanion" aria-label="Mascota maya pixel" title="¡Brinco al inicio!">
-    <div class="pixel-ground-burst" aria-hidden="true">
-      <span class="pixel-puff">■</span>
-      <span class="pixel-puff">■</span>
+  <!-- MASCOTA MAYA PIXEL CON LAPTOP QUE SE POSA SOBRE LOS RECUADROS (ESTILO CLAUDE CODE) -->
+  <aside class="pixel-mascot-companion" id="pixelMascotCompanion" aria-label="Mascota maya programando en laptop" title="K'UUK' // Haz clic para animar">
+    <div class="mascot-speech-bubble" id="mascotBubble">
+      <span class="bubble-prompt">&gt;</span> <span class="bubble-text" id="mascotBubbleText">K'UUK' // DATA &amp; AI</span>
     </div>
-    <svg class="pixel-maya-sprite" viewBox="0 0 24 24" width="60" height="60" shape-rendering="crispEdges" aria-hidden="true">
-      <!-- Penacho / Plumas de Quetzal Carmesí & Ocre -->
-      <rect x="11" y="0" width="2" height="2" fill="#C9382B"/>
-      <rect x="10" y="2" width="4" height="2" fill="#C9382B"/>
-      <rect x="7" y="2" width="2" height="2" fill="#A3A199"/>
-      <rect x="15" y="2" width="2" height="2" fill="#A3A199"/>
-      <rect x="6" y="4" width="3" height="2" fill="#B9A98A"/>
-      <rect x="9" y="4" width="6" height="2" fill="#C9382B"/>
-      <rect x="15" y="4" width="3" height="2" fill="#B9A98A"/>
+    <div class="mascot-dust" aria-hidden="true">
+      <span>■ ■</span>
+      <span>■ ■</span>
+    </div>
+    <div class="mascot-sprite-wrapper">
+      <svg class="mascot-svg" viewBox="0 0 44 24" width="88" height="48" shape-rendering="crispEdges" aria-hidden="true">
+        <!-- Laptop Base & Keyboard (descansa sobre el borde hairline y=22..23) -->
+        <rect x="2" y="22" width="12" height="2" fill="#121316"/>
+        <rect x="3" y="22" width="10" height="1" fill="#A3A199"/>
 
-      <!-- Corona / Diadema Escalonada Piramidal -->
-      <rect x="8" y="6" width="8" height="1" fill="#121316"/>
-      <rect x="9" y="7" width="6" height="1" fill="#B9A98A"/>
-      <rect x="11" y="7" width="2" height="1" fill="#C9382B"/>
-      <rect x="5" y="8" width="14" height="2" fill="#B9A98A"/>
-      <rect x="5" y="8" width="1" height="2" fill="#121316"/>
-      <rect x="18" y="8" width="1" height="2" fill="#121316"/>
-      <rect x="11" y="8" width="2" height="2" fill="#C9382B"/>
-      <rect x="5" y="10" width="14" height="1" fill="#121316"/>
+        <!-- Laptop Screen Tilted (inclinada hacia la mascota) -->
+        <rect x="2" y="21" width="2" height="1" fill="#121316"/>
+        <rect x="1" y="19" width="2" height="2" fill="#121316"/>
+        <rect x="0" y="16" width="2" height="3" fill="#121316"/>
+        <rect x="0" y="14" width="2" height="2" fill="#121316"/>
+        <!-- Pantalla terminal con brillo esmeralda -->
+        <rect x="2" y="15" width="1" height="4" fill="#059669"/>
+        <rect x="3" y="18" width="1" height="3" fill="#059669"/>
+        <rect class="mascot-screen-code" x="2" y="16" width="1" height="1" fill="#34D399"/>
+        <rect class="mascot-screen-code" x="3" y="19" width="1" height="1" fill="#FFFFFF"/>
 
-      <!-- Orejeras Circulares de Piedra (Izquierda y Derecha) -->
-      <rect x="2" y="12" width="4" height="4" fill="#A3A199"/>
-      <rect x="3" y="13" width="2" height="2" fill="#C9382B"/>
-      <rect x="2" y="12" width="4" height="1" fill="#121316"/>
-      <rect x="2" y="15" width="4" height="1" fill="#121316"/>
-      <rect x="2" y="13" width="1" height="2" fill="#121316"/>
-      <rect x="5" y="13" width="1" height="2" fill="#121316"/>
+        <!-- Patitas delanteras tecleando en la laptop -->
+        <rect class="mascot-paw-left" x="9" y="20" width="3" height="2" fill="#C9382B"/>
+        <rect class="mascot-paw-right" x="12" y="21" width="2" height="1" fill="#ECE6DA"/>
 
-      <rect x="18" y="12" width="4" height="4" fill="#A3A199"/>
-      <rect x="19" y="13" width="2" height="2" fill="#C9382B"/>
-      <rect x="18" y="12" width="4" height="1" fill="#121316"/>
-      <rect x="18" y="15" width="4" height="1" fill="#121316"/>
-      <rect x="18" y="13" width="1" height="2" fill="#121316"/>
-      <rect x="21" y="13" width="1" height="2" fill="#121316"/>
+        <!-- Patitas (4 patas descansando exactamente sobre el borde y=23) -->
+        <rect x="16" y="20" width="2" height="4" fill="#A3A199"/>
+        <rect x="16" y="22" width="2" height="2" fill="#121316"/>
+        <rect x="20" y="20" width="2" height="4" fill="#A3A199"/>
+        <rect x="20" y="22" width="2" height="2" fill="#121316"/>
+        <rect x="30" y="20" width="2" height="4" fill="#A3A199"/>
+        <rect x="30" y="22" width="2" height="2" fill="#121316"/>
+        <rect x="34" y="20" width="2" height="4" fill="#A3A199"/>
+        <rect x="34" y="22" width="2" height="2" fill="#121316"/>
 
-      <!-- Rostro Terracota / Piedra Cálida Base -->
-      <rect x="6" y="11" width="12" height="8" fill="#ECE6DA"/>
-      <rect x="5" y="11" width="1" height="7" fill="#121316"/>
-      <rect x="18" y="11" width="1" height="7" fill="#121316"/>
-      <rect x="7" y="19" width="10" height="1" fill="#121316"/>
+        <!-- Cuerpo Terracota Carmesí (#C9382B estilo criatura Claude Code) -->
+        <rect x="14" y="11" width="24" height="10" fill="#C9382B"/>
+        <rect x="14" y="10" width="22" height="1" fill="#C9382B"/>
+        <rect x="16" y="9" width="18" height="1" fill="#C9382B"/>
+        <rect x="13" y="13" width="1" height="7" fill="#C9382B"/>
+        <rect x="38" y="12" width="1" height="8" fill="#C9382B"/>
 
-      <!-- Ojos Grandes Claude Code Style (2x3 con brillo 1x1) -->
-      <rect x="8" y="13" width="2" height="3" fill="#121316"/>
-      <rect x="8" y="13" width="1" height="1" fill="#FFFFFF"/>
-      <rect x="14" y="13" width="2" height="3" fill="#121316"/>
-      <rect x="14" y="13" width="1" height="1" fill="#FFFFFF"/>
+        <!-- Luces y Sombras de volumen constructivista -->
+        <rect x="16" y="10" width="18" height="1" fill="#D96048"/>
+        <rect x="14" y="19" width="24" height="2" fill="#9E2A20"/>
 
-      <!-- Mejillas Carmesí (Blush Pixels) -->
-      <rect x="7" y="16" width="2" height="1" fill="#C9382B"/>
-      <rect x="15" y="16" width="2" height="1" fill="#C9382B"/>
+        <!-- Penacho Maya (Plumas de Quetzal Jade, Carmesí y Ocre) -->
+        <g class="mascot-penacho">
+          <rect x="22" y="4" width="2" height="5" fill="#059669"/>
+          <rect x="24" y="3" width="2" height="6" fill="#059669"/>
+          <rect x="26" y="2" width="2" height="7" fill="#C9382B"/>
+          <rect x="28" y="3" width="2" height="6" fill="#B9A98A"/>
+          <rect x="30" y="5" width="2" height="4" fill="#B9A98A"/>
+          <rect x="24" y="8" width="6" height="1" fill="#121316"/>
+          <rect x="25" y="7" width="4" height="1" fill="#B9A98A"/>
+        </g>
 
-      <!-- Sonrisa Pixel -->
-      <rect x="11" y="17" width="2" height="1" fill="#121316"/>
+        <!-- Ojos Grandes Pixel mirándolo todo atentamente -->
+        <rect x="15" y="13" width="2" height="3" fill="#121316"/>
+        <rect x="15" y="13" width="1" height="1" fill="#FFFFFF"/>
+        <rect x="20" y="13" width="2" height="3" fill="#121316"/>
+        <rect x="20" y="13" width="1" height="1" fill="#FFFFFF"/>
 
-      <!-- Collar de Cuentas Maya (Base) -->
-      <rect x="8" y="20" width="2" height="2" fill="#A3A199"/>
-      <rect x="11" y="20" width="2" height="2" fill="#C9382B"/>
-      <rect x="14" y="20" width="2" height="2" fill="#A3A199"/>
-    </svg>
-    <div class="pixel-name-tag" id="pixelNameTag">K'UUK'</div>
+        <!-- Mejillas sonrojadas -->
+        <rect x="14" y="17" width="2" height="1" fill="#F4A261"/>
+        <rect x="19" y="17" width="2" height="1" fill="#F4A261"/>
+
+        <!-- Cola de Quetzal ondeante -->
+        <rect x="38" y="11" width="2" height="2" fill="#059669"/>
+        <rect x="40" y="9" width="2" height="3" fill="#059669"/>
+        <rect x="41" y="7" width="2" height="3" fill="#B9A98A"/>
+      </svg>
+    </div>
   </aside>
 
   <script src="bauhaus.js" defer></script>

@@ -86,67 +86,138 @@
     } catch {}
   }
 
-  // Mascota Maya Pixel que Brinca entre Secciones
-  const pixelMascot = document.getElementById('pixelMayaCompanion');
-  const pixelTag = document.getElementById('pixelNameTag');
-  if (pixelMascot) {
-    const sectionList = [
-      { id: 'hero', name: "K'UUK'" },
-      { id: 'about', name: 'TESIS' },
-      { id: 'focus', name: 'NOW' },
-      { id: 'work', name: 'PROYECTOS' },
-      { id: 'experience', name: 'EXP' },
-      { id: 'skills', name: 'SKILLS' },
-      { id: 'certs', name: 'CERTS' },
-      { id: 'education', name: 'ACADEMIA' },
-      { id: 'contact', name: 'CONTACTO' }
+  // Mascota Maya Pixel que se para sobre los recuadros y teclea en su laptop
+  const mascot = document.getElementById('pixelMascotCompanion');
+  const bubbleText = document.getElementById('mascotBubbleText');
+
+  if (mascot) {
+    const targetList = [
+      { id: 'stats-ledger', status: "K'UUK' // DATA & AI" },
+      { id: 'banner-about', status: "K'UUK' // COMPILING THESIS" },
+      { id: 'focus', status: "K'UUK' // 4GB DEBIAN + RAG" },
+      { id: 'work', status: "K'UUK' // AIRFLOW & AWS IAC" },
+      { id: 'banner-exp', status: "K'UUK' // AI RESEARCH LAB" },
+      { id: 'skills', status: "K'UUK' // PYTHON & POSTGRES" },
+      { id: 'certs', status: "K'UUK' // AWS CERTIFIED" },
+      { id: 'education', status: "K'UUK' // UPY & HOLBERTON" },
+      { id: 'contact', status: "K'UUK' // TRANSMIT PING" }
     ];
 
-    let currentActiveIndex = 0;
-    let jumpTimeout = null;
+    let currentTargetIndex = -1;
+    let landingTimeout = null;
+    const MASCOT_HEIGHT = 48;
+    const MASCOT_WIDTH = 88;
 
-    const updateHop = () => {
-      let activeIndex = 0;
-      for (let i = sectionList.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionList[i].id);
-        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.42) {
-          activeIndex = i;
-          break;
-        }
-      }
+    const setMascotPosition = (targetEl, isJump) => {
+      if (!targetEl) return;
+      const rect = targetEl.getBoundingClientRect();
+      const pageTop = rect.top + window.scrollY;
+      const pageLeft = rect.left + window.scrollX;
 
-      if (window.innerWidth > 768) {
-        const activeEl = document.getElementById(sectionList[activeIndex].id);
-        if (activeEl) {
-          const banner = activeEl.querySelector('.section-banner') || activeEl;
-          const rect = banner.getBoundingClientRect();
-          const targetY = Math.max(90, Math.min(window.innerHeight - 110, rect.top + 6));
-          pixelMascot.style.top = `${targetY}px`;
-        }
-      }
+      // El borde superior es el suelo. y=pageTop.
+      // Las patitas tocan exactamente la línea superior (borde 1px hairline).
+      const targetY = Math.round(pageTop - MASCOT_HEIGHT + 1);
 
-      if (activeIndex !== currentActiveIndex) {
-        currentActiveIndex = activeIndex;
-        pixelMascot.classList.remove('is-jumping', 'is-landing');
-        void pixelMascot.offsetWidth;
-        pixelMascot.classList.add('is-jumping');
-        if (pixelTag) pixelTag.textContent = sectionList[activeIndex].name;
+      // A la derecha del recuadro, como en la imagen
+      const rightPadding = window.innerWidth <= 768 ? 16 : 36;
+      const targetX = Math.round(pageLeft + rect.width - MASCOT_WIDTH - rightPadding);
 
-        if (jumpTimeout) clearTimeout(jumpTimeout);
-        jumpTimeout = setTimeout(() => {
-          pixelMascot.classList.remove('is-jumping');
-          pixelMascot.classList.add('is-landing');
-        }, 500);
+      mascot.style.top = `${targetY}px`;
+      mascot.style.left = `${Math.max(12, targetX)}px`;
+
+      if (isJump) {
+        mascot.classList.remove('is-jumping', 'is-landing');
+        void mascot.offsetWidth; // retrigger reflow
+        mascot.classList.add('is-jumping');
+
+        if (landingTimeout) clearTimeout(landingTimeout);
+        landingTimeout = setTimeout(() => {
+          mascot.classList.remove('is-jumping');
+          mascot.classList.add('is-landing');
+        }, 460);
       }
     };
 
-    window.addEventListener('scroll', updateHop, { passive: true });
-    window.addEventListener('resize', updateHop);
-    updateHop();
+    const updateActiveSection = () => {
+      let activeIndex = 0;
+      const scrollThreshold = window.innerHeight * 0.45;
 
-    pixelMascot.addEventListener('click', () => {
-      pixelMascot.classList.add('is-jumping');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      for (let i = targetList.length - 1; i >= 0; i--) {
+        const el = document.getElementById(targetList[i].id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= scrollThreshold) {
+            activeIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (activeIndex !== currentTargetIndex) {
+        currentTargetIndex = activeIndex;
+        const target = targetList[activeIndex];
+        const el = document.getElementById(target.id);
+        if (el) {
+          setMascotPosition(el, true);
+          if (bubbleText) bubbleText.textContent = target.status;
+        }
+      }
+    };
+
+    // Al redimensionar, reposicionar sin animación de salto
+    window.addEventListener('resize', () => {
+      if (currentTargetIndex >= 0 && currentTargetIndex < targetList.length) {
+        const el = document.getElementById(targetList[currentTargetIndex].id);
+        if (el) setMascotPosition(el, false);
+      }
+    }, { passive: true });
+
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    // Posición inicial inmediata y al cargar contenido
+    updateActiveSection();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateActiveSection);
+    }
+    setTimeout(updateActiveSection, 150);
+
+    // Permitir hacer clic en cualquier sección o banner para que la mascota brinque a él
+    targetList.forEach((item, index) => {
+      const el = document.getElementById(item.id);
+      if (el) {
+        el.addEventListener('click', (e) => {
+          if (!e.target.closest('a, button, input')) {
+            currentTargetIndex = index;
+            setMascotPosition(el, true);
+            if (bubbleText) bubbleText.textContent = item.status;
+          }
+        });
+      }
+    });
+
+    // Clic en la mascota: acrobacia feliz y mensaje especial
+    mascot.addEventListener('click', () => {
+      mascot.classList.remove('is-jumping', 'is-landing');
+      void mascot.offsetWidth;
+      mascot.classList.add('is-jumping');
+      if (bubbleText) {
+        const easterEggs = [
+          "K'UUK' // [100% PIPELINE SLA]",
+          "K'UUK' // [RERANK TOP-5 READY]",
+          "K'UUK' // [4GB DEBIAN OPTIMIZED]",
+          "K'UUK' // [UV RUN AIRFLOW DAG]"
+        ];
+        bubbleText.textContent = easterEggs[Math.floor(Math.random() * easterEggs.length)];
+      }
     });
   }
 

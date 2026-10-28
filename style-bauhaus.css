@@ -37,6 +37,7 @@ body {
   line-height: 1.65;
   max-width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 .skip-link {
   position: absolute; top: -100px; left: 1rem;
@@ -255,105 +256,148 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 .footer-sub { color: var(--ink-secondary); font-size: 0.85rem; max-width: 580px; margin: 0 auto 1.75rem; }
 .footer-links { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 0; flex-wrap: wrap; }
 
-/* Pixel Maya Mascot Section-Hopper (Estilo Claude Code) */
-.pixel-maya-companion {
-  position: fixed;
-  right: clamp(1rem, 3.5vw, 2.5rem);
-  top: 140px;
-  z-index: 95;
+/* Pixel Maya Mascot Coding on Laptop (Claude Code style perched on recuadros) */
+.pixel-mascot-companion {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  width: 88px;
+  height: 48px;
   pointer-events: auto;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   user-select: none;
-  transition: top 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: top 0.46s cubic-bezier(0.25, 1, 0.5, 1), left 0.46s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: top, left;
 }
 
-.pixel-maya-sprite {
+.mascot-sprite-wrapper {
+  position: relative;
+  width: 88px;
+  height: 48px;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mascot-svg {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  filter: drop-shadow(3px 3px 0 var(--border-hairline));
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: pixelIdle 2.5s ease-in-out infinite;
+  display: block;
+  filter: drop-shadow(2px 2px 0 rgba(18, 19, 22, 0.25));
 }
 
-.pixel-name-tag {
+/* Patitas tecleando en laptop */
+@keyframes typingLeftPaw {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+}
+@keyframes typingRightPaw {
+  0%, 100% { transform: translateY(-1.5px); }
+  50% { transform: translateY(0); }
+}
+.mascot-paw-left {
+  animation: typingLeftPaw 0.26s ease-in-out infinite;
+  transform-origin: 10px 21px;
+}
+.mascot-paw-right {
+  animation: typingRightPaw 0.26s ease-in-out infinite;
+  transform-origin: 12px 21px;
+}
+
+/* Pantalla terminal con brillo esmeralda */
+@keyframes screenCodeBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.mascot-screen-code {
+  animation: screenCodeBlink 0.75s steps(2, start) infinite;
+}
+
+/* Plumas de quetzal oscilando suavemente */
+@keyframes featherSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-3deg); }
+}
+.mascot-penacho {
+  transform-origin: 26px 8px;
+  animation: featherSway 2.4s ease-in-out infinite;
+}
+
+/* Hover interactivo */
+.pixel-mascot-companion:hover .mascot-sprite-wrapper {
+  transform: scale(1.08) translateY(-2px);
+}
+.pixel-mascot-companion:hover .mascot-speech-bubble {
+  box-shadow: 3px 3px 0 var(--border-hairline);
+  background: var(--bg-white);
+}
+
+/* Animación del brinco acrobático entre recuadros */
+.pixel-mascot-companion.is-jumping .mascot-sprite-wrapper {
+  animation: mascotHopArc 0.46s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes mascotHopArc {
+  0% { transform: translateY(0) scale(1.12, 0.75); }
+  35% { transform: translateY(-38px) scale(0.9, 1.25) rotate(-6deg); }
+  70% { transform: translateY(-24px) scale(1.05, 1.05) rotate(4deg); }
+  85% { transform: translateY(3px) scale(1.15, 0.85); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+
+/* Bocadillo de diálogo / status estilo prompt */
+.mascot-speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  right: -8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
   font-family: var(--font-mono);
   font-size: 0.62rem;
   font-weight: 700;
   color: var(--ink-primary);
-  background: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  padding: 0.1rem 0.4rem;
-  border-radius: 9999px;
-  margin-top: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
   box-shadow: 2px 2px 0 var(--accent-crimson);
-  transition: all 0.2s ease;
   white-space: nowrap;
-}
-
-.pixel-maya-companion:hover .pixel-name-tag {
-  background: var(--accent-crimson);
-  color: #FFF;
-  border-color: var(--accent-crimson);
-  transform: scale(1.05);
-}
-
-.pixel-maya-companion:hover .pixel-maya-sprite {
-  transform: scale(1.15) rotate(4deg);
-}
-
-/* Animación del brinco acrobático entre secciones */
-.pixel-maya-companion.is-jumping .pixel-maya-sprite {
-  animation: pixelHop 0.52s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-@keyframes pixelHop {
-  0% { transform: translateY(0) scale(1.1, 0.7); }
-  35% { transform: translateY(-46px) scale(0.9, 1.25) rotate(-8deg); }
-  70% { transform: translateY(-38px) scale(1.02, 1.1) rotate(6deg); }
-  85% { transform: translateY(6px) scale(1.2, 0.8); }
-  100% { transform: translateY(0) scale(1, 1); }
-}
-
-@keyframes pixelIdle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-/* Polvo / efecto pixel de impacto al aterrizar */
-.pixel-ground-burst {
-  position: absolute;
-  bottom: 12px;
-  display: flex;
-  gap: 6px;
-  opacity: 0;
   pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.pixel-puff {
+.bubble-prompt {
+  color: var(--accent-crimson);
+  font-weight: 800;
+  margin-right: 2px;
+}
+
+/* Polvo de impacto pixel al aterrizar */
+.mascot-dust {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px;
+  pointer-events: none;
+  opacity: 0;
+}
+.mascot-dust span {
   font-family: var(--font-mono);
-  font-size: 0.55rem;
+  font-size: 0.5rem;
   color: var(--accent-stone);
 }
-.pixel-maya-companion.is-landing .pixel-ground-burst {
-  animation: dustPuff 0.45s ease-out forwards;
+.pixel-mascot-companion.is-landing .mascot-dust {
+  animation: dustScatter 0.42s ease-out forwards;
 }
-@keyframes dustPuff {
-  0% { opacity: 1; transform: scale(0.4) translateY(0); }
-  100% { opacity: 0; transform: scale(1.8) translateY(10px); }
-}
-
-@media (max-width: 1200px) {
-  .pixel-maya-companion {
-    right: 0.6rem;
-  }
+@keyframes dustScatter {
+  0% { opacity: 1; transform: scale(0.5); }
+  100% { opacity: 0; transform: scale(1.6) translateY(4px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .carousel-track { transition: none; }
-  .pixel-maya-sprite { animation: none; }
+  .pixel-mascot-companion, .mascot-sprite-wrapper { transition: none; animation: none; }
+  .mascot-paw-left, .mascot-paw-right, .mascot-screen-code, .mascot-penacho { animation: none; }
 }
 
 @media (max-width: 900px) {
@@ -366,18 +410,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 
 @media (max-width: 768px) {
   .site-nav { display: none; }
-  .pixel-maya-companion {
-    top: auto !important;
-    bottom: 1rem;
-    right: 0.75rem;
-  }
-  .pixel-maya-companion.is-jumping .pixel-maya-sprite {
-    animation: popFromFloor 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  }
-  @keyframes popFromFloor {
-    0% { transform: translateY(40px) scale(0.8); opacity: 0; }
-    60% { transform: translateY(-10px) scale(1.1); opacity: 1; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
+  .pixel-mascot-companion {
+    transform-origin: bottom right;
   }
   .hero { padding: 3rem 0 2rem; }
   .hero-layout { flex-direction: column-reverse; align-items: center; }
