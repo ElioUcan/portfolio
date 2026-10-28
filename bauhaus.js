@@ -93,15 +93,15 @@
 
   if (mascot) {
     const targetList = [
-      { id: 'stats-ledger', status: "K'UUK' // DATA & AI", side: 'right', walkDist: 36 },
-      { id: 'banner-about', status: "K'UUK' // COMPILING THESIS", side: 'left', walkDist: 40 },
-      { id: 'focus', status: "K'UUK' // 4GB DEBIAN + RAG", side: 'right', walkDist: 38 },
-      { id: 'work', status: "K'UUK' // AIRFLOW & AWS IAC", side: 'right', walkDist: 48 },
-      { id: 'banner-exp', status: "K'UUK' // AI RESEARCH LAB", side: 'left', walkDist: 42 },
-      { id: 'skills', status: "K'UUK' // PYTHON & POSTGRES", side: 'right', walkDist: 34 },
-      { id: 'certs', status: "K'UUK' // AWS CERTIFIED", side: 'left', walkDist: 38 },
-      { id: 'education', status: "K'UUK' // UPY & HOLBERTON", side: 'right', walkDist: 36 },
-      { id: 'contact', status: "K'UUK' // TRANSMIT PING", side: 'right', walkDist: 52 }
+      { id: 'stats-ledger', status: "DATA PIPELINES & AI", side: 'right', walkDist: 36 },
+      { id: 'banner-about', status: "COMPILING THESIS", side: 'left', walkDist: 40 },
+      { id: 'focus', status: "4GB DEBIAN + RAG", side: 'right', walkDist: 38 },
+      { id: 'work', status: "AIRFLOW & AWS IAC", side: 'right', walkDist: 48 },
+      { id: 'banner-exp', status: "AI RESEARCH LAB", side: 'left', walkDist: 42 },
+      { id: 'skills', status: "PYTHON & POSTGRES", side: 'right', walkDist: 34 },
+      { id: 'certs', status: "AWS CERTIFIED", side: 'left', walkDist: 38 },
+      { id: 'education', status: "UPY & HOLBERTON", side: 'right', walkDist: 36 },
+      { id: 'contact', status: "TRANSMIT INQUIRY", side: 'right', walkDist: 52 }
     ];
 
     let currentTargetIndex = -1;
@@ -245,11 +245,11 @@
       mascot.className = 'pixel-mascot-companion is-emerging';
       if (bubbleText) {
         const easterEggs = [
-          "K'UUK' // [100% PIPELINE SLA]",
-          "K'UUK' // [RERANK TOP-5 READY]",
-          "K'UUK' // [4GB DEBIAN OPTIMIZED]",
-          "K'UUK' // [UV RUN AIRFLOW DAG]",
-          "K'UUK' // [LEVEL UP! STAGE CLEARED]"
+          "[100% PIPELINE SLA]",
+          "[RERANK TOP-5 READY]",
+          "[4GB DEBIAN OPTIMIZED]",
+          "[UV RUN AIRFLOW DAG]",
+          "[STAGE CLEARED · 10/10]"
         ];
         bubbleText.textContent = easterEggs[Math.floor(Math.random() * easterEggs.length)];
       }

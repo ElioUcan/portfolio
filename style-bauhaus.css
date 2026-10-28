@@ -403,14 +403,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   animation: screenCodeBlink 0.5s steps(2, start) infinite;
 }
 
-/* Plumas oscilando con cadencia retro */
-@keyframes featherTick {
-  0%, 100% { transform: rotate(0deg); }
-  50%      { transform: rotate(-3deg); }
+/* Corona de Tláloc oscilando con cadencia retro */
+@keyframes crownTick {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1px); }
 }
-.mascot-penacho {
-  transform-origin: 26px 8px;
-  animation: featherTick 1.6s steps(2, start) infinite;
+.mascot-tlaloc-crown, .mascot-penacho {
+  transform-origin: 22px 8px;
+  animation: crownTick 1.6s steps(2, start) infinite;
 }
 
 /* 5. TIERRA / POLVO PIXEL AL SALIR DEL SUELO O ENTERRARSE */
