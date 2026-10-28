@@ -86,56 +86,103 @@
     } catch {}
   }
 
-  // Mascota Maya Pixel que se para sobre los recuadros y teclea en su laptop
+  // Mascota Maya Pixel - Videojuego Retro (Sale del suelo, camina por los bordes en steps)
   const mascot = document.getElementById('pixelMascotCompanion');
+  const spriteWrapper = document.getElementById('mascotSpriteWrapper');
   const bubbleText = document.getElementById('mascotBubbleText');
 
   if (mascot) {
     const targetList = [
-      { id: 'stats-ledger', status: "K'UUK' // DATA & AI" },
-      { id: 'banner-about', status: "K'UUK' // COMPILING THESIS" },
-      { id: 'focus', status: "K'UUK' // 4GB DEBIAN + RAG" },
-      { id: 'work', status: "K'UUK' // AIRFLOW & AWS IAC" },
-      { id: 'banner-exp', status: "K'UUK' // AI RESEARCH LAB" },
-      { id: 'skills', status: "K'UUK' // PYTHON & POSTGRES" },
-      { id: 'certs', status: "K'UUK' // AWS CERTIFIED" },
-      { id: 'education', status: "K'UUK' // UPY & HOLBERTON" },
-      { id: 'contact', status: "K'UUK' // TRANSMIT PING" }
+      { id: 'stats-ledger', status: "K'UUK' // DATA & AI", side: 'right', walkDist: 36 },
+      { id: 'banner-about', status: "K'UUK' // COMPILING THESIS", side: 'left', walkDist: 40 },
+      { id: 'focus', status: "K'UUK' // 4GB DEBIAN + RAG", side: 'right', walkDist: 38 },
+      { id: 'work', status: "K'UUK' // AIRFLOW & AWS IAC", side: 'right', walkDist: 48 },
+      { id: 'banner-exp', status: "K'UUK' // AI RESEARCH LAB", side: 'left', walkDist: 42 },
+      { id: 'skills', status: "K'UUK' // PYTHON & POSTGRES", side: 'right', walkDist: 34 },
+      { id: 'certs', status: "K'UUK' // AWS CERTIFIED", side: 'left', walkDist: 38 },
+      { id: 'education', status: "K'UUK' // UPY & HOLBERTON", side: 'right', walkDist: 36 },
+      { id: 'contact', status: "K'UUK' // TRANSMIT PING", side: 'right', walkDist: 52 }
     ];
 
     let currentTargetIndex = -1;
-    let landingTimeout = null;
+    let animTimers = [];
     const MASCOT_HEIGHT = 48;
     const MASCOT_WIDTH = 88;
 
-    const setMascotPosition = (targetEl, isJump) => {
-      if (!targetEl) return;
-      const rect = targetEl.getBoundingClientRect();
-      const pageTop = rect.top + window.scrollY;
-      const pageLeft = rect.left + window.scrollX;
+    const clearAnimTimers = () => {
+      animTimers.forEach((t) => clearTimeout(t));
+      animTimers = [];
+    };
 
-      // El borde superior es el suelo. y=pageTop.
-      // Las patitas tocan exactamente la línea superior (borde 1px hairline).
-      const targetY = Math.round(pageTop - MASCOT_HEIGHT + 1);
+    const triggerSectionMascot = (index, immediate = false) => {
+      const target = targetList[index];
+      const el = document.getElementById(target.id);
+      if (!el) return;
 
-      // A la derecha del recuadro, como en la imagen
-      const rightPadding = window.innerWidth <= 768 ? 16 : 36;
-      const targetX = Math.round(pageLeft + rect.width - MASCOT_WIDTH - rightPadding);
+      clearAnimTimers();
+      const rect = el.getBoundingClientRect();
+      const pageTop = Math.round(rect.top + window.scrollY);
+      const pageLeft = Math.round(rect.left + window.scrollX);
+      const targetY = pageTop - MASCOT_HEIGHT + 1;
 
-      mascot.style.top = `${targetY}px`;
-      mascot.style.left = `${Math.max(12, targetX)}px`;
+      const isLeft = target.side === 'left';
+      const isMobile = window.innerWidth <= 768;
+      const margin = isMobile ? 12 : 24;
+      const walk = isMobile ? Math.min(20, target.walkDist) : target.walkDist;
 
-      if (isJump) {
-        mascot.classList.remove('is-jumping', 'is-landing');
-        void mascot.offsetWidth; // retrigger reflow
-        mascot.classList.add('is-jumping');
-
-        if (landingTimeout) clearTimeout(landingTimeout);
-        landingTimeout = setTimeout(() => {
-          mascot.classList.remove('is-jumping');
-          mascot.classList.add('is-landing');
-        }, 460);
+      let spawnX, walkTargetX;
+      if (isLeft) {
+        spawnX = Math.round(pageLeft + margin);
+        walkTargetX = spawnX + walk;
+      } else {
+        spawnX = Math.round(pageLeft + rect.width - MASCOT_WIDTH - margin);
+        walkTargetX = spawnX - walk;
       }
+
+      if (immediate || currentTargetIndex === -1) {
+        currentTargetIndex = index;
+        mascot.style.transition = 'none';
+        mascot.style.top = `${targetY}px`;
+        mascot.style.left = `${walkTargetX}px`;
+        mascot.className = 'pixel-mascot-companion is-typing';
+        if (spriteWrapper) {
+          spriteWrapper.classList.toggle('is-facing-right', isLeft);
+        }
+        if (bubbleText) bubbleText.textContent = target.status;
+        return;
+      }
+
+      // Secuencia retro de videojuego:
+      // 1. Sumergirse en el suelo de la tarjeta actual (200ms)
+      mascot.className = 'pixel-mascot-companion is-burrowing';
+
+      // 2. Warp instantáneo a la nueva tarjeta y emerger del suelo
+      animTimers.push(setTimeout(() => {
+        currentTargetIndex = index;
+        mascot.style.transition = 'none';
+        mascot.style.top = `${targetY}px`;
+        mascot.style.left = `${spawnX}px`;
+
+        if (spriteWrapper) {
+          spriteWrapper.classList.toggle('is-facing-right', isLeft);
+        }
+
+        mascot.className = 'pixel-mascot-companion is-emerging';
+        if (bubbleText) bubbleText.textContent = target.status;
+
+        // 3. Caminar por el borde en pasos discretos (steps de 8-bit)
+        animTimers.push(setTimeout(() => {
+          mascot.className = 'pixel-mascot-companion is-walking';
+          mascot.style.transition = 'left 0.5s steps(4, end)';
+          mascot.style.left = `${walkTargetX}px`;
+
+          // 4. Detenerse, desplegar laptop y comenzar a programar
+          animTimers.push(setTimeout(() => {
+            mascot.style.transition = 'none';
+            mascot.className = 'pixel-mascot-companion is-typing';
+          }, 520));
+        }, 340));
+      }, 200));
     };
 
     const updateActiveSection = () => {
@@ -154,21 +201,13 @@
       }
 
       if (activeIndex !== currentTargetIndex) {
-        currentTargetIndex = activeIndex;
-        const target = targetList[activeIndex];
-        const el = document.getElementById(target.id);
-        if (el) {
-          setMascotPosition(el, true);
-          if (bubbleText) bubbleText.textContent = target.status;
-        }
+        triggerSectionMascot(activeIndex, false);
       }
     };
 
-    // Al redimensionar, reposicionar sin animación de salto
     window.addEventListener('resize', () => {
       if (currentTargetIndex >= 0 && currentTargetIndex < targetList.length) {
-        const el = document.getElementById(targetList[currentTargetIndex].id);
-        if (el) setMascotPosition(el, false);
+        triggerSectionMascot(currentTargetIndex, true);
       }
     }, { passive: true });
 
@@ -183,41 +222,40 @@
       }
     }, { passive: true });
 
-    // Posición inicial inmediata y al cargar contenido
-    updateActiveSection();
+    // Inicio inmediato al cargar
+    triggerSectionMascot(0, true);
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', updateActiveSection);
+      document.addEventListener('DOMContentLoaded', () => triggerSectionMascot(0, true));
     }
-    setTimeout(updateActiveSection, 150);
 
-    // Permitir hacer clic en cualquier sección o banner para que la mascota brinque a él
+    // Clic en cualquier banner o tarjeta para invocar a la mascota caminando allí
     targetList.forEach((item, index) => {
       const el = document.getElementById(item.id);
       if (el) {
         el.addEventListener('click', (e) => {
           if (!e.target.closest('a, button, input')) {
-            currentTargetIndex = index;
-            setMascotPosition(el, true);
-            if (bubbleText) bubbleText.textContent = item.status;
+            triggerSectionMascot(index, false);
           }
         });
       }
     });
 
-    // Clic en la mascota: acrobacia feliz y mensaje especial
+    // Clic en la mascota: animación de festejo y easter egg
     mascot.addEventListener('click', () => {
-      mascot.classList.remove('is-jumping', 'is-landing');
-      void mascot.offsetWidth;
-      mascot.classList.add('is-jumping');
+      mascot.className = 'pixel-mascot-companion is-emerging';
       if (bubbleText) {
         const easterEggs = [
           "K'UUK' // [100% PIPELINE SLA]",
           "K'UUK' // [RERANK TOP-5 READY]",
           "K'UUK' // [4GB DEBIAN OPTIMIZED]",
-          "K'UUK' // [UV RUN AIRFLOW DAG]"
+          "K'UUK' // [UV RUN AIRFLOW DAG]",
+          "K'UUK' // [LEVEL UP! STAGE CLEARED]"
         ];
         bubbleText.textContent = easterEggs[Math.floor(Math.random() * easterEggs.length)];
       }
+      setTimeout(() => {
+        mascot.className = 'pixel-mascot-companion is-typing';
+      }, 400);
     });
   }
 
