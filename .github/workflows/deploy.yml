@@ -18,11 +18,19 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp style.css _site/
+          cp style-bauhaus.css _site/
+          cp bauhaus.js _site/
           cp CNAME _site/
           cp robots.txt _site/
           cp llms.txt _site/
           cp -r assets _site/
           cp -r images _site/
+          cp -r reference-art _site/
+          cp favicon* _site/ 2>/dev/null || true
+          cp apple-touch-icon.png _site/ 2>/dev/null || true
+          cp preview-*.html _site/ 2>/dev/null || true
+          cp index-swiss-editorial.html _site/ 2>/dev/null || true
+          cp style-swiss-editorial.css _site/ 2>/dev/null || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
