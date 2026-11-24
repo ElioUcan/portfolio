@@ -16,7 +16,7 @@ The site is hosted on GitHub Pages as static HTML, CSS, and vanilla JS with no b
 
 ## Visual Architecture
 
-Two-Column Split layout on pure white (`#FFFFFF`) with subtle neutral hover surface (`#F5F5F5`), ink (`#171717`), secondary neutral (`#525252`), hairline dividers (`#E5E5E5` / `#D4D4D4`), and cobalt blue (`#1D4ED8` / `#1E40AF`) editorial accents. On desktop, the left column stays sticky with name, concise bio, anchor navigation, resume download, and contact links; the right column presents a flat vertical index of focus, experience, projects, skills, credentials, and education without boxed cards or carousels. Typography uses Plus Jakarta Sans across the entire interface and reserves IBM Plex Mono strictly for CLI code snippets (`npx better-readmes`).
+Two-Column Split layout on pure white (`#FFFFFF`) with subtle neutral hover surface (`#F5F5F5`), ink (`#171717`), secondary neutral (`#525252`), hairline dividers (`#E5E5E5` / `#D4D4D4`), and cobalt blue (`#1D4ED8` / `#1E40AF`) editorial accents. On desktop, the left column stays sticky with name, concise bio, anchor navigation, resume download, and contact links; the right column opens with an editorial visual archive pair from `reference-art/` and presents a flat vertical index of focus, experience, projects (with `portada-*.svg` thumbnails), skills, credentials, and education without boxed cards or carousels. Typography uses Plus Jakarta Sans across the entire interface and reserves IBM Plex Mono strictly for CLI code snippets (`npx better-readmes`).
 
 ## Anti-references
 

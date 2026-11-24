@@ -157,13 +157,18 @@ button:focus-visible {
   text-decoration: none;
   border: 1px solid var(--ink);
   border-radius: 6px;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cta-resume:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.cta-resume:active {
+  transform: scale(0.98);
 }
 
 .inline-links {
@@ -179,17 +184,50 @@ button:focus-visible {
   min-width: 0;
 }
 
+.editorial-art {
+  margin: 0 0 2.25rem;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.75rem;
+}
+
+.editorial-frame {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+  background: var(--bg-subtle);
+}
+
+.editorial-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.editorial-frame:first-child img {
+  object-position: center 22%;
+}
+
+.editorial-frame:hover img {
+  transform: scale(1.025);
+}
+
+.editorial-caption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .section {
   margin-top: 3.25rem;
   padding-top: 2rem;
   border-top: 1px solid var(--rule);
   scroll-margin-top: 3rem;
-}
-
-.content > .section:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
 }
 
 .section-title {
@@ -230,6 +268,45 @@ button:focus-visible {
   color: var(--accent);
   text-decoration-color: var(--accent);
   text-underline-offset: 4px;
+}
+
+.project-row-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.project-row-media,
+.project-thumb {
+  width: 144px;
+  height: 81px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg-subtle);
+  transition: border-color 0.22s ease;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#projects .entry-row:hover .project-thumb {
+  border-color: var(--rule-strong);
+}
+
+#projects .entry-row:hover .project-thumb img {
+  transform: scale(1.04);
+}
+
+.project-row-body {
+  flex: 1;
+  min-width: 0;
 }
 
 .entry-head {
@@ -306,12 +383,17 @@ button:focus-visible {
   font-size: 0.76rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .copy-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.copy-btn:active {
+  transform: scale(0.98);
 }
 
 .copy-btn.is-copied,
@@ -364,15 +446,20 @@ button:focus-visible {
 .cred-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .inline-mark {
-  width: 36px;
-  height: 24px;
+  width: 68px;
+  height: 46px;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cred-item:hover .inline-mark {
+  transform: scale(1.05);
 }
 
 .contact-inline {
@@ -413,6 +500,26 @@ button:focus-visible {
     padding: 2.5rem 1.15rem 3.5rem;
   }
 
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-frame {
+    height: 190px;
+  }
+
+  .project-row-layout {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .project-row-media,
+  .project-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
   .kv-row {
     grid-template-columns: 1fr;
     gap: 0.25rem;
@@ -434,7 +541,21 @@ button:focus-visible {
   button,
   .entry-row,
   .cta-resume,
-  .copy-btn {
+  .copy-btn,
+  .editorial-art img,
+  .project-thumb,
+  .project-thumb img,
+  .inline-mark {
     transition: none;
+  }
+
+  .editorial-frame:hover img,
+  #projects .entry-row:hover .project-thumb img,
+  .cred-item:hover .inline-mark,
+  .cta-resume:hover,
+  .cta-resume:active,
+  .copy-btn:hover,
+  .copy-btn:active {
+    transform: none;
   }
 }
