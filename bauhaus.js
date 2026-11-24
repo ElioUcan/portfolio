@@ -1,6 +1,135 @@
 (function () {
   'use strict';
-  // Carrusel Bauhaus Circular
+
+  function fallbackCopyText(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-9999px';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+    let copied = false;
+    try {
+      copied = document.execCommand('copy');
+    } catch {
+      copied = false;
+    }
+    document.body.removeChild(textarea);
+    return copied;
+  }
+
+  function initCopyControls(root) {
+    if (!root) return;
+    const buttons = root.querySelectorAll('[data-copy-text], .btn-copy-email[data-email]');
+    buttons.forEach((btn) => {
+      let copyTimeout = null;
+      const defaultLabel = btn.getAttribute('data-default-label') || btn.textContent;
+
+      btn.addEventListener('click', async () => {
+        const text = btn.getAttribute('data-copy-text') || btn.getAttribute('data-email') || '';
+        if (!text) return;
+
+        let copied = false;
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+          try {
+            await navigator.clipboard.writeText(text);
+            copied = true;
+          } catch {
+            copied = fallbackCopyText(text);
+          }
+        } else {
+          copied = fallbackCopyText(text);
+        }
+
+        if (!copied) {
+          if (btn.classList.contains('btn-copy-email')) {
+            window.location.href = `mailto:${encodeURIComponent(text)}`;
+          }
+          return;
+        }
+
+        if (copyTimeout) clearTimeout(copyTimeout);
+        btn.textContent = 'COPIED';
+        btn.classList.add('is-copied');
+        copyTimeout = setTimeout(() => {
+          btn.textContent = defaultLabel;
+          btn.classList.remove('is-copied');
+          copyTimeout = null;
+        }, 1800);
+      });
+    });
+  }
+
+  function initScrollSpy(root) {
+    if (!root) return;
+    const links = Array.from(root.querySelectorAll('.toc-nav a[href^="#"]'));
+    const items = links
+      .map((link) => {
+        const id = link.getAttribute('href').slice(1);
+        const target = id ? document.getElementById(id) : null;
+        return target ? { link, target } : null;
+      })
+      .filter(Boolean);
+
+    if (items.length === 0) return;
+
+    function setActive(activeLink) {
+      items.forEach(({ link }) => {
+        const isCurrent = link === activeLink;
+        link.classList.toggle('is-active', isCurrent);
+        if (isCurrent) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function updateActive() {
+      const atBottom =
+        window.scrollY > 0 &&
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      if (atBottom) {
+        setActive(items[items.length - 1].link);
+        return;
+      }
+
+      let activeItem = items[0];
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].target.getBoundingClientRect().top <= 140) {
+          activeItem = items[i];
+        }
+      }
+      setActive(activeItem.link);
+    }
+
+    let ticking = false;
+    function scheduleUpdate() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', updateActive, { passive: true });
+    window.addEventListener('hashchange', updateActive);
+
+    updateActive();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateActive);
+    }
+  }
+
+  initCopyControls(document);
+  initScrollSpy(document);
+
+  // Guarded carousel for legacy preview pages
   const track = document.querySelector('.carousel-track');
   const slides = document.querySelectorAll('.carousel-slide');
   const dots = document.querySelectorAll('.dot-btn');
@@ -60,8 +189,7 @@
     goToSlide(0);
   }
 
-
-  // Mascota Maya Pixel - Videojuego Retro (Sale del suelo, camina por los bordes en steps)
+  // Guarded Tlaloc mascot for legacy preview pages
   const mascot = document.getElementById('pixelMascotCompanion');
   const spriteWrapper = document.getElementById('mascotSpriteWrapper');
   const bubbleText = document.getElementById('mascotBubbleText');
@@ -69,14 +197,14 @@
   if (mascot) {
     const targetList = [
       { id: 'stats-ledger', status: "DATA PIPELINES & AI", side: 'right', walkDist: 36 },
-      { id: 'banner-about', status: "COMPILING THESIS", side: 'left', walkDist: 40 },
-      { id: 'focus', status: "4GB DEBIAN + RAG", side: 'right', walkDist: 38 },
+      { id: 'banner-about', status: "ABOUT & STACK", side: 'left', walkDist: 40 },
+      { id: 'focus', status: "DEBIAN 4GB + RAG", side: 'right', walkDist: 38 },
       { id: 'work', status: "AIRFLOW & AWS IAC", side: 'right', walkDist: 48 },
       { id: 'banner-exp', status: "AI RESEARCH LAB", side: 'left', walkDist: 42 },
       { id: 'skills', status: "PYTHON & POSTGRES", side: 'right', walkDist: 34 },
       { id: 'certs', status: "AWS CERTIFIED", side: 'left', walkDist: 38 },
       { id: 'education', status: "UPY & HOLBERTON", side: 'right', walkDist: 36 },
-      { id: 'contact', status: "TRANSMIT INQUIRY", side: 'right', walkDist: 52 }
+      { id: 'contact', status: "GET IN TOUCH", side: 'right', walkDist: 52 }
     ];
 
     let currentTargetIndex = -1;
@@ -127,11 +255,8 @@
         return;
       }
 
-      // Secuencia retro de videojuego:
-      // 1. Sumergirse en el suelo de la tarjeta actual (200ms)
       mascot.className = 'pixel-mascot-companion is-burrowing';
 
-      // 2. Warp instantáneo a la nueva tarjeta y emerger del suelo
       animTimers.push(setTimeout(() => {
         currentTargetIndex = index;
         mascot.style.transition = 'none';
@@ -145,13 +270,11 @@
         mascot.className = 'pixel-mascot-companion is-emerging';
         if (bubbleText) bubbleText.textContent = target.status;
 
-        // 3. Caminar por el borde en pasos discretos (steps de 8-bit)
         animTimers.push(setTimeout(() => {
           mascot.className = 'pixel-mascot-companion is-walking';
           mascot.style.transition = 'left 0.5s steps(4, end)';
           mascot.style.left = `${walkTargetX}px`;
 
-          // 4. Detenerse, desplegar laptop y comenzar a programar
           animTimers.push(setTimeout(() => {
             mascot.style.transition = 'none';
             mascot.className = 'pixel-mascot-companion is-typing';
@@ -197,13 +320,11 @@
       }
     }, { passive: true });
 
-    // Inicio inmediato al cargar
     triggerSectionMascot(0, true);
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => triggerSectionMascot(0, true));
     }
 
-    // Clic en cualquier banner o tarjeta para invocar a la mascota caminando allí
     targetList.forEach((item, index) => {
       const el = document.getElementById(item.id);
       if (el) {
@@ -215,44 +336,21 @@
       }
     });
 
-    // Clic en la mascota: animación de festejo y easter egg
     mascot.addEventListener('click', () => {
       mascot.className = 'pixel-mascot-companion is-emerging';
       if (bubbleText) {
-        const easterEggs = [
-          "[100% PIPELINE SLA]",
-          "[RERANK TOP-5 READY]",
-          "[4GB DEBIAN OPTIMIZED]",
-          "[UV RUN AIRFLOW DAG]",
-          "[STAGE CLEARED · 10/10]"
+        const statusMessages = [
+          "[99.982% UPTIME SLA]",
+          "[TOP-25 TO TOP-5 RERANK]",
+          "[DEBIAN 4GB RAM]",
+          "[UV RUN AIRFLOW]",
+          "[TERRAFORM APPLY]"
         ];
-        bubbleText.textContent = easterEggs[Math.floor(Math.random() * easterEggs.length)];
+        bubbleText.textContent = statusMessages[Math.floor(Math.random() * statusMessages.length)];
       }
       setTimeout(() => {
         mascot.className = 'pixel-mascot-companion is-typing';
       }, 400);
     });
   }
-
-  // Copiado de Correo Directo
-  document.querySelectorAll('.btn-copy-email').forEach((btn) => {
-    let copyTimeout = null;
-    const initialText = btn.textContent;
-    btn.addEventListener('click', async () => {
-      const email = btn.getAttribute('data-email') || 'elioeduardo06@gmail.com';
-      try {
-        await navigator.clipboard.writeText(email);
-        if (copyTimeout) clearTimeout(copyTimeout);
-        btn.textContent = 'COPIED!';
-        btn.classList.add('is-copied');
-        copyTimeout = setTimeout(() => {
-          btn.textContent = initialText;
-          btn.classList.remove('is-copied');
-          copyTimeout = null;
-        }, 2000);
-      } catch {
-        window.location.href = `mailto:${encodeURIComponent(email)}`;
-      }
-    });
-  });
 })();
